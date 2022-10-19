@@ -15,7 +15,7 @@ class _HomePageState extends State<HomePage> {
     return Container(
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0),
-          border: Border.all(color: Colors.grey, width: 2)),
+          border: Border.all(color: Colors.deepOrange, width: 2)), //grey
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -70,13 +70,13 @@ class _HomePageState extends State<HomePage> {
           // //     )
           // // ),
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(15.0),
             child: Container(
               height: 300,
               child: GridView.count(
                 crossAxisCount: 2,
-                crossAxisSpacing: 12,
-                mainAxisSpacing: 8,
+                crossAxisSpacing: 15,
+                mainAxisSpacing: 20,
                 childAspectRatio: 1.30,
                 children: [
                   _pageadd(
