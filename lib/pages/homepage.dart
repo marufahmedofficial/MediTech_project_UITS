@@ -72,7 +72,7 @@ class _HomePageState extends State<HomePage> {
           child: Padding(
             padding: const EdgeInsets.all(15.0),
             child: Container(
-              height: 300,
+              height: 600,
               child: GridView.count(
                 crossAxisCount: 2,
                 crossAxisSpacing: 15,
@@ -80,6 +80,12 @@ class _HomePageState extends State<HomePage> {
                 childAspectRatio: 1.30,
                 children: [
                   _pageadd(
+                     image: 'images/icon.png',
+                    name: 'Organization'
+                  ),_pageadd(
+                     image: 'images/icon.png',
+                    name: 'Organization'
+                  ),_pageadd(
                      image: 'images/icon.png',
                     name: 'Organization'
                   ),_pageadd(
