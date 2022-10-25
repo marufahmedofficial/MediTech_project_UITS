@@ -70,8 +70,9 @@ class _HomePageState extends State<HomePage> {
           // //     )
           // // ),
           child: Padding(
-            padding: const EdgeInsets.all(40.0),
+            padding: const EdgeInsets.all(35.0),
             child: Container(
+
               height: 600,
               child: GridView.count(
                 crossAxisCount: 2,
@@ -84,19 +85,19 @@ class _HomePageState extends State<HomePage> {
                     name: 'BMI Calculator'
                   ),_pageadd(
                      image: 'assets/images/blood-donation.png',
-                    name: 'Organization'
+                    name: 'Blood Bank & Donor'
                   ),_pageadd(
-                     image: 'assets/images/bmi.png',
-                    name: 'Organization'
+                     image: 'assets/images/ambulance.png',
+                    name: 'Ambulance'
                   ),_pageadd(
-                     image: 'assets/images/bmi.png',
-                    name: 'Organization'
+                     image: 'assets/images/health.png',
+                    name: 'Health & Care'
                   ),_pageadd(
-                     image: 'assets/images/bmi.png',
-                    name: 'Organization'
+                     image: 'assets/images/doctor.png',
+                    name: 'Doctors'
                   ),_pageadd(
-                     image: 'assets/images/bmi.png',
-                    name: 'Organization'
+                     image: 'assets/images/hospital.png',
+                    name: 'Hospital'
                   ),
 
                 ],
