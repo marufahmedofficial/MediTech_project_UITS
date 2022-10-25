@@ -43,7 +43,7 @@ class _HomePageState extends State<HomePage> {
         title: const Text('MediTech'),
         centerTitle: true,
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         // backgroundColor: Colors.indigoAccent,
         // splashColor: Colors.purple,
@@ -51,58 +51,123 @@ class _HomePageState extends State<HomePage> {
 
         onPressed: () {},
         child: Icon(Icons.medical_information),
-        backgroundColor: Colors.red.shade700,
+        backgroundColor: Colors.deepOrange,
         foregroundColor: Colors.white,
         elevation: 8.0,
 
         // // label : const Text('Change'),
         // icon: const Icon(Icons.change_circle) ,
       ),
-      body: Container(
-        child: Container(
-          // height: 800,
-          // width: double.infinity,
-          // // decoration: BoxDecoration(
-          // //     color: Colors.white,
-          // //     borderRadius: BorderRadius.only(
-          // //       topLeft: Radius.circular(30),
-          // //       topRight: Radius.circular(30),
-          // //     )
-          // // ),
-          child: Padding(
-            padding: const EdgeInsets.all(35.0),
-            child: Container(
-
-              height: 600,
-              child: GridView.count(
-                crossAxisCount: 2,
-                crossAxisSpacing: 15,
-                mainAxisSpacing: 20,
-                childAspectRatio: 1.30,
+      bottomNavigationBar: BottomAppBar(
+        notchMargin: 5.0,
+        shape: CircularNotchedRectangle(),
+        color: Colors.deepOrange,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 10.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
                 children: [
-                  _pageadd(
-                     image: 'assets/images/bmi.png',
-                    name: 'BMI Calculator'
-                  ),_pageadd(
-                     image: 'assets/images/blood-donation.png',
-                    name: 'Blood Bank & Donor'
-                  ),_pageadd(
-                     image: 'assets/images/ambulance.png',
-                    name: 'Ambulance'
-                  ),_pageadd(
-                     image: 'assets/images/health.png',
-                    name: 'Health & Care'
-                  ),_pageadd(
-                     image: 'assets/images/doctor.png',
-                    name: 'Doctors'
-                  ),_pageadd(
-                     image: 'assets/images/hospital.png',
-                    name: 'Hospital'
+                  Icon(
+                    Icons.home,
+                    color: Colors.white,
                   ),
-
+                  Text(
+                    "Home",
+                    style: TextStyle(color: Colors.white),
+                  )
                 ],
               ),
             ),
+            Padding(
+              padding:
+              const EdgeInsets.only(right: 20.0, top: 10.0, bottom: 10.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    Icons.shopping_cart,
+                    color: Colors.white,
+                  ),
+                  Text(
+                    "Shop",
+                    style: TextStyle(color: Colors.white),
+                  )
+                ],
+              ),
+            ),
+            Padding(
+              padding:
+              const EdgeInsets.only(left: 20.0, top: 10.0, bottom: 10.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    Icons.favorite,
+                    color: Colors.white,
+                  ),
+                  Text(
+                    "Fav",
+                    style: TextStyle(color: Colors.white),
+                  )
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 10.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    Icons.settings,
+                    color: Colors.white,
+                  ),
+                  Text(
+                    "Setting",
+                    style: TextStyle(color: Colors.white),
+                  )
+                ],
+              ),
+            ),
+          ],
+
+      ),
+      ),
+
+      // backgroundColor: Colors.white,
+      body: Container(
+        child: Padding(
+          padding: const EdgeInsets.all(30.0),
+          child: GridView.count(
+            crossAxisCount: 2,
+            crossAxisSpacing: 15,
+            mainAxisSpacing: 20,
+            childAspectRatio: 1.30,
+            children: [
+              _pageadd(
+                 image: 'assets/images/bmi1.png',
+                name: 'BMI Calculator'
+              ),_pageadd(
+                 image: 'assets/images/blood-donation.png',
+                name: 'Blood Bank & Donor'
+              ),_pageadd(
+                 image: 'assets/images/ambulance.png',
+                name: 'Ambulance'
+              ),_pageadd(
+                 image: 'assets/images/health.png',
+                name: 'Health & Care'
+              ),_pageadd(
+                 image: 'assets/images/doctor.png',
+                name: 'Doctors'
+              ),_pageadd(
+                 image: 'assets/images/hospital.png',
+                name: 'Hospital'
+              ),
+
+            ],
           ),
         ),
       ),
