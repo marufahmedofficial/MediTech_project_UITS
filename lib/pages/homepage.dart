@@ -45,21 +45,23 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
-        // backgroundColor: Colors.indigoAccent,
-        // splashColor: Colors.purple,
-        // hoverColor: Colors.orange,
+
+        splashColor: Colors.purple,
+        hoverColor: Colors.black54,
 
         onPressed: () {},
         child: Icon(Icons.medical_information),
         backgroundColor: Colors.deepOrange,
         foregroundColor: Colors.white,
         elevation: 8.0,
+        mouseCursor: MouseCursor.defer,
+
 
         // // label : const Text('Change'),
         // icon: const Icon(Icons.change_circle) ,
       ),
       bottomNavigationBar: BottomAppBar(
-        notchMargin: 5.0,
+        notchMargin: 10.0,
         shape: CircularNotchedRectangle(),
         color: Colors.deepOrange,
         child: Row(
@@ -89,11 +91,11 @@ class _HomePageState extends State<HomePage> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Icon(
-                    Icons.shopping_cart,
+                    Icons.bloodtype_sharp,
                     color: Colors.white,
                   ),
                   Text(
-                    "Shop",
+                    "Blood",
                     style: TextStyle(color: Colors.white),
                   )
                 ],
@@ -106,11 +108,11 @@ class _HomePageState extends State<HomePage> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Icon(
-                    Icons.favorite,
+                    Icons.perm_contact_calendar_sharp,
                     color: Colors.white,
                   ),
                   Text(
-                    "Fav",
+                    "INFO",
                     style: TextStyle(color: Colors.white),
                   )
                 ],
