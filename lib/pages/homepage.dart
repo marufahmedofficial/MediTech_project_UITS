@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
           // //     )
           // // ),
           child: Padding(
-            padding: const EdgeInsets.all(15.0),
+            padding: const EdgeInsets.all(40.0),
             child: Container(
               height: 600,
               child: GridView.count(
@@ -80,22 +80,22 @@ class _HomePageState extends State<HomePage> {
                 childAspectRatio: 1.30,
                 children: [
                   _pageadd(
-                     image: 'images/icon.png',
+                     image: 'assets/images/bmi.png',
+                    name: 'BMI Calculator'
+                  ),_pageadd(
+                     image: 'assets/images/blood-donation.png',
                     name: 'Organization'
                   ),_pageadd(
-                     image: 'images/icon.png',
+                     image: 'assets/images/bmi.png',
                     name: 'Organization'
                   ),_pageadd(
-                     image: 'images/icon.png',
+                     image: 'assets/images/bmi.png',
                     name: 'Organization'
                   ),_pageadd(
-                     image: 'images/icon.png',
+                     image: 'assets/images/bmi.png',
                     name: 'Organization'
                   ),_pageadd(
-                     image: 'images/icon.png',
-                    name: 'Organization'
-                  ),_pageadd(
-                     image: 'images/icon.png',
+                     image: 'assets/images/bmi.png',
                     name: 'Organization'
                   ),
 
