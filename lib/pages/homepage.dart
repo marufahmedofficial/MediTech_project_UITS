@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meditech/pages/bmi.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -149,9 +150,12 @@ class _HomePageState extends State<HomePage> {
           crossAxisSpacing: 15,
           mainAxisSpacing: 20,
           childAspectRatio: 1.30,
+
           children: [
             InkWell(
-              onTap: () { },
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => BMI()));
+              },
               mouseCursor: MouseCursor.defer,
              splashColor: Colors.red.shade100,
               hoverColor: Colors.grey.shade200,
