@@ -203,13 +203,31 @@ class _HomePageState extends State<HomePage> {
                   name: 'Doctors'
                 ),
               ),
-            ),InkWell(onTap: () { },
+            ),
+            InkWell(onTap: () { },
               mouseCursor: MouseCursor.defer,
               splashColor: Colors.red.shade100,
               hoverColor: Colors.grey.shade200,
               child: _pageadd(
                  image: 'assets/images/hospital.png',
                 name: 'Hospital'
+              ),
+            ),
+            InkWell(onTap: () { },
+              mouseCursor: MouseCursor.defer,
+              splashColor: Colors.red.shade100,
+              hoverColor: Colors.grey.shade200,
+              child: _pageadd(
+                 image: 'assets/images/medicine.png',
+                name: 'Medicine'
+              ),
+            ), InkWell(onTap: () { },
+              mouseCursor: MouseCursor.defer,
+              splashColor: Colors.red.shade100,
+              hoverColor: Colors.grey.shade200,
+              child: _pageadd(
+                 image: 'assets/images/calories.png',
+                name: 'Food & Calories'
               ),
             ),
 
