@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
           ),
           Text(
             name,
-            style: TextStyle(fontSize: 17),
+            style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color: Colors.indigo.shade900),
           ),
         ],
       ),
@@ -151,10 +151,10 @@ class _HomePageState extends State<HomePage> {
             children: [
               _pageadd(
                  image: 'assets/images/bmi1.png',
-                name: 'BMI Calculator'
+                name: 'BMI Calculator,'
               ),_pageadd(
                  image: 'assets/images/blood-donation.png',
-                name: 'Blood Bank & Donor'
+                name: 'Blood Bank'
               ),_pageadd(
                  image: 'assets/images/ambulance.png',
                 name: 'Ambulance'
