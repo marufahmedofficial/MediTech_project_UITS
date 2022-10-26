@@ -150,24 +150,63 @@ class _HomePageState extends State<HomePage> {
           mainAxisSpacing: 20,
           childAspectRatio: 1.30,
           children: [
-            _pageadd(
-               image: 'assets/images/bmi1.png',
-              name: 'BMI Calculator'
-            ),_pageadd(
-               image: 'assets/images/blood-donation.png',
-              name: 'Blood Bank'
-            ),_pageadd(
-               image: 'assets/images/ambulance.png',
-              name: 'Ambulance'
-            ),_pageadd(
-               image: 'assets/images/health.png',
-              name: 'Health & Care'
-            ),_pageadd(
-               image: 'assets/images/doctor.png',
-              name: 'Doctors'
-            ),_pageadd(
-               image: 'assets/images/hospital.png',
-              name: 'Hospital'
+            InkWell(
+              onTap: () { },
+              mouseCursor: MouseCursor.defer,
+             splashColor: Colors.red.shade100,
+              hoverColor: Colors.grey.shade200,
+              child: _pageadd(
+                 image: 'assets/images/bmi1.png',
+                name: 'BMI Calculator'
+              ),
+            ),InkWell(onTap: () { },
+              mouseCursor: MouseCursor.defer,
+              splashColor: Colors.red.shade100,
+              hoverColor: Colors.grey.shade200,
+              child: _pageadd(
+                 image: 'assets/images/blood-donation.png',
+                name: 'Blood Bank'
+              ),
+            ),InkWell(
+              onTap: () { },
+              mouseCursor: MouseCursor.defer,
+              splashColor: Colors.red.shade100,
+              hoverColor: Colors.grey.shade200,
+              child: _pageadd(
+                 image: 'assets/images/ambulance.png',
+                name: 'Ambulance'
+              ),
+            ),InkWell(
+              onTap: () { },
+              mouseCursor: MouseCursor.defer,
+              splashColor: Colors.red.shade100,
+              hoverColor: Colors.grey.shade200,
+              child: _pageadd(
+                 image: 'assets/images/health.png',
+                name: 'Health & Care'
+              ),
+            ),InkWell(
+              onTap: () { },
+              mouseCursor: MouseCursor.defer,
+              splashColor: Colors.red.shade100,
+              hoverColor: Colors.grey.shade200,
+              child: InkWell(onTap: () { },
+                mouseCursor: MouseCursor.defer,
+                splashColor: Colors.red.shade100,
+                hoverColor: Colors.grey.shade200,
+                child: _pageadd(
+                   image: 'assets/images/doctor.png',
+                  name: 'Doctors'
+                ),
+              ),
+            ),InkWell(onTap: () { },
+              mouseCursor: MouseCursor.defer,
+              splashColor: Colors.red.shade100,
+              hoverColor: Colors.grey.shade200,
+              child: _pageadd(
+                 image: 'assets/images/hospital.png',
+                name: 'Hospital'
+              ),
             ),
 
           ],
