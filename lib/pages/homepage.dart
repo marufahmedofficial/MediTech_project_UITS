@@ -22,9 +22,11 @@ class _HomePageState extends State<HomePage> {
           Container(
             height: 60,
             decoration:
-                BoxDecoration(image: DecorationImage(image: AssetImage(image))),
+                BoxDecoration(image: DecorationImage(image: AssetImage(image),fit: BoxFit.contain),
+
+                ),
           ),
-          SizedBox(
+         const SizedBox(
             height: 10,
           ),
           Text(
@@ -140,37 +142,35 @@ class _HomePageState extends State<HomePage> {
       ),
 
       // backgroundColor: Colors.white,
-      body: Container(
-        child: Padding(
-          padding: const EdgeInsets.all(30.0),
-          child: GridView.count(
-            crossAxisCount: 2,
-            crossAxisSpacing: 15,
-            mainAxisSpacing: 20,
-            childAspectRatio: 1.30,
-            children: [
-              _pageadd(
-                 image: 'assets/images/bmi1.png',
-                name: 'BMI Calculator,'
-              ),_pageadd(
-                 image: 'assets/images/blood-donation.png',
-                name: 'Blood Bank'
-              ),_pageadd(
-                 image: 'assets/images/ambulance.png',
-                name: 'Ambulance'
-              ),_pageadd(
-                 image: 'assets/images/health.png',
-                name: 'Health & Care'
-              ),_pageadd(
-                 image: 'assets/images/doctor.png',
-                name: 'Doctors'
-              ),_pageadd(
-                 image: 'assets/images/hospital.png',
-                name: 'Hospital'
-              ),
+      body: Padding(
+        padding: const EdgeInsets.all(30.0),
+        child: GridView.count(
+          crossAxisCount: 2,
+          crossAxisSpacing: 15,
+          mainAxisSpacing: 20,
+          childAspectRatio: 1.30,
+          children: [
+            _pageadd(
+               image: 'assets/images/bmi1.png',
+              name: 'BMI Calculator'
+            ),_pageadd(
+               image: 'assets/images/blood-donation.png',
+              name: 'Blood Bank'
+            ),_pageadd(
+               image: 'assets/images/ambulance.png',
+              name: 'Ambulance'
+            ),_pageadd(
+               image: 'assets/images/health.png',
+              name: 'Health & Care'
+            ),_pageadd(
+               image: 'assets/images/doctor.png',
+              name: 'Doctors'
+            ),_pageadd(
+               image: 'assets/images/hospital.png',
+              name: 'Hospital'
+            ),
 
-            ],
-          ),
+          ],
         ),
       ),
     );
