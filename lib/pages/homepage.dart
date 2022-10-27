@@ -43,11 +43,30 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        flexibleSpace:
+        Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Colors.deepOrange,Colors.redAccent.shade200],
+                begin: Alignment.bottomRight,
+                end : Alignment.topLeft,
+              ),
+              borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(90),bottomRight: Radius.circular(90)
+              ),
+
+          ),
+        ),
         title: const Text('MediTech'),
         centerTitle: true,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(bottomLeft: Radius.circular(90),bottomRight: Radius.circular((90))),
+        ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
+
+
 
         splashColor: Colors.purple,
         hoverColor: Colors.black54,
