@@ -43,6 +43,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 11,
+        shadowColor: Colors.blueAccent,
         flexibleSpace:
         Container(
           decoration: BoxDecoration(
