@@ -84,64 +84,41 @@ class _HomePageState extends State<HomePage> {
         // // label : const Text('Change'),
         // icon: const Icon(Icons.change_circle) ,
       ),
-      bottomNavigationBar: BottomAppBar(
+      bottomNavigationBar:BottomAppBar(
         notchMargin: 10.0,
         shape: CircularNotchedRectangle(),
         color: Colors.deepOrange,
+
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           mainAxisSize: MainAxisSize.max,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 10.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(
-                    Icons.home,
-                    color: Colors.white,
-                  ),
-                  Text(
-                    "Home",
-                    style: TextStyle(color: Colors.white),
-                  )
-                ],
+
+            InkWell(
+              onTap: () {
+
+              },
+              child: Padding(
+                padding: const EdgeInsets.only(left: 10.0,right: 10),
+                child: Column(
+
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+
+                    Icon(
+                      Icons.home,
+                      color: Colors.white,
+                    ),
+                    Text(
+                      "Home",
+                      style: TextStyle(color: Colors.white),
+                    )
+                  ],
+                ),
               ),
             ),
-            Padding(
-              padding:
-              const EdgeInsets.only(right: 20.0, top: 10.0, bottom: 10.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(
-                    Icons.bloodtype_sharp,
-                    color: Colors.white,
-                  ),
-                  Text(
-                    "Blood",
-                    style: TextStyle(color: Colors.white),
-                  )
-                ],
-              ),
-            ),
-            Padding(
-              padding:
-              const EdgeInsets.only(left: 25.0, top: 10.0, bottom: 10.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(
-                    Icons.perm_contact_calendar_sharp,
-                    color: Colors.white,
-                  ),
-                  Text(
-                    "INFO",
-                    style: TextStyle(color: Colors.white),
-                  )
-                ],
-              ),
-            ),
+            Container(height: 55.0),
+
             Padding(
               padding: const EdgeInsets.only(right: 10.0),
               child: Column(
