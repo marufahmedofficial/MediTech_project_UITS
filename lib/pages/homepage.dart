@@ -57,7 +57,7 @@ class _HomePageState extends State<HomePage> {
             ),
             borderRadius: BorderRadius.only(
                 // bottomLeft: Radius.circular(60),
-                bottomRight: Radius.circular(80)),
+                bottomRight: Radius.circular(60)),
           ),
         ),
         title: const Text('MediTech'),
@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
               // bottomLeft: Radius.circular(60),
-              bottomRight: Radius.circular((80))),
+              bottomRight: Radius.circular((60))),
         ),
       ),
       drawer: (
