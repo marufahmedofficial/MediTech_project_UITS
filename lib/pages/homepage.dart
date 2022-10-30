@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> {
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Colors.deepOrange, Colors.redAccent.shade200],
+              colors: [Colors.deepOrange, Colors.redAccent.shade400],
               begin: Alignment.bottomRight,
               end: Alignment.topLeft,
             ),
