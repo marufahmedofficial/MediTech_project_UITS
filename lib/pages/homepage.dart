@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
               end: Alignment.topLeft,
             ),
             borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(80),
+                // bottomLeft: Radius.circular(60),
                 bottomRight: Radius.circular(80)),
           ),
         ),
@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(80),
+              // bottomLeft: Radius.circular(60),
               bottomRight: Radius.circular((80))),
         ),
       ),
