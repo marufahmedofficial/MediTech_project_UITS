@@ -70,6 +70,7 @@ class _HomePageState extends State<HomePage> {
       ),
       drawer: (
           Container(
+
             clipBehavior: Clip.antiAliasWithSaveLayer,
         padding: const EdgeInsets.only(left: 16.0, right: 40),
         decoration: BoxDecoration(
@@ -78,6 +79,7 @@ class _HomePageState extends State<HomePage> {
             color: Colors.grey.shade200,
             width: 1,
           ),
+
           boxShadow: const [
             BoxShadow(
               color: Colors.grey,
@@ -85,7 +87,10 @@ class _HomePageState extends State<HomePage> {
               blurRadius: 6.0,
             ),
           ],
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.only(
+            topRight: Radius.circular(200),
+            bottomRight: Radius.circular(200),
+          ),
         ),
         width: 280,
         child: SafeArea(
@@ -108,8 +113,8 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 Container(
-                  height: 90,
-                  width: 90,
+                  height: MediaQuery.of(context).size.height * 0.51,
+                  // width: MediaQuery.of(context).size.width,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
@@ -129,7 +134,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Text('Maruf 2',
                     style: TextStyle(color: Colors.blue, fontSize: 16.0)),
-                const SizedBox(height: 30),
+                const SizedBox(height: 15),
                 Row(
                   children: [
                     Icon(
@@ -185,7 +190,7 @@ class _HomePageState extends State<HomePage> {
                     SizedBox(width: 50),
                     Text('data'),
                   ],
-                ),SizedBox(height: 310),
+                ),
               ],
             ),
           ),
