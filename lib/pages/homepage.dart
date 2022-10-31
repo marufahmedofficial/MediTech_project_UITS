@@ -70,6 +70,8 @@ class _HomePageState extends State<HomePage> {
       ),
       drawer: (
           Container(
+            height: MediaQuery.of(context).size.height * 0.94,
+            // width: MediaQuery.of(context).size.width,
 
             clipBehavior: Clip.antiAliasWithSaveLayer,
         padding: const EdgeInsets.only(left: 16.0, right: 40),
@@ -88,33 +90,21 @@ class _HomePageState extends State<HomePage> {
             ),
           ],
           borderRadius: BorderRadius.only(
-            topRight: Radius.circular(200),
-            bottomRight: Radius.circular(200),
+            topRight: Radius.elliptical(170.0, 400.0),
+            bottomRight: Radius.elliptical(190.0, 400.0),
           ),
         ),
         width: 280,
+
         child: SafeArea(
           child: SingleChildScrollView(
             child: Column(
               children: <Widget>[
+                const SizedBox(height: 32.0),
                 Container(
-                  alignment: Alignment.centerRight,
-                  padding: const EdgeInsets.all(8),
-                  child: IconButton(
-                    icon: const Icon(
-                      Icons.power_settings_new,
-                      color: Colors.red,
-                    ),
-                    onPressed: () async {
-                      // await setLoginStatus(false);
-                      // Navigator.pushReplacementNamed(
-                      //     context, LauncherPage.routeName);
-                    },
-                  ),
-                ),
-                Container(
-                  height: MediaQuery.of(context).size.height * 0.51,
-                  // width: MediaQuery.of(context).size.width,
+
+                 height: 90,
+                  width: 90,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
@@ -124,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                         fit: BoxFit.cover),
                   ),
                 ),
-                const SizedBox(height: 5.0),
+                const SizedBox(height: 13.0),
                 Text(
                   "Maruf Ahmed",
                   style: const TextStyle(
@@ -134,7 +124,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Text('Maruf 2',
                     style: TextStyle(color: Colors.blue, fontSize: 16.0)),
-                const SizedBox(height: 15),
+                const SizedBox(height: 27),
                 Row(
                   children: [
                     Icon(
@@ -168,12 +158,12 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   children: [
                     Icon(
-                      Icons.home,
+                      Icons.share_rounded,
                       color: Colors.red,
                       size: 40,
                     ),
                     SizedBox(width: 50),
-                    Text('data'),
+                    Text('Share'),
                   ],
                 ),
                 const Divider(),
@@ -183,13 +173,33 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   children: [
                     Icon(
-                      Icons.home,
+                      Icons.info_rounded,
                       color: Colors.red,
                       size: 40,
                     ),
                     SizedBox(width: 50),
-                    Text('data'),
+                    Text('About'),
                   ],
+                ),
+                const Divider(),
+                const SizedBox(
+                  height: 15,
+                ),
+                Container(
+                  alignment: Alignment.centerLeft,
+                  padding: const EdgeInsets.all(8),
+                  child: IconButton(
+                    icon: const Icon(
+                      Icons.power_settings_new,
+                      color: Colors.red,
+                    ),
+                    onPressed: () async {
+                      // await setLoginStatus(false);
+                      // Navigator.pushReplacementNamed(
+                      //     context, LauncherPage.routeName);
+                    },
+                  ),
+
                 ),
               ],
             ),
