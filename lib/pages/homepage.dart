@@ -68,12 +68,11 @@ class _HomePageState extends State<HomePage> {
               bottomRight: Radius.circular((60))),
         ),
       ),
-      drawer: (
-          Container(
-            height: MediaQuery.of(context).size.height * 0.94,
-            // width: MediaQuery.of(context).size.width,
+      drawer: (Container(
+        height: MediaQuery.of(context).size.height * 0.94,
+        // width: MediaQuery.of(context).size.width,
 
-            clipBehavior: Clip.antiAliasWithSaveLayer,
+        clipBehavior: Clip.antiAliasWithSaveLayer,
         padding: const EdgeInsets.only(left: 16.0, right: 40),
         decoration: BoxDecoration(
           color: Colors.white,
@@ -81,7 +80,6 @@ class _HomePageState extends State<HomePage> {
             color: Colors.grey.shade200,
             width: 1,
           ),
-
           boxShadow: const [
             BoxShadow(
               color: Colors.grey,
@@ -102,8 +100,7 @@ class _HomePageState extends State<HomePage> {
               children: <Widget>[
                 const SizedBox(height: 32.0),
                 Container(
-
-                 height: 90,
+                  height: 90,
                   width: 90,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
@@ -128,12 +125,12 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   children: [
                     Icon(
-                      Icons.home,
+                      Icons.account_circle_outlined,
                       color: Colors.red,
                       size: 40,
                     ),
                     SizedBox(width: 50),
-                    Text('data')
+                    Text('Profile',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 17 ))
                   ],
                 ),
                 const Divider(),
@@ -143,12 +140,12 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   children: [
                     Icon(
-                      Icons.home,
+                      Icons.star,
                       color: Colors.red,
                       size: 40,
                     ),
                     SizedBox(width: 50),
-                    Text('data'),
+                    Text('Rate Us',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 17 )),
                   ],
                 ),
                 const Divider(),
@@ -163,7 +160,7 @@ class _HomePageState extends State<HomePage> {
                       size: 40,
                     ),
                     SizedBox(width: 50),
-                    Text('Share'),
+                    Text('Share',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 17 )),
                   ],
                 ),
                 const Divider(),
@@ -178,29 +175,24 @@ class _HomePageState extends State<HomePage> {
                       size: 40,
                     ),
                     SizedBox(width: 50),
-                    Text('About'),
+                    Text('About',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 17 )),
                   ],
                 ),
                 const Divider(),
                 const SizedBox(
                   height: 15,
                 ),
-                Container(
-                  alignment: Alignment.centerLeft,
-                  padding: const EdgeInsets.all(8),
-                  child: IconButton(
-                    icon: const Icon(
-                      Icons.power_settings_new,
+                Row(
+                  children: [
+                    Icon(
+                      Icons.exit_to_app_rounded,
                       color: Colors.red,
+                      size: 38,
                     ),
-                    onPressed: () async {
-                      // await setLoginStatus(false);
-                      // Navigator.pushReplacementNamed(
-                      //     context, LauncherPage.routeName);
-                    },
-                  ),
-
-                ),
+                    const SizedBox(width: 50),
+                    Text('Exit',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 17 )),
+                  ],
+                )
               ],
             ),
           ),
