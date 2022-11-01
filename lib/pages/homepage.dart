@@ -155,7 +155,7 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   children: [
                     Icon(
-                      Icons.account_circle_outlined,
+                      CupertinoIcons.profile_circled,
                       color: Colors.red,
                       size: 40,
                     ),
@@ -171,7 +171,7 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   children: [
                     Icon(
-                      Icons.star,
+                      CupertinoIcons.star,
                       color: Colors.red,
                       size: 40,
                     ),
@@ -187,7 +187,7 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   children: [
                     Icon(
-                      Icons.share_rounded,
+                      CupertinoIcons.share,
                       color: Colors.red,
                       size: 40,
                     ),
@@ -203,7 +203,7 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   children: [
                     Icon(
-                      Icons.info_rounded,
+                      CupertinoIcons.info_circle,
                       color: Colors.red,
                       size: 40,
                     ),
@@ -247,7 +247,7 @@ class _HomePageState extends State<HomePage> {
                   child: Row(
                     children: [
                       Icon(
-                        Icons.exit_to_app_rounded,
+                        CupertinoIcons.arrow_right_circle,
                         color: Colors.red,
                         size: 38,
                       ),
