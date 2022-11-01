@@ -52,12 +52,28 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: const Icon(
+                CupertinoIcons.arrow_right_arrow_left_circle_fill,
+                color: Colors.white70,
+                size: 30,// Change Custom Drawer Icon Color
+              ),
+
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+              tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+            );
+          },
+        ),
         elevation: 10,
         shadowColor: Colors.blueAccent,
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Colors.deepOrange, Colors.redAccent.shade400],
+              colors: [Colors.deepOrange.shade400, Colors.redAccent.shade700],
               begin: Alignment.bottomRight,
               end: Alignment.topLeft,
             ),
