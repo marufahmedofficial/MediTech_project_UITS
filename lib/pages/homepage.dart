@@ -1,5 +1,10 @@
+
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:meditech/pages/bmi.dart';
+import 'package:slide_digital_clock/slide_digital_clock.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -98,7 +103,27 @@ class _HomePageState extends State<HomePage> {
           child: SingleChildScrollView(
             child: Column(
               children: <Widget>[
-                const SizedBox(height: 32.0),
+                const SizedBox(height: 15.0),
+                Padding(
+                  padding: const EdgeInsets.only(right: 55),
+                  child: DigitalClock(
+                    digitAnimationStyle: Curves.linear,
+                    is24HourTimeFormat: false,
+                    areaDecoration: BoxDecoration(
+                      color: Colors.transparent,
+                    ),
+                    hourMinuteDigitTextStyle: TextStyle(
+                      color: Colors.blueGrey,
+                      fontSize: 27,
+                    ),
+                    amPmDigitTextStyle: TextStyle(color: Colors.blueGrey, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                // const Icon(
+                //   CupertinoIcons.clock,
+                //   color: Colors.grey,
+                // ),
+                const SizedBox(height: 15.0),
                 Container(
                   height: 90,
                   width: 90,
