@@ -293,7 +293,7 @@ class _HomePageState extends State<HomePage> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Icon(
-                      Icons.home,
+                      CupertinoIcons.home,
                       color: Colors.white,
                     ),
                     Text(
@@ -311,7 +311,7 @@ class _HomePageState extends State<HomePage> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Icon(
-                    Icons.settings,
+                    CupertinoIcons.settings,
                     color: Colors.white,
                   ),
                   Text(
