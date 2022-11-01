@@ -238,7 +238,7 @@ class _HomePageState extends State<HomePage> {
                         context: context,
                         builder: (context) {
                           return AlertDialog(
-                            title: Text(' Alert Dialog'),
+                            // title: Text(' Alert Dialog'),
                             content: Text('Do you really want to Exit?'),
                             actions: <Widget>[
                               TextButton(
@@ -254,7 +254,7 @@ class _HomePageState extends State<HomePage> {
                                 onPressed: () {
                                   Navigator.pop(context); //close Dialog
                                 },
-                                child: Text('Close'),
+                                child: Text('No'),
                               ),
                             ],
                           );
