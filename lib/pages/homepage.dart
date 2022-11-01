@@ -1,7 +1,8 @@
-
+import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:meditech/pages/bmi.dart';
 import 'package:slide_digital_clock/slide_digital_clock.dart';
 
@@ -61,7 +62,7 @@ class _HomePageState extends State<HomePage> {
               end: Alignment.topLeft,
             ),
             borderRadius: BorderRadius.only(
-                // bottomLeft: Radius.circular(60),
+              // bottomLeft: Radius.circular(60),
                 bottomRight: Radius.circular(60)),
           ),
         ),
@@ -69,12 +70,15 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
-              // bottomLeft: Radius.circular(60),
+            // bottomLeft: Radius.circular(60),
               bottomRight: Radius.circular((60))),
         ),
       ),
       drawer: (Container(
-        height: MediaQuery.of(context).size.height * 0.94,
+        height: MediaQuery
+            .of(context)
+            .size
+            .height * 0.94,
         // width: MediaQuery.of(context).size.width,
 
         clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -116,7 +120,8 @@ class _HomePageState extends State<HomePage> {
                       color: Colors.blueGrey,
                       fontSize: 27,
                     ),
-                    amPmDigitTextStyle: TextStyle(color: Colors.blueGrey, fontWeight: FontWeight.bold),
+                    amPmDigitTextStyle: TextStyle(
+                        color: Colors.blueGrey, fontWeight: FontWeight.bold),
                   ),
                 ),
                 // const Icon(
@@ -144,8 +149,8 @@ class _HomePageState extends State<HomePage> {
                       fontSize: 18.0,
                       fontWeight: FontWeight.w600),
                 ),
-                Text('Maruf 2',
-                    style: TextStyle(color: Colors.blue, fontSize: 16.0)),
+                Text('Meditech ',
+                    style: TextStyle(color: Colors.blue, fontSize: 15.0)),
                 const SizedBox(height: 27),
                 Row(
                   children: [
@@ -155,7 +160,8 @@ class _HomePageState extends State<HomePage> {
                       size: 40,
                     ),
                     SizedBox(width: 50),
-                    Text('Profile',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 17 ))
+                    Text('Profile', style: TextStyle(
+                        fontWeight: FontWeight.w500, fontSize: 17))
                   ],
                 ),
                 const Divider(),
@@ -170,7 +176,8 @@ class _HomePageState extends State<HomePage> {
                       size: 40,
                     ),
                     SizedBox(width: 50),
-                    Text('Rate Us',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 17 )),
+                    Text('Rate Us', style: TextStyle(
+                        fontWeight: FontWeight.w500, fontSize: 17)),
                   ],
                 ),
                 const Divider(),
@@ -185,7 +192,8 @@ class _HomePageState extends State<HomePage> {
                       size: 40,
                     ),
                     SizedBox(width: 50),
-                    Text('Share',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 17 )),
+                    Text('Share', style: TextStyle(
+                        fontWeight: FontWeight.w500, fontSize: 17)),
                   ],
                 ),
                 const Divider(),
@@ -200,23 +208,54 @@ class _HomePageState extends State<HomePage> {
                       size: 40,
                     ),
                     SizedBox(width: 50),
-                    Text('About',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 17 )),
+                    Text('About', style: TextStyle(
+                        fontWeight: FontWeight.w500, fontSize: 17)),
                   ],
                 ),
                 const Divider(),
                 const SizedBox(
                   height: 15,
                 ),
-                Row(
-                  children: [
-                    Icon(
-                      Icons.exit_to_app_rounded,
-                      color: Colors.red,
-                      size: 38,
-                    ),
-                    const SizedBox(width: 50),
-                    Text('Exit',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 17 )),
-                  ],
+                InkWell(
+                  onTap: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            title: Text(' Alert Dialog'),
+                            content: Text('Do you really want to Exit?'),
+                            actions: <Widget>[
+                              TextButton(
+                                  onPressed: () {
+                                    if (Platform.isAndroid) {
+                                      SystemNavigator.pop();
+                                    } else if (Platform.isIOS) {
+                                      exit(0);
+                                    }
+                                  },
+                                  child: Text('Yes')),
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context); //close Dialog
+                                },
+                                child: Text('Close'),
+                              ),
+                            ],
+                          );
+                        });
+                  },
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.exit_to_app_rounded,
+                        color: Colors.red,
+                        size: 38,
+                      ),
+                      const SizedBox(width: 50),
+                      Text('Exit', style: TextStyle(
+                          fontWeight: FontWeight.w500, fontSize: 17)),
+                    ],
+                  ),
                 )
               ],
             ),
@@ -371,6 +410,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ],
         ),
+
       ),
     );
   }
