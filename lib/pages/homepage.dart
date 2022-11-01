@@ -296,7 +296,8 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomAppBar(
         notchMargin: 10.0,
         shape: CircularNotchedRectangle(),
-        color: Colors.deepOrange,
+
+        color: Colors.red.shade700,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           mainAxisSize: MainAxisSize.max,
