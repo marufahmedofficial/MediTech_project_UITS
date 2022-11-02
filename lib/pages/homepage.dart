@@ -3,8 +3,9 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:meditech/pages/bmi.dart';
 import 'package:slide_digital_clock/slide_digital_clock.dart';
+
+import 'bmi/home_screen.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -354,7 +355,7 @@ class _HomePageState extends State<HomePage> {
             InkWell(
               onTap: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => BMI()));
+                    context, MaterialPageRoute(builder: (context) => HomeScreen()));
               },
               mouseCursor: MouseCursor.defer,
               splashColor: Colors.red.shade100,
