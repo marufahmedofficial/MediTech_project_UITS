@@ -6,10 +6,10 @@ class HeightWidget extends StatefulWidget {
   const HeightWidget({Key? key, required this.onChange}) : super(key: key);
 
   @override
-  _HeightWidgetState createState() => _HeightWidgetState();
+  HeightWidgetState createState() => HeightWidgetState();
 }
 
-class _HeightWidgetState extends State<HeightWidget> {
+class HeightWidgetState extends State<HeightWidget> {
   int _height = 150;
 
   @override

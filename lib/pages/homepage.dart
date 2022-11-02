@@ -355,7 +355,7 @@ class _HomePageState extends State<HomePage> {
             InkWell(
               onTap: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => HomeScreen()));
+                    context, MaterialPageRoute(builder: (context) => HomeScreenBMI()));
               },
               mouseCursor: MouseCursor.defer,
               splashColor: Colors.red.shade100,

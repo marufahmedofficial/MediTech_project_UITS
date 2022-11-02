@@ -21,10 +21,10 @@ class AgeWeightWidget extends StatefulWidget {
       : super(key: key);
 
   @override
-  _AgeWeightWidgetState createState() => _AgeWeightWidgetState();
+  AgeWeightWidgetState createState() => AgeWeightWidgetState();
 }
 
-class _AgeWeightWidgetState extends State<AgeWeightWidget> {
+class AgeWeightWidgetState extends State<AgeWeightWidget> {
   int counter = 0;
 
   @override

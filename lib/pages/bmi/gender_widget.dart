@@ -7,10 +7,10 @@ class GenderWidget extends StatefulWidget {
   const GenderWidget({Key? key, required this.onChange}) : super(key: key);
 
   @override
-  _GenderWidgetState createState() => _GenderWidgetState();
+  GenderWidgetState createState() => GenderWidgetState();
 }
 
-class _GenderWidgetState extends State<GenderWidget> {
+class GenderWidgetState extends State<GenderWidget> {
   int _gender = 0;
 
   final ChoiceChip3DStyle selectedStyle = ChoiceChip3DStyle(
