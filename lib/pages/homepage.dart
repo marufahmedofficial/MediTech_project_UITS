@@ -78,14 +78,14 @@ class _HomePageState extends State<HomePage> {
               begin: Alignment.bottomRight,
               end: Alignment.topLeft,
             ),
-            borderRadius: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
               // bottomLeft: Radius.circular(60),
                 bottomRight: Radius.circular(60)),
           ),
         ),
         title: const Text('MediTech'),
         centerTitle: true,
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
             // bottomLeft: Radius.circular(60),
               bottomRight: Radius.circular((60))),
@@ -113,7 +113,7 @@ class _HomePageState extends State<HomePage> {
               blurRadius: 6.0,
             ),
           ],
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
             topRight: Radius.elliptical(170.0, 400.0),
             bottomRight: Radius.elliptical(190.0, 400.0),
           ),
@@ -130,14 +130,14 @@ class _HomePageState extends State<HomePage> {
                   child: DigitalClock(
                     digitAnimationStyle: Curves.linear,
                     is24HourTimeFormat: false,
-                    areaDecoration: BoxDecoration(
+                    areaDecoration: const BoxDecoration(
                       color: Colors.transparent,
                     ),
-                    hourMinuteDigitTextStyle: TextStyle(
+                    hourMinuteDigitTextStyle: const TextStyle(
                       color: Colors.blueGrey,
                       fontSize: 27,
                     ),
-                    amPmDigitTextStyle: TextStyle(
+                    amPmDigitTextStyle: const TextStyle(
                         color: Colors.blueGrey, fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -153,24 +153,24 @@ class _HomePageState extends State<HomePage> {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     border: Border.all(width: 2, color: Colors.deepOrange),
-                    image: DecorationImage(
+                    image: const DecorationImage(
                         image: AssetImage('assets/images/doctor.png'),
                         fit: BoxFit.cover),
                   ),
                 ),
                 const SizedBox(height: 13.0),
-                Text(
+                const Text(
                   "Maruf Ahmed",
-                  style: const TextStyle(
+                  style: TextStyle(
                       color: Colors.black45,
                       fontSize: 18.0,
                       fontWeight: FontWeight.w600),
                 ),
-                Text('Meditech ',
+                const Text('Meditech ',
                     style: TextStyle(color: Colors.blue, fontSize: 15.0)),
                 const SizedBox(height: 27),
                 Row(
-                  children: [
+                  children:const  [
                     Icon(
                       CupertinoIcons.profile_circled,
                       color: Colors.red,
@@ -186,14 +186,14 @@ class _HomePageState extends State<HomePage> {
                   height: 15,
                 ),
                 Row(
-                  children: [
+                  children: const [
                     Icon(
                       CupertinoIcons.star,
                       color: Colors.red,
                       size: 40,
                     ),
-                    SizedBox(width: 50),
-                    Text('Rate Us', style: TextStyle(
+                     SizedBox(width: 50),
+                     Text('Rate Us', style: TextStyle(
                         fontWeight: FontWeight.w500, fontSize: 17)),
                   ],
                 ),
@@ -202,7 +202,7 @@ class _HomePageState extends State<HomePage> {
                   height: 15,
                 ),
                 Row(
-                  children: [
+                  children:const  [
                     Icon(
                       CupertinoIcons.share,
                       color: Colors.red,
@@ -218,7 +218,7 @@ class _HomePageState extends State<HomePage> {
                   height: 15,
                 ),
                 Row(
-                  children: [
+                  children:const  [
                     Icon(
                       CupertinoIcons.info_circle,
                       color: Colors.red,
@@ -240,7 +240,7 @@ class _HomePageState extends State<HomePage> {
                         builder: (context) {
                           return AlertDialog(
                             // title: Text(' Alert Dialog'),
-                            content: Text('Do you really want to Exit?'),
+                            content: const Text('Do you really want to Exit?'),
                             actions: <Widget>[
                               TextButton(
                                   onPressed: () {
@@ -250,26 +250,26 @@ class _HomePageState extends State<HomePage> {
                                       exit(0);
                                     }
                                   },
-                                  child: Text('Yes')),
+                                  child: const Text('Yes')),
                               TextButton(
                                 onPressed: () {
                                   Navigator.pop(context); //close Dialog
                                 },
-                                child: Text('No'),
+                                child: const Text('No'),
                               ),
                             ],
                           );
                         });
                   },
                   child: Row(
-                    children: [
+                    children: const [
                       Icon(
                         CupertinoIcons.arrow_right_circle,
                         color: Colors.red,
                         size: 38,
                       ),
-                      const SizedBox(width: 50),
-                      Text('Exit', style: TextStyle(
+                       SizedBox(width: 50),
+                       Text('Exit', style: TextStyle(
                           fontWeight: FontWeight.w500, fontSize: 17)),
                     ],
                   ),
@@ -285,7 +285,7 @@ class _HomePageState extends State<HomePage> {
         hoverColor: Colors.black54,
 
         onPressed: () {},
-        child: Icon(Icons.medical_information),
+        child: const Icon(Icons.medical_information),
         backgroundColor: Colors.deepOrange,
         foregroundColor: Colors.white,
         elevation: 8.0,
@@ -296,7 +296,7 @@ class _HomePageState extends State<HomePage> {
       ),
       bottomNavigationBar: BottomAppBar(
         notchMargin: 10.0,
-        shape: CircularNotchedRectangle(),
+        shape: const CircularNotchedRectangle(),
 
         color: Colors.red.shade700,
         child: Row(
@@ -309,7 +309,7 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.only(left: 10.0, right: 10),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
-                  children: [
+                  children: const [
                     Icon(
                       CupertinoIcons.home,
                       color: Colors.white,
@@ -327,7 +327,7 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.only(right: 10.0),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
-                children: [
+                children: const [
                   Icon(
                     CupertinoIcons.settings,
                     color: Colors.white,
@@ -355,7 +355,7 @@ class _HomePageState extends State<HomePage> {
             InkWell(
               onTap: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => HomeScreenBMI()));
+                    context, MaterialPageRoute(builder: (context) => const HomeScreenBMI()));
               },
               mouseCursor: MouseCursor.defer,
               splashColor: Colors.red.shade100,
