@@ -285,7 +285,7 @@ class _HomePageState extends State<HomePage> {
         hoverColor: Colors.black54,
 
         onPressed: () {},
-        child: const Icon(Icons.medical_information),
+        child: Icon(Icons.medical_information),
         backgroundColor: Colors.deepOrange,
         foregroundColor: Colors.white,
         elevation: 8.0,
