@@ -1,6 +1,10 @@
-# meditech
+ # meditech
 
-An app project for UITS.
+MediTech is a one-stop digital health service solution for the people of Bangladesh. MediTech is a complete healthcare App created with an intent of becoming your first point of contact for Health, Wellbeing, and Happiness.We wish to bring Access and Quality of care into the digital world so that we can improve your lives, wherever you are, whenever you need it.
+![Untitled-1](https://user-images.githubusercontent.com/79131390/201475988-7ded0b61-7909-4975-949e-1161f88e60d6.png)
+
+ 
+
 
 ## Getting Started
 
@@ -14,3 +18,4 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
