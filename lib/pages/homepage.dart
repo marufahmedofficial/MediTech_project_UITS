@@ -8,6 +8,7 @@ import 'package:slide_digital_clock/slide_digital_clock.dart';
 
 import 'bmi/home_screen.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:share_plus/share_plus.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -251,7 +252,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 InkWell(
                   onTap: (){
-
+                    Share.share('https://github.com/marufahmedofficial/MediTech_project_UITS');
                   },
                   child: Row(
                     children: const [
