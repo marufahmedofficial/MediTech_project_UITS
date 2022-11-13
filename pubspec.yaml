@@ -31,9 +31,8 @@ environment:
 dependencies:
   slide_digital_clock: ^1.0.2
   flutter_native_splash: ^2.2.14
-  nb_utils: ^4.6.23
   flutter_rating_bar: ^4.0.1
-
+  nb_utils: ^4.6.23
 
   flutter:
     sdk: flutter
