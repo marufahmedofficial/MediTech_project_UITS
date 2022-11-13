@@ -7,7 +7,6 @@ import 'package:slide_digital_clock/slide_digital_clock.dart';
 
 import 'bmi/home_screen.dart';
 
-
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -59,9 +58,8 @@ class _HomePageState extends State<HomePage> {
               icon: const Icon(
                 CupertinoIcons.arrow_right_arrow_left_circle_fill,
                 color: Colors.white70,
-                size: 30,// Change Custom Drawer Icon Color
+                size: 30, // Change Custom Drawer Icon Color
               ),
-
               onPressed: () {
                 Scaffold.of(context).openDrawer();
               },
@@ -79,7 +77,7 @@ class _HomePageState extends State<HomePage> {
               end: Alignment.topLeft,
             ),
             borderRadius: const BorderRadius.only(
-              // bottomLeft: Radius.circular(60),
+                // bottomLeft: Radius.circular(60),
                 bottomRight: Radius.circular(60)),
           ),
         ),
@@ -87,15 +85,12 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
-            // bottomLeft: Radius.circular(60),
+              // bottomLeft: Radius.circular(60),
               bottomRight: Radius.circular((60))),
         ),
       ),
       drawer: (Container(
-        height: MediaQuery
-            .of(context)
-            .size
-            .height * 0.94,
+        height: MediaQuery.of(context).size.height * 0.94,
         // width: MediaQuery.of(context).size.width,
 
         clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -170,15 +165,16 @@ class _HomePageState extends State<HomePage> {
                     style: TextStyle(color: Colors.blue, fontSize: 15.0)),
                 const SizedBox(height: 27),
                 Row(
-                  children:const  [
+                  children: const [
                     Icon(
                       CupertinoIcons.profile_circled,
                       color: Colors.red,
                       size: 40,
                     ),
                     SizedBox(width: 50),
-                    Text('Profile', style: TextStyle(
-                        fontWeight: FontWeight.w500, fontSize: 17))
+                    Text('Profile',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500, fontSize: 17))
                   ],
                 ),
                 const Divider(),
@@ -192,9 +188,10 @@ class _HomePageState extends State<HomePage> {
                       color: Colors.red,
                       size: 40,
                     ),
-                     SizedBox(width: 50),
-                     Text('Rate Us', style: TextStyle(
-                        fontWeight: FontWeight.w500, fontSize: 17)),
+                    SizedBox(width: 50),
+                    Text('Rate Us',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500, fontSize: 17)),
                   ],
                 ),
                 const Divider(),
@@ -202,15 +199,16 @@ class _HomePageState extends State<HomePage> {
                   height: 15,
                 ),
                 Row(
-                  children:const  [
+                  children: const [
                     Icon(
                       CupertinoIcons.share,
                       color: Colors.red,
                       size: 40,
                     ),
                     SizedBox(width: 50),
-                    Text('Share', style: TextStyle(
-                        fontWeight: FontWeight.w500, fontSize: 17)),
+                    Text('Share',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500, fontSize: 17)),
                   ],
                 ),
                 const Divider(),
@@ -218,15 +216,16 @@ class _HomePageState extends State<HomePage> {
                   height: 15,
                 ),
                 Row(
-                  children:const  [
+                  children: const [
                     Icon(
                       CupertinoIcons.info_circle,
                       color: Colors.red,
                       size: 40,
                     ),
                     SizedBox(width: 50),
-                    Text('About', style: TextStyle(
-                        fontWeight: FontWeight.w500, fontSize: 17)),
+                    Text('About',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500, fontSize: 17)),
                   ],
                 ),
                 const Divider(),
@@ -235,31 +234,34 @@ class _HomePageState extends State<HomePage> {
                 ),
                 InkWell(
                   onTap: () {
-                    showDialog(
+                    showCupertinoDialog(
                         context: context,
                         builder: (context) {
-                          return AlertDialog(
-                            // title: Text(' Alert Dialog'),
-                            content: const Text('Do you really want to Exit?'),
-                            actions: <Widget>[
-                              TextButton(
-                                  onPressed: () {
-                                    if (Platform.isAndroid) {
-                                      SystemNavigator.pop();
-                                    } else if (Platform.isIOS) {
-                                      exit(0);
-                                    }
-                                  },
-                                  child: const Text('Yes')),
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.pop(context); //close Dialog
-                                },
-                                child: const Text('No'),
+                          return CupertinoAlertDialog(
+                            title: Text('Exit?',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18)),
+                            content: Text('Do you really want to Exit?',style: TextStyle(fontSize: 18)),
+                            actions: [
+                              CupertinoDialogAction(
+                                child: Text('Cancel',style: TextStyle(fontSize: 18)),
+                                   onPressed: () {
+                                     Navigator.pop(context); //close Dialog
+                                         },
                               ),
+                              CupertinoDialogAction(
+                                child: Text('Yes',style: TextStyle(fontSize: 18,color: Colors.red.shade700)),
+                                onPressed: () {
+                                   if (Platform.isAndroid) {
+                                   SystemNavigator.pop();
+                                     }
+                                   else if (Platform.isIOS) {
+                                      exit(0);
+                                       }
+                                           }
+                              )
                             ],
                           );
                         });
+
                   },
                   child: Row(
                     children: const [
@@ -268,9 +270,10 @@ class _HomePageState extends State<HomePage> {
                         color: Colors.red,
                         size: 38,
                       ),
-                       SizedBox(width: 50),
-                       Text('Exit', style: TextStyle(
-                          fontWeight: FontWeight.w500, fontSize: 17)),
+                      SizedBox(width: 50),
+                      Text('Exit',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500, fontSize: 17)),
                     ],
                   ),
                 )
@@ -297,7 +300,6 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomAppBar(
         notchMargin: 10.0,
         shape: const CircularNotchedRectangle(),
-
         color: Colors.red.shade700,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -355,7 +357,9 @@ class _HomePageState extends State<HomePage> {
             InkWell(
               onTap: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => const HomeScreenBMI()));
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const HomeScreenBMI()));
               },
               mouseCursor: MouseCursor.defer,
               splashColor: Colors.red.shade100,
@@ -428,7 +432,6 @@ class _HomePageState extends State<HomePage> {
             ),
           ],
         ),
-
       ),
     );
   }
