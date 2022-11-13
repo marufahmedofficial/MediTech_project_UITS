@@ -3,9 +3,11 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:slide_digital_clock/slide_digital_clock.dart';
 
 import 'bmi/home_screen.dart';
+import 'package:nb_utils/nb_utils.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -181,35 +183,89 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   height: 15,
                 ),
-                Row(
-                  children: const [
-                    Icon(
-                      CupertinoIcons.star,
-                      color: Colors.red,
-                      size: 40,
-                    ),
-                    SizedBox(width: 50),
-                    Text('Rate Us',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w500, fontSize: 17)),
-                  ],
+                InkWell(
+                  onTap: (){
+                    showDialog(
+                        context: context,
+                        builder: (BuildContext context) => Theme(
+                          data: ThemeData.light(),
+                          child: CupertinoAlertDialog(
+                            title: Text(
+                              'Rating',
+                              style: boldTextStyle(size: 18),
+                            ).paddingOnly(bottom: 9),
+                            content: Column(
+                              children: [
+                                RatingBar.builder(
+                                  initialRating: 5,
+                                  minRating: 1,
+                                  itemSize: 35,
+                                  direction: Axis.horizontal,
+                                  itemPadding: EdgeInsets.symmetric(horizontal: 2.0),
+                                  itemBuilder: (context, _) => Icon(
+                                    Icons.star,
+                                    color: Colors.amber,
+                                  ),
+                                  onRatingUpdate: (rating) {},
+                                ),
+                              ],
+                            ),
+                            actions: [
+                              CupertinoDialogAction(
+                                child: Text(
+                                  "Cancel",
+                                ),
+                                onPressed: () {
+                                  finish(context);
+                                },
+                              ),
+                              CupertinoDialogAction(
+                                child: Text('Submit'),
+                                onPressed: () {
+                                  toasty(context, 'Submitted!',gravity: ToastGravity.BOTTOM_LEFT);
+                                  finish(context);
+                                },
+                              )
+                            ],
+                          ),
+                        ));
+
+                  },
+                  child: Row(
+                    children: const [
+                      Icon(
+                        CupertinoIcons.star,
+                        color: Colors.red,
+                        size: 40,
+                      ),
+                      SizedBox(width: 50),
+                      Text('Rate Us',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500, fontSize: 17)),
+                    ],
+                  ),
                 ),
                 const Divider(),
                 const SizedBox(
                   height: 15,
                 ),
-                Row(
-                  children: const [
-                    Icon(
-                      CupertinoIcons.share,
-                      color: Colors.red,
-                      size: 40,
-                    ),
-                    SizedBox(width: 50),
-                    Text('Share',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w500, fontSize: 17)),
-                  ],
+                InkWell(
+                  onTap: (){
+
+                  },
+                  child: Row(
+                    children: const [
+                      Icon(
+                        CupertinoIcons.share,
+                        color: Colors.red,
+                        size: 40,
+                      ),
+                      SizedBox(width: 50),
+                      Text('Share',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500, fontSize: 17)),
+                    ],
+                  ),
                 ),
                 const Divider(),
                 const SizedBox(
@@ -262,6 +318,31 @@ class _HomePageState extends State<HomePage> {
                           );
                         });
 
+                    // showDialog(
+                    //     context: context,
+                    //     builder: (context) {
+                    //       return AlertDialog(
+                    //         // title: Text(' Alert Dialog'),
+                    //         content: const Text('Do you really want to Exit?'),
+                    //         actions: <Widget>[
+                    //           TextButton(
+                    //               onPressed: () {
+                    //                 if (Platform.isAndroid) {
+                    //                   SystemNavigator.pop();
+                    //                 } else if (Platform.isIOS) {
+                    //                   exit(0);
+                    //                 }
+                    //               },
+                    //               child: const Text('Yes')),
+                    //           TextButton(
+                    //             onPressed: () {
+                    //               Navigator.pop(context); //close Dialog
+                    //             },
+                    //             child: const Text('No'),
+                    //           ),
+                    //         ],
+                    //       );
+                    //     });
                   },
                   child: Row(
                     children: const [
@@ -276,7 +357,7 @@ class _HomePageState extends State<HomePage> {
                               fontWeight: FontWeight.w500, fontSize: 17)),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),
