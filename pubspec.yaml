@@ -33,6 +33,7 @@ dependencies:
   flutter_native_splash: ^2.2.14
   flutter_rating_bar: ^4.0.1
   nb_utils: ^4.6.23
+  introduction_screen: ^3.0.1
 
   flutter:
     sdk: flutter

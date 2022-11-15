@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meditech/pages/homepage.dart';
+import 'package:meditech/pages/onboarding.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
-      home: const HomePage(),
+      home: OnBoardingPage(),
     );
   }
 }
