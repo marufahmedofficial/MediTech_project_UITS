@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:meditech/pages/homepage.dart';
 import 'package:meditech/pages/onboarding.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
+var initScreen;
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences preferences = await SharedPreferences.getInstance();
+  initScreen =await preferences.getInt('initScreen');
+  await preferences.setInt('initScreen', 1);
   runApp(const MyApp());
 }
 
@@ -17,7 +23,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
-      home: OnBoardingPage(),
+
+      initialRoute: initScreen == 0 || initScreen == null ? 'OnBoardingPage' : 'HomePage',
+      routes: {
+        'HomePage' : (context) => HomePage(),
+        'OnBoardingPage' : (context) => OnBoardingPage(),
+      } ,
+      // home: OnBoardingPage(),
     );
   }
 }
