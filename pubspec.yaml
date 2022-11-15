@@ -34,6 +34,7 @@ dependencies:
   flutter_rating_bar: ^4.0.1
   nb_utils: ^4.6.23
   introduction_screen: ^3.0.1
+  shared_preferences: ^2.0.15
 
   flutter:
     sdk: flutter
