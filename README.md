@@ -1,6 +1,8 @@
  # meditech
 
-MediTech is a one-stop digital health service solution for the people of Bangladesh. MediTech is a complete healthcare App created with an intent of becoming your first point of contact for Health, Wellbeing, and Happiness.We wish to bring Access and Quality of care into the digital world so that we can improve your lives, wherever you are, whenever you need it.
+MediTech is a one-stop digital health service solution for the people of Bangladesh.                                 UITS
+ MediTech is a complete healthcare App created with the intent of becoming your first point of
+ contact for Health, well-being, and Happiness.We wish to bring Access and Quality of care into the digital world so that we can improve your lives, wherever you are, whenever you need it.
 ![Untitled-1](https://user-images.githubusercontent.com/79131390/201475988-7ded0b61-7909-4975-949e-1161f88e60d6.png)
 
  
