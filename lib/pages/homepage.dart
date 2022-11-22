@@ -4,11 +4,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:nb_utils/nb_utils.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:slide_digital_clock/slide_digital_clock.dart';
 
 import 'bmi/home_screen.dart';
-import 'package:nb_utils/nb_utils.dart';
-import 'package:share_plus/share_plus.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -21,8 +21,11 @@ class _HomePageState extends State<HomePage> {
   Widget _pageadd({
     required String image,
     required String name,
+    TextStyle style = const TextStyle(
+        fontSize: 16, fontWeight: FontWeight.bold, color: Colors.indigo),
   }) {
     return Container(
+      width: MediaQuery.of(context).size.width / 2,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0),
           border: Border.all(color: Colors.deepOrange, width: 2)), //grey
@@ -39,13 +42,7 @@ class _HomePageState extends State<HomePage> {
           const SizedBox(
             height: 10,
           ),
-          Text(
-            name,
-            style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                color: Colors.indigo.shade900),
-          ),
+          Text(name, style: style)
         ],
       ),
     );
@@ -54,6 +51,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         leading: Builder(
           builder: (BuildContext context) {
@@ -185,52 +183,53 @@ class _HomePageState extends State<HomePage> {
                   height: 15,
                 ),
                 InkWell(
-                  onTap: (){
+                  onTap: () {
                     showDialog(
                         context: context,
                         builder: (BuildContext context) => Theme(
-                          data: ThemeData.light(),
-                          child: CupertinoAlertDialog(
-                            title: Text(
-                              'Rating',
-                              style: boldTextStyle(size: 18),
-                            ).paddingOnly(bottom: 9),
-                            content: Column(
-                              children: [
-                                RatingBar.builder(
-                                  initialRating: 5,
-                                  minRating: 1,
-                                  itemSize: 35,
-                                  direction: Axis.horizontal,
-                                  itemPadding: EdgeInsets.symmetric(horizontal: 2.0),
-                                  itemBuilder: (context, _) => Icon(
-                                    Icons.star,
-                                    color: Colors.amber,
+                              data: ThemeData.light(),
+                              child: CupertinoAlertDialog(
+                                title: Text(
+                                  'Rating',
+                                  style: boldTextStyle(size: 18),
+                                ).paddingOnly(bottom: 9),
+                                content: Column(
+                                  children: [
+                                    RatingBar.builder(
+                                      initialRating: 5,
+                                      minRating: 1,
+                                      itemSize: 35,
+                                      direction: Axis.horizontal,
+                                      itemPadding:
+                                          EdgeInsets.symmetric(horizontal: 2.0),
+                                      itemBuilder: (context, _) => Icon(
+                                        Icons.star,
+                                        color: Colors.amber,
+                                      ),
+                                      onRatingUpdate: (rating) {},
+                                    ),
+                                  ],
+                                ),
+                                actions: [
+                                  CupertinoDialogAction(
+                                    child: Text(
+                                      "Cancel",
+                                    ),
+                                    onPressed: () {
+                                      finish(context);
+                                    },
                                   ),
-                                  onRatingUpdate: (rating) {},
-                                ),
-                              ],
-                            ),
-                            actions: [
-                              CupertinoDialogAction(
-                                child: Text(
-                                  "Cancel",
-                                ),
-                                onPressed: () {
-                                  finish(context);
-                                },
+                                  CupertinoDialogAction(
+                                    child: Text('Submit'),
+                                    onPressed: () {
+                                      toasty(context, 'Submitted!',
+                                          gravity: ToastGravity.BOTTOM_LEFT);
+                                      finish(context);
+                                    },
+                                  )
+                                ],
                               ),
-                              CupertinoDialogAction(
-                                child: Text('Submit'),
-                                onPressed: () {
-                                  toasty(context, 'Submitted!',gravity: ToastGravity.BOTTOM_LEFT);
-                                  finish(context);
-                                },
-                              )
-                            ],
-                          ),
-                        ));
-
+                            ));
                   },
                   child: Row(
                     children: const [
@@ -251,8 +250,9 @@ class _HomePageState extends State<HomePage> {
                   height: 15,
                 ),
                 InkWell(
-                  onTap: (){
-                    Share.share('https://github.com/marufahmedofficial/MediTech_project_UITS');
+                  onTap: () {
+                    Share.share(
+                        'https://github.com/marufahmedofficial/MediTech_project_UITS');
                   },
                   child: Row(
                     children: const [
@@ -295,26 +295,31 @@ class _HomePageState extends State<HomePage> {
                         context: context,
                         builder: (context) {
                           return CupertinoAlertDialog(
-                            title: Text('Exit?',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18)),
-                            content: Text('Do you really want to Exit?',style: TextStyle(fontSize: 18)),
+                            title: Text('Exit?',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 18)),
+                            content: Text('Do you really want to Exit?',
+                                style: TextStyle(fontSize: 18)),
                             actions: [
                               CupertinoDialogAction(
-                                child: Text('Cancel',style: TextStyle(fontSize: 18)),
-                                   onPressed: () {
-                                     Navigator.pop(context); //close Dialog
-                                         },
+                                child: Text('Cancel',
+                                    style: TextStyle(fontSize: 18)),
+                                onPressed: () {
+                                  Navigator.pop(context); //close Dialog
+                                },
                               ),
                               CupertinoDialogAction(
-                                child: Text('Yes',style: TextStyle(fontSize: 18,color: Colors.red.shade700)),
-                                onPressed: () {
-                                   if (Platform.isAndroid) {
-                                   SystemNavigator.pop();
-                                     }
-                                   else if (Platform.isIOS) {
+                                  child: Text('Yes',
+                                      style: TextStyle(
+                                          fontSize: 18,
+                                          color: Colors.red.shade700)),
+                                  onPressed: () {
+                                    if (Platform.isAndroid) {
+                                      SystemNavigator.pop();
+                                    } else if (Platform.isIOS) {
                                       exit(0);
-                                       }
-                                           }
-                              )
+                                    }
+                                  })
                             ],
                           );
                         });
@@ -366,14 +371,19 @@ class _HomePageState extends State<HomePage> {
       )),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
-        splashColor: Colors.purple,
+        splashColor: Colors.redAccent,
         hoverColor: Colors.black54,
 
         onPressed: () {},
-        child: Icon(Icons.medical_information),
-        backgroundColor: Colors.deepOrange,
+        child: Center(
+            child: Image.asset('assets/images/playstore.png')),
+        // Icon(Icons.medical_information),
+        // backgroundColor: Colors.deepOrange,
+        backgroundColor: Colors.white,
+        // foregroundColor: Colors.white,
         foregroundColor: Colors.white,
-        elevation: 8.0,
+        // elevation: 8.0,
+        elevation: 0,
         mouseCursor: MouseCursor.defer,
 
         // // label : const Text('Change'),
@@ -434,7 +444,7 @@ class _HomePageState extends State<HomePage> {
           crossAxisCount: 2,
           crossAxisSpacing: 15,
           mainAxisSpacing: 20,
-          childAspectRatio: 1.30,
+          childAspectRatio: 1.20,
           children: [
             InkWell(
               onTap: () {
