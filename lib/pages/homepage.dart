@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:meditech/pages/hospital/hospital.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:slide_digital_clock/slide_digital_clock.dart';
@@ -499,7 +500,12 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Hospital()));
+              },
               mouseCursor: MouseCursor.defer,
               splashColor: Colors.red.shade100,
               hoverColor: Colors.grey.shade200,

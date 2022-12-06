@@ -49,6 +49,10 @@ dependencies:
   page_transition: ^2.0.5
   pretty_gauge: ^1.0.1
   share_plus: ^4.0.4
+  firebase_auth:
+  firebase_core:
+  firebase_storage:
+  cloud_firestore:
 
 dev_dependencies:
   flutter_test:
