@@ -35,7 +35,6 @@ dependencies:
   nb_utils: ^4.6.23
   introduction_screen: ^3.0.1
   shared_preferences: ^2.0.15
-  day_night_switcher: ^0.2.0+1
   provider:
 
   flutter:
