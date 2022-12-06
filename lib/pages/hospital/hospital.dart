@@ -53,6 +53,14 @@ class HospitalState extends State<Hospital> {
 
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          leading: const BackButton(
+            color: Colors.black, // <-- SEE HERE
+          ),
+          centerTitle: true,
+          title: const Text("Hospitals",style: TextStyle(color: Colors.black),),
+          backgroundColor: CupertinoColors.systemBackground,
+        ),
         body: Column(
           children: [
             Container(
@@ -63,11 +71,11 @@ class HospitalState extends State<Hospital> {
                     0: Container(
                         padding: EdgeInsets.all(8),
                         child: Text(
-                          'Home',
+                          'Government',
                           style: primaryTextStyle(color: _sliding == 0 ? blackColor : grey),
                         )),
-                    1: Container(padding: EdgeInsets.all(8), child: Text('Booking', style: primaryTextStyle(color: _sliding == 1 ? blackColor : grey))),
-                    2: Container(padding: EdgeInsets.all(8), child: Text('Setting', style: primaryTextStyle(color: _sliding == 2 ? blackColor : grey))),
+                    1: Container(padding: EdgeInsets.all(8), child: Text('Private', style: primaryTextStyle(color: _sliding == 1 ? blackColor : grey))),
+                    2: Container(padding: EdgeInsets.all(8), child: Text('Covid', style: primaryTextStyle(color: _sliding == 2 ? blackColor : grey))),
                   },
                   groupValue: _sliding,
                   onValueChanged: (dynamic newValue) {
@@ -76,9 +84,9 @@ class HospitalState extends State<Hospital> {
                     });
                   }),
             ),
-            if (_sliding == 0) mPage("Home"),
-            if (_sliding == 1) mPage("Booking"),
-            if (_sliding == 2) mPage("Setting"),
+            if (_sliding == 0) mPage("Government"),
+            if (_sliding == 1) mPage("Private"),
+            if (_sliding == 2) mPage("Covid"),
           ],
         ),
       ),
