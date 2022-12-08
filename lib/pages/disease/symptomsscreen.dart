@@ -16,7 +16,9 @@ class _SymptomsScreenState extends State<SymptomsScreen> {
   Widget build(BuildContext context) {
     debugPrint(symptoms.length.toString());
     return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
+
         onPressed: (){
           if(selectedsymptoms.isEmpty){
             showCupertinoDialog(context: context, builder: (context)=>CupertinoAlertDialog(
@@ -33,33 +35,36 @@ class _SymptomsScreenState extends State<SymptomsScreen> {
         },child: Icon(Icons.arrow_forward_ios),
       ),
         appBar: Constants.appBar,
-        body: ListView.builder(
-            itemCount: symptoms.length,
-            itemBuilder: (context, index) {
-              if (index == 0) {
-                return Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Text(
-                    "Please Select The Symptoms That Appear",
-                    style: TextStyle(fontSize: 15),
-                  ),
-                );
-              } else {
-                return CheckboxListTile(
-                  value: Tools.isListIncludesThis(index: index),
-                  onChanged: (value) {
-                    if (selectedsymptoms.contains(symptoms[index])) {
-                      selectedsymptoms.remove(symptoms[index]);
-                    } else {
-                      selectedsymptoms.add(symptoms[index]);
-                    }setState(() {
+        body: Padding(
+          padding: EdgeInsets.only(bottom: 80),
+          child: ListView.builder(
+              itemCount: symptoms.length,
+              itemBuilder: (context, index) {
+                if (index == 0) {
+                  return Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Text(
+                      "Please Select The Symptoms That Appear",
+                      style: TextStyle(fontSize: 15),
+                    ),
+                  );
+                } else {
+                  return CheckboxListTile(
+                    value: Tools.isListIncludesThis(index: index),
+                    onChanged: (value) {
+                      if (selectedsymptoms.contains(symptoms[index])) {
+                        selectedsymptoms.remove(symptoms[index]);
+                      } else {
+                        selectedsymptoms.add(symptoms[index]);
+                      }setState(() {
 
-                    });
-                  },
-                  title: Text(symptoms[index]),
-                );
-              }
-            }));
+                      });
+                    },
+                    title: Text(symptoms[index]),
+                  );
+                }
+              }),
+        ));
   }
 }
 
