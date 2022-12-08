@@ -18,11 +18,13 @@ class Tools {
   static ImageProvider returnImage() {
     int hour = DateTime.now().hour;
     if (hour >= 2 && hour < 12) {
-      return AssetImage("assets/images/nature..jpg");
+      return AssetImage("assets/images/morning.jpg");
+
+
     } else if (hour >= 12 && hour < 17) {
-      return AssetImage("assets/images/weather..jpg");
+      return AssetImage("assets/images/day.jpg");
     } else {
-      return AssetImage("assets/images/nature.(1).jpg");
+      return AssetImage("assets/images/night.jpg");
     }
   }
 
