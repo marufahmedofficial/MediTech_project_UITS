@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:meditech/pages/disease/mainscreen.dart';
 import 'package:meditech/pages/hospital/hospital.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:share_plus/share_plus.dart';
@@ -464,7 +465,7 @@ class _HomePageState extends State<HomePage> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const HomeScreenBMI()));
+                        builder: (context) => const DiseaseMain()));
               },
               mouseCursor: MouseCursor.defer,
               splashColor: Colors.red.shade100,
