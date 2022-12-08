@@ -31,20 +31,28 @@ class _DiseaseMainState extends State<DiseaseMain> {
                   backgroundImage: Tools.returnImage(),
                   backgroundColor: Colors.white,
                   radius: 100,
-                  child: Column(
+                  child:
+                  Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Divider(
                         height: 50,
                         color: Colors.transparent,
                       ),
-                      Center(
-                        child: Text(
-                          Tools.returnTime(),
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
                     ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top:  30,bottom: 30),
+                child: Center(
+                  child: Column( children: [
+                    Text(
+                      Tools.returnTime(),
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ],
+
                   ),
                 ),
               ),
