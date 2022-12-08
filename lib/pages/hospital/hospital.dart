@@ -5,11 +5,16 @@ import 'package:nb_utils/nb_utils.dart';
 
 class Hospital extends StatefulWidget {
 
+
+
+
   @override
   HospitalState createState() => HospitalState();
 }
 
 class HospitalState extends State<Hospital> {
+
+
   @override
   void initState() {
     super.initState();
@@ -40,7 +45,7 @@ class HospitalState extends State<Hospital> {
           ).paddingLeft(16),
           Padding(
             padding: EdgeInsets.only(left: 20, right: 20, top: 16),
-            child: Text('Maruf AHmed',
+            child: Text('Maruf Ahmed',
               style: secondaryTextStyle(),
               textAlign: TextAlign.justify,
             ),
@@ -74,7 +79,7 @@ class HospitalState extends State<Hospital> {
           ).paddingLeft(16),
           Padding(
             padding: EdgeInsets.only(left: 20, right: 20, top: 16),
-            child: Text('Maruf',
+            child: Text('Ahmed',
               style: secondaryTextStyle(),
               textAlign: TextAlign.justify,
             ),

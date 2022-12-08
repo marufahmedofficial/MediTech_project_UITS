@@ -470,7 +470,7 @@ class _HomePageState extends State<HomePage> {
               splashColor: Colors.red.shade100,
               hoverColor: Colors.grey.shade200,
               child: _pageadd(
-                  image: 'assets/images/bmi1.png', name: 'Disease'),
+                  image: 'assets/images/desease.png', name: 'Disease'),
             ),
             InkWell(
               onTap: () {},
