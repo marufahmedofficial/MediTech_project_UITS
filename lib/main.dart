@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:meditech/pages/homepage.dart';
 import 'package:meditech/pages/onboarding.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 var initScreen;
 Future<void> main() async {
