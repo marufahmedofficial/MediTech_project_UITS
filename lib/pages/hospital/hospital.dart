@@ -38,11 +38,11 @@ class HospitalState extends State<Hospital> {
   Widget build(BuildContext context) {
     Widget mPage1(var value) {
       return SizedBox(
-        height: MediaQuery.of(context).size.height,
+        height: MediaQuery.of(context).size.height-151,
         child: ListView.builder(
 
-            itemCount: 10,
-            itemBuilder:(context, index) => Text('ddd'),
+            itemCount: 100,
+            itemBuilder:(context, index) => Text('Hello World......................'),
 
         ),
       );
