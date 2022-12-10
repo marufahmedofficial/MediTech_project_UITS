@@ -49,37 +49,25 @@ class HospitalState extends State<Hospital> {
 
     }
     Widget mPage2(var value) {
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(value,
-            style: boldTextStyle(),
-          ).paddingLeft(16),
-          Padding(
-            padding: EdgeInsets.only(left: 20, right: 20, top: 16),
-            child: Text('Maruf',
-              style: secondaryTextStyle(),
-              textAlign: TextAlign.justify,
-            ),
-          ),
-        ],
+      return SizedBox(
+        height: MediaQuery.of(context).size.height-151,
+        child: ListView.builder(
+
+          itemCount: 100,
+          itemBuilder:(context, index) => Text('Privet Hospital......................'),
+
+        ),
       );
     }
     Widget mPage3(var value) {
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(value,
-            style: boldTextStyle(),
-          ).paddingLeft(16),
-          Padding(
-            padding: EdgeInsets.only(left: 20, right: 20, top: 16),
-            child: Text('Ahmed',
-              style: secondaryTextStyle(),
-              textAlign: TextAlign.justify,
-            ),
-          ),
-        ],
+      return SizedBox(
+        height: MediaQuery.of(context).size.height-151,
+        child: ListView.builder(
+
+          itemCount: 100,
+          itemBuilder:(context, index) => Text('Covid Hospital......................'),
+
+        ),
       );
     }
 
