@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:meditech/pages/blood/blood_mainscreen.dart';
 import 'package:meditech/pages/disease/mainscreen.dart';
 import 'package:meditech/pages/hospital/hospital.dart';
 import 'package:nb_utils/nb_utils.dart';
@@ -460,7 +461,8 @@ class _HomePageState extends State<HomePage> {
               hoverColor: Colors.grey.shade200,
               child: _pageadd(
                   image: 'assets/images/bmi1.png', name: 'BMI Calculator'),
-            ),     InkWell(
+            ),
+            InkWell(
               onTap: () {
                 Navigator.push(
                     context,
@@ -474,7 +476,12 @@ class _HomePageState extends State<HomePage> {
                   image: 'assets/images/desease.png', name: 'Disease'),
             ),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const BloodMain()));
+              },
               mouseCursor: MouseCursor.defer,
               splashColor: Colors.red.shade100,
               hoverColor: Colors.grey.shade200,
