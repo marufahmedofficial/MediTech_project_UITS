@@ -38,7 +38,7 @@ class HospitalState extends State<Hospital> {
   Widget build(BuildContext context) {
     Widget mPage1(var value) {
       return SizedBox(
-
+        height: MediaQuery.of(context).size.height,
         child: ListView.builder(
 
             itemCount: 10,
