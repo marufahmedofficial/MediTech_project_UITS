@@ -61,7 +61,7 @@ class _DiseaseMainState extends State<DiseaseMain> {
                 color: Colors.black26,
               ),
               ListTile(
-                  title: Text("Let's Find A Disease"),
+                  title: Text("Let's Find my Disease"),
                   trailing: Icon(Icons.arrow_forward_ios),
                   onTap: () {
                     Navigator.of(context).push(CupertinoPageRoute(
