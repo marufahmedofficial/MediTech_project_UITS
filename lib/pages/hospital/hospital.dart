@@ -37,21 +37,16 @@ class HospitalState extends State<Hospital> {
   @override
   Widget build(BuildContext context) {
     Widget mPage1(var value) {
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(value,
-            style: boldTextStyle(),
-          ).paddingLeft(16),
-          Padding(
-            padding: EdgeInsets.only(left: 20, right: 20, top: 16),
-            child: Text('Maruf Ahmed',
-              style: secondaryTextStyle(),
-              textAlign: TextAlign.justify,
-            ),
-          ),
-        ],
+      return SizedBox(
+
+        child: ListView.builder(
+
+            itemCount: 10,
+            itemBuilder:(context, index) => Text('ddd'),
+
+        ),
       );
+
     }
     Widget mPage2(var value) {
       return Column(
