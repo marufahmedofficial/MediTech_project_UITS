@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:meditech/pages/disease/data/constants.dart';
 import 'package:meditech/pages/disease/data/tools.dart';
 import 'package:meditech/pages/disease/detailsscreen.dart';
-import 'package:meditech/pages/disease/mainscreen.dart';
-import 'package:meditech/pages/disease/symptomsscreen.dart';
+
  
 class ResultsScreen extends StatefulWidget {
   const ResultsScreen({Key? key}) : super(key: key);
@@ -464,13 +463,13 @@ class _ResultsScreenState extends State<ResultsScreen> {
     Tools.sortResults();
     Tools.removeFalseResults();
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){
-          selectedsymptoms=[];
-          Navigator.of(context).push(CupertinoPageRoute(builder: (context)=>DiseaseMain()));
-
-        },child: Icon(Icons.arrow_forward_ios),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: (){
+      //     selectedsymptoms=[];
+      //     Navigator.of(context).push(CupertinoPageRoute(builder: (context)=>DiseaseMain()));
+      //
+      //   },child: Icon(Icons.arrow_forward_ios),
+      // ),
       appBar: Constants.appBar,
       body: ListView.builder(
           itemCount: results.length,
@@ -482,7 +481,7 @@ class _ResultsScreenState extends State<ResultsScreen> {
               title: Text(results[index]["name"].toString()),
               leading: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text("%"+percent.toString()),
+                child: Text(percent.toString()+"%"),
               ),
               trailing: Icon(Icons.arrow_forward_ios),
               onTap: (){
@@ -496,93 +495,5 @@ class _ResultsScreenState extends State<ResultsScreen> {
 
 
 
-/*List<ResultModel> results = [
-  ResultModel(
-      name: "Crimean–Congo Hemorrhagic Fever",
-      explanation:
-          "Crimean–Congo hemorrhagic fever (CCHF) is a viral disease. In those who survive, recovery generally occurs around two weeks after onset.The CCHF virus is typically spread by tick bites or close contact with the blood, secretions, organs or other bodily fluids of infected persons or animals. Groups that are at high risk of infection are farmers and those who work in slaughterhouses.[1] The virus can also spread between people via body fluids.",
-      symptoms: [
-        "Fever",
-        "Muscle Pains",
-        "Vomiting",
-        "Diarrhea",
-        "Bledding Into The Skin"
-      ],
-      percent: Tools.calculatePercent(realSymptoms: [
-        "Fever",
-        "Muscle Pains",
-        "Vomiting",
-        "Diarrhea",
-        "Bledding Into The Skin"
-      ])),
-  ResultModel(
-      name: "Smallpox",
-      explanation:
-          "Smallpox was an infectious disease caused by one of two virus variants, Variola major and Variola minor. The agent of variola virus belongs to the genus Orthopoxvirus. The last naturally occurring case was diagnosed in October 1977, and the World Health Organization certified the global eradication of the disease in 1980, making it the only human disease to be eradicated.",
-      symptoms: [
-        "Fever",
-        "Vomiting",
-        "Mouth Sored",
-        "Fluid Filled Blisters Which Scab Over"
-      ],
-      percent: Tools.calculatePercent(realSymptoms: [
-        "Fever",
-        "Vomiting",
-        "Mouth Sored",
-        "Fluid Filled Blisters Which Scab Over"
-      ])),
-  ResultModel(
-      name: "COVID-19",
-      explanation:
-          "Coronavirus disease 2019 (COVID-19) is a contagious disease caused by a virus, the severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). The first known case was identified in Wuhan, China, in December 2019. The disease quickly spread worldwide, resulting in the COVID-19 pandemic.",
-      symptoms: [
-        "Fever",
-        "Cough",
-        "Diminished Taste And Smell Perception",
-        "Shortness of Breath"
-      ],
-      percent: Tools.calculatePercent(realSymptoms: [
-        "Fever",
-        "Cough",
-        "Diminished Taste And Smell Perception",
-        "Shortness of Breath"
-      ])),
-  ResultModel(
-      name: "Gonorrhoeae",
-      explanation:
-          "Gonorrhea, colloquially known as the clap, is a sexually transmitted infection (STI) caused by the bacterium Neisseria gonorrhoeae. Infection may involve the genitals, mouth, or rectum.",
-      symptoms: ["Burning with Urination", "Dismenore"],
-      percent: Tools.calculatePercent(
-          realSymptoms: ["Burning with Urination", "Dismenore"])),
-  ResultModel(
-      name: "Brucellosis",
-      explanation:
-          "Brucellosis is a highly contagious zoonosis caused by ingestion of unpasteurized milk or undercooked meat from infected animals, or close contact with their secretions. It is also known as undulant fever, Malta fever, and Mediterranean fever.",
-      symptoms: [
-        "Fever",
-        "Chills",
-        "Lost of Appetite",
-        "Sweats",
-        "Weakness",
-        "Fatigue",
-        "Headache",
-      ],
-      percent: Tools.calculatePercent(realSymptoms: [
-        "Fever",
-        "Chills",
-        "Lost of Appetite",
-        "Sweats",
-        "Weakness",
-        "Fatigue",
-        "Headache",
-      ])),
-  ResultModel(
-      name: "Diphtheria",
-      explanation:
-          "Diphtheria is an infection caused by the bacterium Corynebacterium diphtheriae. Most infections are asymptomatic or have a mild clinical course, but in some outbreaks more than 10% of those diagnosed with the disease may die.",
-      symptoms: ["Sore Throat", "Fever", "Cough"],
-      percent: Tools.calculatePercent(
-          realSymptoms: ["Sore Throat", "Fever", "Cough"])),
-];*/
 
 List<Map<String, dynamic>> results = [];

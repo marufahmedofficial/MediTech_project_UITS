@@ -34,22 +34,3 @@ class DetailsScreen extends StatelessWidget {
     );
   }
 }
-/*
-(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(21.0),
-            child: Text(results[index]["name"].toString(),style: TextStyle(fontSize: 25),),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(14.0),
-            child: Text(results[index]["explanation"],style: TextStyle(fontSize: 15),),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Text(symptomsOfThisDisease,style: TextStyle(fontSize: 15),),
-          ),
-
-        ],
-      )
-*/
