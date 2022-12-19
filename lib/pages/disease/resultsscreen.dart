@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:meditech/pages/disease/data/constants.dart';
 import 'package:meditech/pages/disease/data/tools.dart';
 import 'package:meditech/pages/disease/detailsscreen.dart';
+import 'package:meditech/pages/disease/mainscreen.dart';
+import 'package:meditech/pages/disease/symptomsscreen.dart';
 
  
 class ResultsScreen extends StatefulWidget {
@@ -463,35 +465,40 @@ class _ResultsScreenState extends State<ResultsScreen> {
     Tools.sortResults();
     Tools.removeFalseResults();
     return Scaffold(
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: (){
-      //     selectedsymptoms=[];
-      //     Navigator.of(context).push(CupertinoPageRoute(builder: (context)=>DiseaseMain()));
-      //
-      //   },child: Icon(Icons.arrow_forward_ios),
-      // ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.teal,
+        onPressed: (){
+          selectedsymptoms=[];
+          Navigator.of(context).push(CupertinoPageRoute(builder: (context)=>SymptomsScreen()));
+
+        },child: Icon(Icons.arrow_back_ios_new_rounded),
+      ),
       appBar: Constants.appBar,
-      body: ListView.builder(
-          itemCount: results.length,
-          itemBuilder: (context, index) {
-            String percent = double.parse(results[index]["percent"].toString())
-                .toInt()
-                .toString();
-            return Card(
-              elevation: 3,
-              child: ListTile(
-                title: Text(results[index]["name"].toString()),
-                leading: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(percent.toString()+"%",style: TextStyle(color: Colors.deepPurple),),
+      body: Padding(
+        padding: EdgeInsets.only(bottom: 80),
+        child: ListView.builder(
+            itemCount: results.length,
+            itemBuilder: (context, index) {
+              String percent = double.parse(results[index]["percent"].toString())
+                  .toInt()
+                  .toString();
+              return Card(
+                elevation: 3,
+                child: ListTile(
+                  title: Text(results[index]["name"].toString()),
+                  leading: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(percent.toString()+"%",style: TextStyle(color: Colors.deepPurple),),
+                  ),
+                  trailing: Icon(Icons.arrow_forward_ios,color: Colors.red,),
+                  onTap: (){
+                    Navigator.of(context).push(CupertinoPageRoute(builder: (context)=>DetailsScreen(index : index)));
+                  },
                 ),
-                trailing: Icon(Icons.arrow_forward_ios,color: Colors.red,),
-                onTap: (){
-                  Navigator.of(context).push(CupertinoPageRoute(builder: (context)=>DetailsScreen(index : index)));
-                },
-              ),
-            );
-          }),
+              );
+            }),
+      ),
     );
   }
 }
