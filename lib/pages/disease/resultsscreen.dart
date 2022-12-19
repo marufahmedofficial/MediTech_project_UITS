@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:meditech/pages/disease/data/constants.dart';
 import 'package:meditech/pages/disease/data/tools.dart';
 import 'package:meditech/pages/disease/detailsscreen.dart';
-import 'package:meditech/pages/disease/mainscreen.dart';
 import 'package:meditech/pages/disease/symptomsscreen.dart';
 
  

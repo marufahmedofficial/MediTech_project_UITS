@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:meditech/pages/disease/data/tools.dart';
 import 'package:meditech/pages/disease/symptomsscreen.dart';
+import 'package:meditech/pages/homepage.dart';
  
 class DiseaseMain extends StatefulWidget {
   const DiseaseMain({Key? key}) : super(key: key);
@@ -15,12 +16,31 @@ class _DiseaseMainState extends State<DiseaseMain> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
+      home:
+      Scaffold(
           appBar: AppBar(
             automaticallyImplyLeading: false,
             backgroundColor: Colors.transparent,
             elevation: 0,
             title: Text("Disease Finder",style: TextStyle(color:Colors.black),),
+          ),
+          floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+          floatingActionButton: Padding(
+            padding: EdgeInsets.only(bottom: 9),
+            child: FloatingActionButton.extended(
+              label: const Text(
+                'Home',
+                style: TextStyle(fontSize: 13),
+              ),
+              // backgroundColor: Colors.black,
+              icon: const Icon(
+                CupertinoIcons.home,
+              ),
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => const HomePage()));
+              },
+            ),
           ),
           body: ListView(
             children: [
@@ -90,9 +110,12 @@ class _DiseaseMainState extends State<DiseaseMain> {
                       color: Colors.red.shade900
                     ) ,),
                 ),
-              )
+              ),
+
             ],
+
           )),
+
     );
   }
 }
