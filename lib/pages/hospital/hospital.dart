@@ -63,14 +63,14 @@ class HospitalState extends State<Hospital> {
               ),
 
               child: Padding(
-                padding: const EdgeInsets.all(15.0),
+                padding: const EdgeInsets.only(top: 5,bottom: 3,right: 2,left: 3),
                 child: ListTile(
-                  title: Text('Hello World......................',
+                  title: Text('Kurmitola General Hospital',
                     //textAlign: TextAlign.center,
                     style: TextStyle(
                     ),
                   ),
-                  subtitle: Text('dddd'),
+                  subtitle: Text('Kurmitola,Dhaka'),
                   trailing:Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
