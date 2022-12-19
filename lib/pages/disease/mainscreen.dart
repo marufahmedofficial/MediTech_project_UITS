@@ -18,7 +18,12 @@ class _DiseaseMainState extends State<DiseaseMain> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          appBar: Constants.appBar,
+          appBar: AppBar(
+            automaticallyImplyLeading: false,
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            title: Text("Disease Finder",style: TextStyle(color:Colors.black),),
+          ),
           body: ListView(
             children: [
               Divider(
@@ -60,15 +65,18 @@ class _DiseaseMainState extends State<DiseaseMain> {
                 height: 15,
                 color: Colors.black26,
               ),
-              ListTile(
-                  title: Text("Let's Find my Disease"),
-                  trailing: Icon(Icons.arrow_forward_ios),
-                  onTap: () {
-                    Navigator.of(context).push(CupertinoPageRoute(
-                        builder: (context) => SymptomsScreen()));
-                  }),
+              Card(
+                elevation: 4,
+                child: ListTile(
+                    title: Text("Let's Find my Disease"),
+                    trailing: Icon(Icons.arrow_forward_ios,color: Colors.red,),
+                    onTap: () {
+                      Navigator.of(context).push(CupertinoPageRoute(
+                          builder: (context) => SymptomsScreen()));
+                    }),
+              ),
               Divider(
-                height: 2,
+                height: 1,
                 color: Colors.black26,
                 
               )
