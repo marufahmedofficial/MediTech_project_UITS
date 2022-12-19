@@ -64,9 +64,25 @@ class HospitalState extends State<Hospital> {
 
               child: Padding(
                 padding: const EdgeInsets.all(15.0),
-                child: Text('Hello World......................',
-                  //textAlign: TextAlign.center,
-                  style: TextStyle(
+                child: ListTile(
+                  title: Text('Hello World......................',
+                    //textAlign: TextAlign.center,
+                    style: TextStyle(
+                    ),
+                  ),
+                  subtitle: Text('dddd'),
+                  trailing:Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      IconButton(
+                        onPressed: () { },
+                        icon: Icon(CupertinoIcons.location_solid),
+                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: Icon(CupertinoIcons.phone),
+                      ),
+                    ],
                   ),
                 ),
               ),
