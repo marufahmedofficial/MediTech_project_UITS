@@ -477,16 +477,19 @@ class _ResultsScreenState extends State<ResultsScreen> {
             String percent = double.parse(results[index]["percent"].toString())
                 .toInt()
                 .toString();
-            return ListTile(
-              title: Text(results[index]["name"].toString()),
-              leading: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(percent.toString()+"%"),
+            return Card(
+              elevation: 3,
+              child: ListTile(
+                title: Text(results[index]["name"].toString()),
+                leading: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(percent.toString()+"%",style: TextStyle(color: Colors.deepPurple),),
+                ),
+                trailing: Icon(Icons.arrow_forward_ios,color: Colors.red,),
+                onTap: (){
+                  Navigator.of(context).push(CupertinoPageRoute(builder: (context)=>DetailsScreen(index : index)));
+                },
               ),
-              trailing: Icon(Icons.arrow_forward_ios),
-              onTap: (){
-                Navigator.of(context).push(CupertinoPageRoute(builder: (context)=>DetailsScreen(index : index)));
-              },
             );
           }),
     );
