@@ -49,18 +49,21 @@ class _SymptomsScreenState extends State<SymptomsScreen> {
                     ),
                   );
                 } else {
-                  return CheckboxListTile(
-                    value: Tools.isListIncludesThis(index: index),
-                    onChanged: (value) {
-                      if (selectedsymptoms.contains(symptoms[index])) {
-                        selectedsymptoms.remove(symptoms[index]);
-                      } else {
-                        selectedsymptoms.add(symptoms[index]);
-                      }setState(() {
+                  return Card(
+                    elevation: 5,
+                    child: CheckboxListTile(
+                      value: Tools.isListIncludesThis(index: index),
+                      onChanged: (value) {
+                        if (selectedsymptoms.contains(symptoms[index])) {
+                          selectedsymptoms.remove(symptoms[index]);
+                        } else {
+                          selectedsymptoms.add(symptoms[index]);
+                        }setState(() {
 
-                      });
-                    },
-                    title: Text(symptoms[index]),
+                        });
+                      },
+                      title: Text(symptoms[index]),
+                    ),
                   );
                 }
               }),
