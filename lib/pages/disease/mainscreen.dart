@@ -2,8 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:meditech/pages/disease/data/tools.dart';
 import 'package:meditech/pages/disease/symptomsscreen.dart';
-
-import 'data/constants.dart';
  
 class DiseaseMain extends StatefulWidget {
   const DiseaseMain({Key? key}) : super(key: key);
@@ -75,10 +73,23 @@ class _DiseaseMainState extends State<DiseaseMain> {
                           builder: (context) => SymptomsScreen()));
                     }),
               ),
+
               Divider(
                 height: 1,
                 color: Colors.black26,
-                
+
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 25,right: 9,top: 45,bottom: 5),
+                child: Container(
+                  child: Text('Important Note : This application can estimate your infection based on your symptoms but results can be false.The information in this application has been researched and collected from different sources',
+                    style:TextStyle(
+                      color: Colors.red.shade900
+                    ) ,),
+                ),
               )
             ],
           )),
