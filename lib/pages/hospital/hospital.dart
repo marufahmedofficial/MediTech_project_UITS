@@ -36,13 +36,41 @@ class HospitalState extends State<Hospital> {
 
   @override
   Widget build(BuildContext context) {
+    double _w = MediaQuery.of(context).size.width;
     Widget mPage1(var value) {
       return SizedBox(
-        height: MediaQuery.of(context).size.height-151,
+        // height: MediaQuery.of(context).size.height-151,
         child: ListView.builder(
+          padding: EdgeInsets.all(_w/30),
+           physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
 
             itemCount: 100,
-            itemBuilder:(context, index) => Text('Hello World......................'),
+            itemBuilder:(context, index) => Container(
+              margin: EdgeInsets.only(bottom: _w / 15),
+              height: _w /5,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.all(
+                  Radius.circular(20),
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.1),
+                    blurRadius: 40,
+                    spreadRadius: 10,
+                  ),
+                ],
+              ),
+
+              child: Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Text('Hello World......................',
+                  //textAlign: TextAlign.center,
+                  style: TextStyle(
+                  ),
+                ),
+              ),
+            ),
 
         ),
       );

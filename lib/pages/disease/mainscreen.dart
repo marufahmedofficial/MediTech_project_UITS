@@ -25,6 +25,7 @@ class _DiseaseMainState extends State<DiseaseMain> {
             title: Text("Disease Finder",style: TextStyle(color:Colors.black),),
           ),
           floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+          floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
           floatingActionButton: Padding(
             padding: EdgeInsets.only(bottom: 9),
             child: FloatingActionButton.extended(
