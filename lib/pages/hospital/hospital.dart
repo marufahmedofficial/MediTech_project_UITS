@@ -39,7 +39,7 @@ class HospitalState extends State<Hospital> {
     double _w = MediaQuery.of(context).size.width;
     Widget mPage1(var value) {
       return SizedBox(
-        // height: MediaQuery.of(context).size.height-151,
+        height: MediaQuery.of(context).size.height-160,
         child: ListView.builder(
           padding: EdgeInsets.all(_w/30),
            physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
@@ -63,14 +63,15 @@ class HospitalState extends State<Hospital> {
               ),
 
               child: Padding(
-                padding: const EdgeInsets.only(top: 5,bottom: 3,right: 2,left: 3),
+                padding: const EdgeInsets.only(top: 2,bottom: 3,right: 1,left: 1),
                 child: ListTile(
                   title: Text('Kurmitola General Hospital',
                     //textAlign: TextAlign.center,
                     style: TextStyle(
+                      fontSize: 14
                     ),
                   ),
-                  subtitle: Text('Kurmitola,Dhaka'),
+                  subtitle: Text('Kurmitola,Dhaka',style: TextStyle(fontSize: 12)),
                   trailing:Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
