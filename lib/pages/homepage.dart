@@ -497,7 +497,8 @@ class _HomePageState extends State<HomePage> {
           childAspectRatio: 1.20,
           children: [
             Card(
-              elevation: 5,
+              elevation: 6,
+              shadowColor: CupertinoColors.systemRed,
               child: InkWell(
                 onTap: () {
                   Navigator.push(
@@ -513,7 +514,8 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Card(
-              elevation: 5,
+              elevation: 6,
+              shadowColor: CupertinoColors.systemRed,
               child: InkWell(
                 onTap: () {
                   Navigator.push(
@@ -529,7 +531,8 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Card(
-              elevation: 5,
+              elevation: 6,
+              shadowColor: CupertinoColors.systemRed,
               child: InkWell(
                 onTap: () {
                   Navigator.push(
@@ -545,78 +548,100 @@ class _HomePageState extends State<HomePage> {
                     name: 'Blood Bank'),
               ),
             ),
-            InkWell(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const BloodMain()));
-              },
-              mouseCursor: MouseCursor.defer,
-              splashColor: Colors.red.shade100,
-              hoverColor: Colors.grey.shade200,
-              child: _pageadd(
-                  image: 'assets/images/blood-donation.png',
-                  name: 'Blood Donate'),
+            Card(
+              elevation: 6,
+              shadowColor: CupertinoColors.systemRed,
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const BloodMain()));
+                },
+                mouseCursor: MouseCursor.defer,
+                splashColor: Colors.red.shade100,
+                hoverColor: Colors.grey.shade200,
+                child: _pageadd(
+                    image: 'assets/images/blood-donation.png',
+                    name: 'Blood Donate'),
+              ),
             ),
-            InkWell(
-              onTap: () {},
-              mouseCursor: MouseCursor.defer,
-              splashColor: Colors.red.shade100,
-              hoverColor: Colors.grey.shade200,
-              child: _pageadd(
-                  image: 'assets/images/ambulance.png', name: 'Ambulance'),
-            ),
-            InkWell(
-              onTap: () {},
-              mouseCursor: MouseCursor.defer,
-              splashColor: Colors.red.shade100,
-              hoverColor: Colors.grey.shade200,
-              child: _pageadd(
-                  image: 'assets/images/health.png', name: 'Health & Care'),
-            ),
-            InkWell(
-              onTap: () {},
-              mouseCursor: MouseCursor.defer,
-              splashColor: Colors.red.shade100,
-              hoverColor: Colors.grey.shade200,
+            Card(
+              elevation: 6,
+              shadowColor: CupertinoColors.systemRed,
               child: InkWell(
                 onTap: () {},
                 mouseCursor: MouseCursor.defer,
                 splashColor: Colors.red.shade100,
                 hoverColor: Colors.grey.shade200,
                 child: _pageadd(
-                    image: 'assets/images/doctor.png', name: 'Doctors'),
+                    image: 'assets/images/ambulance.png', name: 'Ambulance'),
               ),
             ),
-            InkWell(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => Hospital()));
-              },
-              mouseCursor: MouseCursor.defer,
-              splashColor: Colors.red.shade100,
-              hoverColor: Colors.grey.shade200,
-              child: _pageadd(
-                  image: 'assets/images/hospital.png', name: 'Hospital'),
+            Card(
+              elevation: 6,
+              shadowColor: CupertinoColors.systemRed,
+              child: InkWell(
+                onTap: () {},
+                mouseCursor: MouseCursor.defer,
+                splashColor: Colors.red.shade100,
+                hoverColor: Colors.grey.shade200,
+                child: _pageadd(
+                    image: 'assets/images/health.png', name: 'Health & Care'),
+              ),
             ),
-            InkWell(
-              onTap: () {},
-              mouseCursor: MouseCursor.defer,
-              splashColor: Colors.red.shade100,
-              hoverColor: Colors.grey.shade200,
-              child: _pageadd(
-                  image: 'assets/images/medicine.png', name: 'Medicine'),
+           Card(
+             elevation: 6,
+             shadowColor: CupertinoColors.systemRed,
+             child: InkWell(
+                  onTap: () {},
+                  mouseCursor: MouseCursor.defer,
+                  splashColor: Colors.red.shade100,
+                  hoverColor: Colors.grey.shade200,
+                  child: _pageadd(
+                      image: 'assets/images/doctor.png', name: 'Doctors'),
+                ),
+           ),
+            Card(
+              elevation: 6,
+              shadowColor: CupertinoColors.systemRed,
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => Hospital()));
+                },
+                mouseCursor: MouseCursor.defer,
+                splashColor: Colors.red.shade100,
+                hoverColor: Colors.grey.shade200,
+                child: _pageadd(
+                    image: 'assets/images/hospital.png', name: 'Hospital'),
+              ),
             ),
-            InkWell(
-              onTap: () {},
-              mouseCursor: MouseCursor.defer,
-              splashColor: Colors.red.shade100,
-              hoverColor: Colors.grey.shade200,
-              child: _pageadd(
-                  image: 'assets/images/calories.png', name: 'Food & Calories'),
+            Card(
+              elevation: 6,
+              shadowColor: CupertinoColors.systemRed,
+              child: InkWell(
+                onTap: () {},
+                mouseCursor: MouseCursor.defer,
+                splashColor: Colors.red.shade100,
+                hoverColor: Colors.grey.shade200,
+                child: _pageadd(
+                    image: 'assets/images/medicine.png', name: 'Medicine'),
+              ),
+            ),
+            Card(
+              elevation: 6,
+              shadowColor: CupertinoColors.systemRed,
+              child: InkWell(
+                onTap: () {},
+                mouseCursor: MouseCursor.defer,
+                splashColor: Colors.red.shade100,
+                hoverColor: Colors.grey.shade200,
+                child: _pageadd(
+                    image: 'assets/images/calories.png', name: 'Food & Calories'),
+              ),
             ),
           ],
         ),
