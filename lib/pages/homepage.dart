@@ -21,6 +21,41 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  // Widget _pageadd1({
+  //   required Color color1,
+  //   required String title1,
+  //   required String subtitle,
+  // }) {
+  //   return Container(
+  //     margin: EdgeInsets.symmetric(horizontal: 10),
+  //     padding: EdgeInsets.only(left: 20),
+  //     height: 120,
+  //     width: 240,
+  //     decoration: BoxDecoration(
+  //       color: color1,
+  //       borderRadius: BorderRadius.circular(15.0),
+  //     ),
+  //     child: Column(
+  //       crossAxisAlignment: CrossAxisAlignment.start,
+  //       mainAxisAlignment: MainAxisAlignment.center,
+  //       children: [
+  //         Text(title1, style: TextStyle(
+  //             fontSize: 22, color: Colors.white
+  //         ),),
+  //         SizedBox(
+  //           height: 5,
+  //         ),
+  //         Text(subtitle, style: TextStyle(
+  //             fontSize: 19, color: Colors.white70
+  //         ),),
+  //
+  //       ],
+  //
+  //     ),
+  //   );
+  // }
+
+
   Widget _pageadd({
     required String image,
     required String name,
@@ -28,10 +63,14 @@ class _HomePageState extends State<HomePage> {
         fontSize: 16, fontWeight: FontWeight.bold, color: Colors.indigo),
   }) {
     return Container(
-      width: MediaQuery.of(context).size.width / 2,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.0),
-          border: Border.all(color: Colors.deepOrange, width: 2)), //grey
+      width: MediaQuery
+          .of(context)
+          .size
+          .width / 2,
+      // decoration: BoxDecoration(
+      //     borderRadius: BorderRadius.circular(22.0),
+      //     border: Border.all(color: Colors.deepOrange, width: 2))
+      // , //grey
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -67,7 +106,9 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {
                 Scaffold.of(context).openDrawer();
               },
-              tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+              tooltip: MaterialLocalizations
+                  .of(context)
+                  .openAppDrawerTooltip,
             );
           },
         ),
@@ -81,7 +122,7 @@ class _HomePageState extends State<HomePage> {
               end: Alignment.topLeft,
             ),
             borderRadius: const BorderRadius.only(
-                // bottomLeft: Radius.circular(60),
+              // bottomLeft: Radius.circular(60),
                 bottomRight: Radius.circular(60)),
           ),
         ),
@@ -89,12 +130,15 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
-              // bottomLeft: Radius.circular(60),
+            // bottomLeft: Radius.circular(60),
               bottomRight: Radius.circular((60))),
         ),
       ),
       drawer: (Container(
-        height: MediaQuery.of(context).size.height * 0.94,
+        height: MediaQuery
+            .of(context)
+            .size
+            .height * 0.94,
         // width: MediaQuery.of(context).size.width,
 
         clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -189,7 +233,8 @@ class _HomePageState extends State<HomePage> {
                   onTap: () {
                     showDialog(
                         context: context,
-                        builder: (BuildContext context) => Theme(
+                        builder: (BuildContext context) =>
+                            Theme(
                               data: ThemeData.light(),
                               child: CupertinoAlertDialog(
                                 title: Text(
@@ -204,11 +249,12 @@ class _HomePageState extends State<HomePage> {
                                       itemSize: 35,
                                       direction: Axis.horizontal,
                                       itemPadding:
-                                          EdgeInsets.symmetric(horizontal: 2.0),
-                                      itemBuilder: (context, _) => Icon(
-                                        Icons.star,
-                                        color: Colors.amber,
-                                      ),
+                                      EdgeInsets.symmetric(horizontal: 2.0),
+                                      itemBuilder: (context, _) =>
+                                          Icon(
+                                            Icons.star,
+                                            color: Colors.amber,
+                                          ),
                                       onRatingUpdate: (rating) {},
                                     ),
                                   ],
@@ -443,37 +489,61 @@ class _HomePageState extends State<HomePage> {
       // backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(30.0),
+
         child: GridView.count(
           crossAxisCount: 2,
           crossAxisSpacing: 15,
           mainAxisSpacing: 20,
           childAspectRatio: 1.20,
           children: [
-            InkWell(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const HomeScreenBMI()));
-              },
-              mouseCursor: MouseCursor.defer,
-              splashColor: Colors.red.shade100,
-              hoverColor: Colors.grey.shade200,
-              child: _pageadd(
-                  image: 'assets/images/bmi1.png', name: 'BMI Calculator'),
+            Card(
+              elevation: 5,
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const HomeScreenBMI()));
+                },
+                mouseCursor: MouseCursor.defer,
+                splashColor: Colors.red.shade100,
+                hoverColor: Colors.grey.shade200,
+                child: _pageadd(
+                    image: 'assets/images/bmi1.png', name: 'BMI Calculator'),
+              ),
             ),
-            InkWell(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const DiseaseMain()));
-              },
-              mouseCursor: MouseCursor.defer,
-              splashColor: Colors.red.shade100,
-              hoverColor: Colors.grey.shade200,
-              child: _pageadd(
-                  image: 'assets/images/desease.png', name: 'Disease'),
+            Card(
+              elevation: 5,
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const DiseaseMain()));
+                },
+                mouseCursor: MouseCursor.defer,
+                splashColor: Colors.red.shade100,
+                hoverColor: Colors.grey.shade200,
+                child: _pageadd(
+                    image: 'assets/images/desease.png', name: 'Disease'),
+              ),
+            ),
+            Card(
+              elevation: 5,
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const BloodMain()));
+                },
+                mouseCursor: MouseCursor.defer,
+                splashColor: Colors.red.shade100,
+                hoverColor: Colors.grey.shade200,
+                child: _pageadd(
+                    image: 'assets/images/b_donation.png',
+                    name: 'Blood Bank'),
+              ),
             ),
             InkWell(
               onTap: () {
@@ -487,20 +557,6 @@ class _HomePageState extends State<HomePage> {
               hoverColor: Colors.grey.shade200,
               child: _pageadd(
                   image: 'assets/images/blood-donation.png',
-                  name: 'Blood Bank'),
-            ),
-            InkWell(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const BloodMain()));
-              },
-              mouseCursor: MouseCursor.defer,
-              splashColor: Colors.red.shade100,
-              hoverColor: Colors.grey.shade200,
-              child: _pageadd(
-                  image: 'assets/images/b_donation.png',
                   name: 'Blood Donate'),
             ),
             InkWell(
@@ -564,7 +620,10 @@ class _HomePageState extends State<HomePage> {
             ),
           ],
         ),
+
       ),
+
     );
+
   }
 }
