@@ -497,6 +497,9 @@ class _HomePageState extends State<HomePage> {
           childAspectRatio: 1.20,
           children: [
             Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(25.0),
+              ),
               elevation: 6,
               shadowColor: CupertinoColors.systemRed,
               child: InkWell(
@@ -514,6 +517,9 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(25.0),
+              ),
               elevation: 6,
               shadowColor: CupertinoColors.systemRed,
               child: InkWell(
@@ -531,6 +537,9 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Card(
+              shape: BeveledRectangleBorder(
+                borderRadius: BorderRadius.circular(15.0),
+              ),
               elevation: 6,
               shadowColor: CupertinoColors.systemRed,
               child: InkWell(
@@ -549,6 +558,9 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Card(
+              shape: BeveledRectangleBorder(
+                borderRadius: BorderRadius.circular(15.0),
+              ),
               elevation: 6,
               shadowColor: CupertinoColors.systemRed,
               child: InkWell(
@@ -567,6 +579,9 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(25.0),
+              ),
               elevation: 6,
               shadowColor: CupertinoColors.systemRed,
               child: InkWell(
@@ -579,6 +594,9 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(25.0),
+              ),
               elevation: 6,
               shadowColor: CupertinoColors.systemRed,
               child: InkWell(
@@ -591,6 +609,9 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
            Card(
+             shape: BeveledRectangleBorder(
+               borderRadius: BorderRadius.circular(15.0),
+             ),
              elevation: 6,
              shadowColor: CupertinoColors.systemRed,
              child: InkWell(
@@ -603,6 +624,9 @@ class _HomePageState extends State<HomePage> {
                 ),
            ),
             Card(
+              shape: BeveledRectangleBorder(
+                borderRadius: BorderRadius.circular(15.0),
+              ),
               elevation: 6,
               shadowColor: CupertinoColors.systemRed,
               child: InkWell(
@@ -620,6 +644,9 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(25.0),
+              ),
               elevation: 6,
               shadowColor: CupertinoColors.systemRed,
               child: InkWell(
@@ -632,6 +659,9 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(25.0),
+              ),
               elevation: 6,
               shadowColor: CupertinoColors.systemRed,
               child: InkWell(
