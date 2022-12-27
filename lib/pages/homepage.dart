@@ -490,6 +490,20 @@ class _HomePageState extends State<HomePage> {
                   name: 'Blood Bank'),
             ),
             InkWell(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const BloodMain()));
+              },
+              mouseCursor: MouseCursor.defer,
+              splashColor: Colors.red.shade100,
+              hoverColor: Colors.grey.shade200,
+              child: _pageadd(
+                  image: 'assets/images/b_donation.png',
+                  name: 'Blood Donate'),
+            ),
+            InkWell(
               onTap: () {},
               mouseCursor: MouseCursor.defer,
               splashColor: Colors.red.shade100,
