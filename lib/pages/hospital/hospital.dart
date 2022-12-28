@@ -95,25 +95,115 @@ class HospitalState extends State<Hospital> {
     }
     Widget mPage2(var value) {
       return SizedBox(
-        height: MediaQuery.of(context).size.height-151,
+        height: MediaQuery.of(context).size.height-160,
         child: ListView.builder(
+          padding: EdgeInsets.all(_w/30),
+          physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
 
           itemCount: 100,
-          itemBuilder:(context, index) => Text('Privet Hospital......................'),
+          itemBuilder:(context, index) => Container(
+            margin: EdgeInsets.only(bottom: _w / 15),
+            height: _w /5,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.all(
+                Radius.circular(20),
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.1),
+                  blurRadius: 40,
+                  spreadRadius: 10,
+                ),
+              ],
+            ),
+
+            child: Padding(
+              padding: const EdgeInsets.only(top: 2,bottom: 3,right: 1,left: 1),
+              child: ListTile(
+                title: Text('Evercare Hospital Dhaka',
+                  //textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 14
+                  ),
+                ),
+                subtitle: Text('Bashundhara,Dhaka',style: TextStyle(fontSize: 12)),
+                trailing:Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    IconButton(
+                      onPressed: () { },
+                      icon: Icon(CupertinoIcons.location_solid),
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: Icon(CupertinoIcons.phone),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
 
         ),
       );
+
     }
     Widget mPage3(var value) {
       return SizedBox(
-        height: MediaQuery.of(context).size.height-151,
+        height: MediaQuery.of(context).size.height-160,
         child: ListView.builder(
+          padding: EdgeInsets.all(_w/30),
+          physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
 
           itemCount: 100,
-          itemBuilder:(context, index) => Text('Covid Hospital......................'),
+          itemBuilder:(context, index) => Container(
+            margin: EdgeInsets.only(bottom: _w / 15),
+            height: _w /5,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.all(
+                Radius.circular(20),
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.1),
+                  blurRadius: 40,
+                  spreadRadius: 10,
+                ),
+              ],
+            ),
+
+            child: Padding(
+              padding: const EdgeInsets.only(top: 2,bottom: 3,right: 1,left: 1),
+              child: ListTile(
+                title: Text('DNCC                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      Covid-19 Hospital',
+                  //textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 14
+                  ),
+                ),
+                subtitle: Text('Dhanmondi,Dhaka',style: TextStyle(fontSize: 12)),
+                trailing:Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    IconButton(
+                      onPressed: () { },
+                      icon: Icon(CupertinoIcons.location_solid),
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: Icon(CupertinoIcons.phone),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
 
         ),
       );
+
     }
 
     return SafeArea(
