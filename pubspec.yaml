@@ -54,6 +54,7 @@ dependencies:
   firebase_storage:
   cloud_firestore:
   firebase_database:
+  settings_ui: ^2.0.2
 
 dev_dependencies:
   flutter_test:

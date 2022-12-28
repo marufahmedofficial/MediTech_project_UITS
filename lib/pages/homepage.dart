@@ -7,6 +7,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:meditech/pages/blood/blood_mainscreen.dart';
 import 'package:meditech/pages/disease/mainscreen.dart';
 import 'package:meditech/pages/hospital/hospital.dart';
+import 'package:meditech/pages/settings.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:slide_digital_clock/slide_digital_clock.dart';
@@ -468,18 +469,26 @@ class _HomePageState extends State<HomePage> {
             Container(height: 55.0),
             Padding(
               padding: const EdgeInsets.only(right: 10.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: const [
-                  Icon(
-                    CupertinoIcons.settings,
-                    color: Colors.white,
-                  ),
-                  Text(
-                    "Setting",
-                    style: TextStyle(color: Colors.white),
-                  )
-                ],
+              child: InkWell(
+                onTap: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const Settings()));
+                },
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children:  [
+                    Icon(
+                      CupertinoIcons.settings,
+                      color: Colors.white,
+                    ),
+                    Text(
+                      "Setting",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
