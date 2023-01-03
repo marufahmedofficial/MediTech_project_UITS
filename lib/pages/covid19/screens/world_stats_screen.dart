@@ -42,7 +42,7 @@ class _WorldStatsScreenState extends State<WorldStatsScreen> {
       child: Scaffold(
         appBar: AppBar(
           title: Text(
-            'Covid-19 Tracker',
+            'Covid 19 Tracker',
             style: Theme.of(context).textTheme.headline2!.copyWith(
                   fontSize: _size!.height * 0.04,
                 ),
@@ -364,14 +364,15 @@ class _WorldStatsScreenState extends State<WorldStatsScreen> {
               );
             },
             style: ElevatedButton.styleFrom(
-              foregroundColor: MyColors.kPorcelain, backgroundColor: MyColors.kCodGray, enableFeedback: true,
+              foregroundColor: MyColors.kPorcelain, backgroundColor: Colors.red.shade900, enableFeedback: true,
               fixedSize: const Size.fromWidth(double.infinity),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40))
             ),
             child: Text(
               'Track Countries',
               style: Theme.of(context).textTheme.headline4!.copyWith(
                     fontSize: _size!.height * 0.02,
-                    color: MyColors.kPorcelain,
+                    color: MyColors.kPorcelain,fontWeight: FontWeight.bold
                   ),
             ),
           ),

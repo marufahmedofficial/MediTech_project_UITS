@@ -51,7 +51,7 @@ class _SplashScreenState extends State<SplashScreen>
                     _buildAnimatedLogo(size),
                     addVerticalSpace(size.height * 0.06),
                     _buildAppText(
-                      text: 'Covid19\nTracker App',
+                      text: 'Covid 19\nTracker App',
                       size: size,
                       textStyle:
                           Theme.of(context).textTheme.headline2!.copyWith(

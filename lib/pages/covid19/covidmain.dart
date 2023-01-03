@@ -16,7 +16,7 @@ class _CovidMainState extends State<CovidMain> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Covid19 Tracker',
+      title: 'Covid 19 Tracker',
       debugShowCheckedModeBanner: false,
       theme: covidTheme,
       routes: {

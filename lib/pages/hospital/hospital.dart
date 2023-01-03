@@ -39,7 +39,7 @@ class HospitalState extends State<Hospital> {
     double _w = MediaQuery.of(context).size.width;
     Widget mPage1(var value) {
       return SizedBox(
-        height: MediaQuery.of(context).size.height-160,
+        height: MediaQuery.of(context).size.height-165,
         child: ListView.builder(
           padding: EdgeInsets.all(_w/30),
            physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
@@ -95,7 +95,7 @@ class HospitalState extends State<Hospital> {
     }
     Widget mPage2(var value) {
       return SizedBox(
-        height: MediaQuery.of(context).size.height-160,
+        height: MediaQuery.of(context).size.height-165,
         child: ListView.builder(
           padding: EdgeInsets.all(_w/30),
           physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
@@ -151,7 +151,7 @@ class HospitalState extends State<Hospital> {
     }
     Widget mPage3(var value) {
       return SizedBox(
-        height: MediaQuery.of(context).size.height-160,
+        height: MediaQuery.of(context).size.height-165,
         child: ListView.builder(
           padding: EdgeInsets.all(_w/30),
           physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),

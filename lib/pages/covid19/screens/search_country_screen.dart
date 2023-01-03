@@ -38,7 +38,7 @@ class _SearchCountryScreenState extends State<SearchCountryScreen> {
           style: Theme.of(context).textTheme.headline2!.copyWith(
                 fontSize: _size!.height * 0.03,
               ),
-        ),
+        ),centerTitle: true,
         automaticallyImplyLeading: true,
       ),
       body: _buildBody(),
