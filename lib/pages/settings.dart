@@ -1,8 +1,5 @@
-import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:settings_ui/settings_ui.dart';
 
 class Settings extends StatefulWidget {
@@ -29,6 +26,78 @@ class _SettingsState extends State<Settings> {
               tiles: <SettingsTile>[
                 SettingsTile.navigation(
                   onPressed: (context) {
+                    showCupertinoDialog(
+                        context: context,
+                        builder: (BuildContext context) => Theme(
+                          data: ThemeData.light(),
+                          child: CupertinoAlertDialog(
+                            title: Text(
+                              'Select Language',
+                              style: TextStyle(color: CupertinoColors.systemIndigo, fontSize: 18),
+                            ),
+                            actions: [
+                              CupertinoDialogAction(
+                                child: Text(
+                                  'Bengali',
+                                  style: TextStyle(color: CupertinoColors.black, fontSize: 18),
+                                ),
+                                onPressed: () {
+
+                                },
+                              ),
+                              CupertinoDialogAction(
+                                child: Text(
+                                  'English',
+                                  style: TextStyle(color: CupertinoColors.black, fontSize: 18),
+                                ),
+                                onPressed: () {
+                                },
+                              ),
+                              CupertinoDialogAction(
+                                child: Text(
+                                  'Hindi',
+                                  style: TextStyle(color: CupertinoColors.black, fontSize: 18),
+                                ),
+                                onPressed: () {
+                                },
+                              ),
+                              CupertinoDialogAction(
+                                child: Text(
+                                  'Chaina',
+                                  style: TextStyle(color: CupertinoColors.black, fontSize: 18),
+                                ),
+                                onPressed: () {
+                                },
+                              ),
+                              CupertinoDialogAction(
+                                child: Text(
+                                  'Arabic',
+                                  style: TextStyle(color: CupertinoColors.black, fontSize: 18),
+                                ),
+                                onPressed: () {
+                                },
+                              ),
+                              CupertinoDialogAction(
+                                child: Text(
+                                  'Spanish',
+                                  style: TextStyle(color: CupertinoColors.black, fontSize: 18),
+                                ),
+                                onPressed: () {
+                                },
+                              ),
+                              CupertinoDialogAction(
+                                child: Text(
+                                  'Cancel',
+                                  style: TextStyle(color: CupertinoColors.systemRed, fontSize: 18,fontWeight: FontWeight.bold),
+                                ),
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                              ),
+                            ],
+                          ),
+                        ));
+
                    // showDialog(context: context, builder: (context) { return
                    //   CupertinoAlertDialog(
                    //     title: Text('Exit?',

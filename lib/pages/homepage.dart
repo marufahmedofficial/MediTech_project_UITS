@@ -499,37 +499,36 @@ class _HomePageState extends State<HomePage> {
       // backgroundColor: Colors.white,
       body: WillPopScope(
           onWillPop: () async {
-            final shouldPop = await showDialog<bool>(
+            final shouldPop = await showCupertinoModalPopup<bool>(
               context: context,
               builder: (context) {
-                return CupertinoAlertDialog(
-                  title: Text('Exit?',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 18)),
-                  content: Text('Do you really want to Exit?',
-                      style: TextStyle(fontSize: 18)),
+                return CupertinoActionSheet(
+                  title: Text('Do you really want to Exit?',
+                      style: TextStyle(fontSize: 18,color: CupertinoColors.black)),
+                  // message: Text('It\'s a demo for cupertino action sheet.'),
                   actions: [
-                    CupertinoDialogAction(
-                      child: Text('Cancel',
-                          style: TextStyle(fontSize: 18)),
-                      onPressed: () {
-                        Navigator.pop(context); //close Dialog
-                      },
-                    ),
-                    CupertinoDialogAction(
-                        child: Text('Yes',
-                            style: TextStyle(
-                                fontSize: 18,
-                                color: Colors.red.shade700)),
+                    CupertinoActionSheetAction(
                         onPressed: () {
                           if (Platform.isAndroid) {
                             SystemNavigator.pop();
                           } else if (Platform.isIOS) {
                             exit(0);
                           }
-                        })
+                        },
+                        child: Text('OK', style: TextStyle(fontSize: 18,
+                        color: Colors.red.shade700)))
                   ],
+                  cancelButton: CupertinoActionSheetAction(
+                      onPressed: () {
+                        finish(context);
+                      },
+                      child: Text(
+                        'Cancel',
+                        style: primaryTextStyle(color: CupertinoColors.black, size: 18),
+                      )),
+
                 );
+
               },
             );
             return shouldPop!;
@@ -614,6 +613,26 @@ class _HomePageState extends State<HomePage> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
+                            builder: (context) => Hospital()));
+                  },
+                  mouseCursor: MouseCursor.defer,
+                  splashColor: Colors.red.shade100,
+                  hoverColor: Colors.grey.shade200,
+                  child: _pageadd(
+                      image: 'assets/images/hospital.png', name: 'Hospital'),
+                ),
+              ),
+              Card(
+                shape: BeveledRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+                elevation: 6,
+                shadowColor: CupertinoColors.systemRed,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
                             builder: (context) => const BloodMain()));
                   },
                   mouseCursor: MouseCursor.defer,
@@ -667,7 +686,8 @@ class _HomePageState extends State<HomePage> {
                 elevation: 6,
                 shadowColor: CupertinoColors.systemRed,
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                  },
                   mouseCursor: MouseCursor.defer,
                   splashColor: Colors.red.shade100,
                   hoverColor: Colors.grey.shade200,
@@ -692,26 +712,6 @@ class _HomePageState extends State<HomePage> {
                         image: 'assets/images/doctor.png', name: 'Doctors'),
                   ),
              ),
-              Card(
-                shape: BeveledRectangleBorder(
-                  borderRadius: BorderRadius.circular(15.0),
-                ),
-                elevation: 6,
-                shadowColor: CupertinoColors.systemRed,
-                child: InkWell(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => Hospital()));
-                  },
-                  mouseCursor: MouseCursor.defer,
-                  splashColor: Colors.red.shade100,
-                  hoverColor: Colors.grey.shade200,
-                  child: _pageadd(
-                      image: 'assets/images/hospital.png', name: 'Hospital'),
-                ),
-              ),
               Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25.0),
