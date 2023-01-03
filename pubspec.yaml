@@ -56,7 +56,7 @@ dependencies:
   firebase_database:
   settings_ui: ^2.0.2
   google_fonts: ^3.0.1
-
+  url_launcher: ^6.1.7
 
 dev_dependencies:
   flutter_test:
