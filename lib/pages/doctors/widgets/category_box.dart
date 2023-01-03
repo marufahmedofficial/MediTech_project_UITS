@@ -10,8 +10,8 @@ class CategoryBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return  
       Container(
-        margin: EdgeInsets.only(right: 15),
-        padding: EdgeInsets.only(top: 20, bottom: 20, left: 30, right: 30),
+        margin: EdgeInsets.only(right: 8),
+        padding: EdgeInsets.only(top: 4, bottom: 4, left: 16, right: 16),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           color: Colors.white,
@@ -27,8 +27,8 @@ class CategoryBox extends StatelessWidget {
         
         child: Column(
           children: [
-            Icon(icon, size: 40, color: color,),
-            SizedBox(height: 10),
+            Icon(icon, size: 34, color: color,),
+            SizedBox(height: 5),
             Text(title, style: TextStyle(color: color),)
           ],
         ) 

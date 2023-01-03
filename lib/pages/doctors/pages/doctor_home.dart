@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import '../data/json.dart';
 import '../theme/colors.dart';
-import '../widgets/avatar_image.dart';
 import '../widgets/category_box.dart';
 import '../widgets/doctor_box.dart';
 import '../widgets/textbox.dart';
@@ -37,10 +36,8 @@ class _DoctorPageState extends State<DoctorPage> {
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(child: Text("Hi,", style: TextStyle(fontSize: 23, color: primary, fontWeight: FontWeight.w500),),),
-                SizedBox(height: 5,),
-                Container(child: Text("Let's Find Your Doctor", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),)),
-                SizedBox(height: 25,),
+                Container(child: Text("Hi, Let's Find Your Doctor", style: TextStyle(fontSize: 17, color: primary, fontWeight: FontWeight.w500),),),
+                SizedBox(height: 7),
                 Container(child: Text("Categories", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),)),
                 SizedBox(height:10),
                 SingleChildScrollView(
@@ -59,8 +56,7 @@ class _DoctorPageState extends State<DoctorPage> {
                     ],
                   ),
                 ),
-                SizedBox(height: 20,),
-                SizedBox(height: 25,),
+                SizedBox(height: 15,),
                 Container(child: Text("Popular Doctors", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),)),
                 SizedBox(height: 10),
                 SingleChildScrollView(
@@ -76,7 +72,7 @@ class _DoctorPageState extends State<DoctorPage> {
                                   Icon(Icons.filter_list_rounded, color: primary, size: 35,),
                                 ],
                               ),
-                              SizedBox(height: 20,),
+                              SizedBox(height: 5,),
                               getDoctorList()
                             ]
                         )

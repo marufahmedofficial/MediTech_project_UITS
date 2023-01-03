@@ -16,7 +16,7 @@ class CustomTextBox extends StatelessWidget {
           decoration: InputDecoration(
             prefixIcon: Icon(Icons.search, color: Colors.grey),
             border: InputBorder.none,
-            hintText: "Search",
+            hintText: "Search here",
             hintStyle: TextStyle(color: Colors.grey, fontSize: 17)),
         ),
       );
