@@ -12,6 +12,7 @@ import 'package:slide_digital_clock/slide_digital_clock.dart';
 import 'ambulance/ambulane.dart';
 import 'bmi/home_screen.dart';
 import 'covid19/covidmain.dart';
+import 'doctors/pages/doctor_home.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -745,6 +746,26 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Card(
+                shape: BeveledRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+                elevation: 6,
+                shadowColor: CupertinoColors.systemRed,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const DoctorPage()));
+                  },
+                  mouseCursor: MouseCursor.defer,
+                  splashColor: Colors.red.shade100,
+                  hoverColor: Colors.grey.shade200,
+                  child: _pageadd(
+                      image: 'assets/images/doctor.png', name: 'Doctors'),
+                ),
+              ),
+              Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25.0),
                 ),
@@ -760,23 +781,6 @@ class _HomePageState extends State<HomePage> {
                       image: 'assets/images/health.png', name: 'Health & Care'),
                 ),
               ),
-             Card(
-               shape: BeveledRectangleBorder(
-                 borderRadius: BorderRadius.circular(15.0),
-               ),
-               elevation: 6,
-               shadowColor: CupertinoColors.systemRed,
-               child: InkWell(
-                    onTap: () {
-
-                    },
-                    mouseCursor: MouseCursor.defer,
-                    splashColor: Colors.red.shade100,
-                    hoverColor: Colors.grey.shade200,
-                    child: _pageadd(
-                        image: 'assets/images/doctor.png', name: 'Doctors'),
-                  ),
-             ),
               Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25.0),
