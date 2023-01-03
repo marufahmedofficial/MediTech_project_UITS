@@ -37,27 +37,24 @@ class _WorldStatsScreenState extends State<WorldStatsScreen> {
     _wrRepo = Provider.of<WorldReportRepository>(context, listen: true);
     _crRepo = Provider.of<CountriesReportRepository>(context, listen: true);
 
-    return WillPopScope(
-      onWillPop: _onBackPressed,
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'Covid 19 Tracker',
-            style: Theme.of(context).textTheme.headline2!.copyWith(
-                  fontSize: _size!.height * 0.04,
-                ),
-          ),
-          automaticallyImplyLeading: false,
-          centerTitle: true,
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Covid 19 Tracker',
+          style: Theme.of(context).textTheme.headline2!.copyWith(
+                fontSize: _size!.height * 0.04,
+              ),
         ),
-        body: _wrRepo.worldReport == null || _crRepo.countriesReportList == null
-            ? const Center(
-                child: CircularProgressIndicator(
-                  color: MyColors.kCodGray,
-                ),
-              )
-            : _buildBody(),
+        automaticallyImplyLeading: false,
+        centerTitle: true,
       ),
+      body: _wrRepo.worldReport == null || _crRepo.countriesReportList == null
+          ? const Center(
+              child: CircularProgressIndicator(
+                color: MyColors.kCodGray,
+              ),
+            )
+          : _buildBody(),
     );
   }
 
@@ -390,39 +387,4 @@ class _WorldStatsScreenState extends State<WorldStatsScreen> {
     );
   }
 
-  // method, will be called when back button is pressed.
-  Future<bool> _onBackPressed() async {
-    return await showDialog(
-          context: context,
-          builder: (context) => AlertDialog(
-            title: Text(
-              'Are you sure?',
-              style: Theme.of(context).textTheme.headline4!,
-            ),
-            content: const Text('Do you want to exit an App'),
-            actions: <Widget>[
-              TextButton(
-                onPressed: () {
-                  Navigator.of(context).pop(false);
-                },
-                style: TextButton.styleFrom(
-                  foregroundColor: MyColors.kCodGray,
-                ),
-                child: const Text('No'),
-              ),
-              const SizedBox(height: 16),
-              TextButton(
-                onPressed: () {
-                  Navigator.of(context).pop(true);
-                },
-                style: TextButton.styleFrom(
-                  foregroundColor: MyColors.kCodGray,
-                ),
-                child: const Text('Yes'),
-              ),
-            ],
-          ),
-        ) ??
-        false;
-  }
 }
