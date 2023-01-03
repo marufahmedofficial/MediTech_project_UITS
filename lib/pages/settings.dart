@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:settings_ui/settings_ui.dart';
 
 class Settings extends StatefulWidget {
@@ -9,8 +10,13 @@ class Settings extends StatefulWidget {
   State<Settings> createState() => _SettingsState();
 }
 
+
+bool isDefault = true;
+bool isTrackColorSwitch = false;
+
 class _SettingsState extends State<Settings> {
   @override
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -63,7 +69,7 @@ class _SettingsState extends State<Settings> {
                               ),
                               CupertinoDialogAction(
                                 child: Text(
-                                  'Chaina',
+                                  'China',
                                   style: TextStyle(color: CupertinoColors.black, fontSize: 18),
                                 ),
                                 onPressed: () {
@@ -98,37 +104,6 @@ class _SettingsState extends State<Settings> {
                           ),
                         ));
 
-                   // showDialog(context: context, builder: (context) { return
-                   //   CupertinoAlertDialog(
-                   //     title: Text('Exit?',
-                   //         style: TextStyle(
-                   //             fontWeight: FontWeight.bold, fontSize: 18)),
-                   //     content: Text('Do you really want to Exit?',
-                   //         style: TextStyle(fontSize: 18)),
-                   //     actions: [
-                   //       CupertinoDialogAction(
-                   //         child: Text('Cancel',
-                   //             style: TextStyle(fontSize: 18)),
-                   //         onPressed: () {
-                   //           Navigator.pop(context); //close Dialog
-                   //         },
-                   //       ),
-                   //       CupertinoDialogAction(
-                   //           child: Text('Yes',
-                   //               style: TextStyle(
-                   //                   fontSize: 18,
-                   //                   color: Colors.red.shade700)),
-                   //           onPressed: () {
-                   //             if (Platform.isAndroid) {
-                   //               SystemNavigator.pop();
-                   //             } else if (Platform.isIOS) {
-                   //               exit(0);
-                   //             }
-                   //           })
-                   //     ],
-                   //   );
-                   // },
-                   // );
                   },
                   leading: Icon(Icons.language),
                   title: Text('Language'),
@@ -138,12 +113,28 @@ class _SettingsState extends State<Settings> {
                   onToggle: (value) {},
                   initialValue: false,
                   leading: Icon(Icons.format_paint),
+                  trailing: CupertinoSwitch(
+                  value: isTrackColorSwitch,
+                  trackColor: getColorFromHex('#f2866c'),
+                  activeColor: getColorFromHex('#8998FF'),
+                    onChanged: (bool val) {
+                     isTrackColorSwitch = val;
+                       setState(() {});
+                       },
+                  ),
                   title: Text('Enable Dark theme'),
                 ),
                 SettingsTile.switchTile(
                   onToggle: (value) {},
                   initialValue: true,
                   leading: Icon(Icons.notifications_active_rounded),
+                  trailing:CupertinoSwitch(
+                     value: isDefault,
+                   onChanged: (bool val) {
+                 isDefault = val;
+                 setState(() {});
+                 },
+                  ),
                   title: Text('Enable Notifications'),
                 ),
               ],
