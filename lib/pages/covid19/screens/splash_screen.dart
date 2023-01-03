@@ -86,7 +86,7 @@ class _SplashScreenState extends State<SplashScreen>
         width: size.height * 0.20,
         height: size.height * 0.20,
         child: Image.asset(
-          r'assets/images/virus.png',
+          r'assets/images/virus1.png',
           fit: BoxFit.cover,
         ),
       ),

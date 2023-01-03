@@ -14,7 +14,6 @@ import 'package:slide_digital_clock/slide_digital_clock.dart';
 
 import 'bmi/home_screen.dart';
 import 'covid19/covidmain.dart';
-import 'covid19/screens/world_stats_screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -595,6 +594,26 @@ class _HomePageState extends State<HomePage> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
+                            builder: (context) => const CovidMain()));
+                  },
+                  mouseCursor: MouseCursor.defer,
+                  splashColor: Colors.red.shade100,
+                  hoverColor: Colors.grey.shade200,
+                  child: _pageadd(
+                      image: 'assets/images/covid19.png', name: 'Covid Tracker'),
+                ),
+              ),
+              Card(
+                shape: BeveledRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+                elevation: 6,
+                shadowColor: CupertinoColors.systemRed,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
                             builder: (context) => const BloodMain()));
                   },
                   mouseCursor: MouseCursor.defer,
@@ -664,10 +683,7 @@ class _HomePageState extends State<HomePage> {
                shadowColor: CupertinoColors.systemRed,
                child: InkWell(
                     onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const CovidMain()));
+
                     },
                     mouseCursor: MouseCursor.defer,
                     splashColor: Colors.red.shade100,
