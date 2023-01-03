@@ -31,13 +31,13 @@ class _SettingsState extends State<Settings> {
                 ),
                 SettingsTile.switchTile(
                   onToggle: (value) {},
-                  initialValue: true,
+                  initialValue: false,
                   leading: Icon(Icons.format_paint),
                   title: Text('Enable Dark theme'),
                 ),
                 SettingsTile.switchTile(
                   onToggle: (value) {},
-                  initialValue: false,
+                  initialValue: true,
                   leading: Icon(Icons.notifications_active_rounded),
                   title: Text('Enable Notifications'),
                 ),
