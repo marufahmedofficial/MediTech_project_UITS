@@ -1,14 +1,11 @@
-import 'package:badges/badges.dart';
-import 'package:doctor_app/data/json.dart';
-import 'package:doctor_app/theme/colors.dart';
-import 'package:doctor_app/widgets/category_box.dart';
-import 'package:doctor_app/widgets/popular_doctor.dart';
-import 'package:doctor_app/widgets/textbox.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-
+import '../data/json.dart';
+import '../theme/colors.dart';
 import '../widgets/avatar_image.dart';
+import '../widgets/category_box.dart';
 import '../widgets/doctor_box.dart';
+import '../widgets/textbox.dart';
 import 'doctor_profile_page.dart';
 
 class DoctorPage extends StatefulWidget {
@@ -23,7 +20,7 @@ class _DoctorPageState extends State<DoctorPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: appBgColor,
+      backgroundColor: appBgColor,
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
@@ -43,8 +40,6 @@ class _DoctorPageState extends State<DoctorPage> {
                 Container(child: Text("Hi,", style: TextStyle(fontSize: 23, color: primary, fontWeight: FontWeight.w500),),),
                 SizedBox(height: 5,),
                 Container(child: Text("Let's Find Your Doctor", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),)),
-                SizedBox(height: 15,),
-                CustomTextBox(),
                 SizedBox(height: 25,),
                 Container(child: Text("Categories", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),)),
                 SizedBox(height:10),
@@ -80,24 +75,6 @@ class _DoctorPageState extends State<DoctorPage> {
                                   SizedBox(width: 5,),
                                   Icon(Icons.filter_list_rounded, color: primary, size: 35,),
                                 ],
-                              ),
-                              SizedBox(height: 20,),
-                              SingleChildScrollView(
-                                scrollDirection: Axis.horizontal,
-                                child: Row(
-                                    children: List.generate(chatsData.length, (index) =>
-                                        Padding(
-                                          padding: const EdgeInsets.only(right: 10),
-                                          child: Badge(
-                                              badgeColor: Colors.green,
-                                              borderSide: BorderSide(color: Colors.white),
-                                              position: BadgePosition.topEnd(top: -3, end: 0),
-                                              badgeContent: Text(''),
-                                              child: AvatarImage(chatsData[index]["image"].toString())
-                                          ),
-                                        )
-                                    )
-                                ),
                               ),
                               SizedBox(height: 20,),
                               getDoctorList()
