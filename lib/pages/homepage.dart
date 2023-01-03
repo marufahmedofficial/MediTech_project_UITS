@@ -1,17 +1,15 @@
 import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:meditech/pages/blood/blood_mainscreen.dart';
 import 'package:meditech/pages/disease/mainscreen.dart';
 import 'package:meditech/pages/hospital/hospital.dart';
 import 'package:meditech/pages/settings.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:slide_digital_clock/slide_digital_clock.dart';
-
+import 'ambulance/ambulane.dart';
 import 'bmi/home_screen.dart';
 import 'covid19/covidmain.dart';
 
@@ -734,41 +732,10 @@ class _HomePageState extends State<HomePage> {
                 shadowColor: CupertinoColors.systemRed,
                 child: InkWell(
                   onTap: () {
-                    showDialog(
-                        context: context,
-                        builder: (context) =>
-                    AlertDialog(
-                      backgroundColor: CupertinoColors.systemBackground,
-                      content: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("Hold On", style: TextStyle(fontWeight: FontWeight.bold,color:CupertinoColors.systemBlue)),
-                          SizedBox(height: 16,),
-                          Text(
-                            "Please ! Hold on.\nMore features coming  soon....",
-                            style: TextStyle(fontSize: 14,color: CupertinoColors.black),
-                          ),
-                          SizedBox(height: 16,),
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.of(context).pop();
-                            },
-                            child: Align(
-                              alignment: Alignment.topRight,
-                              child: Container(
-                                decoration: BoxDecoration(color: CupertinoColors.systemRed, borderRadius: BorderRadius.circular(10)),
-                                padding: EdgeInsets.fromLTRB(16, 8, 16, 8),
-                                child: Text("Ok", style: TextStyle(color: Colors.white, fontSize: 16.0), ),
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                      contentPadding: EdgeInsets.fromLTRB(16, 16, 16, 16),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(topRight: Radius.circular(50), bottomLeft: Radius.circular(50))),
-                    ));
-
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>  AmbulanceList()));
                   },
                   mouseCursor: MouseCursor.defer,
                   splashColor: Colors.red.shade100,
