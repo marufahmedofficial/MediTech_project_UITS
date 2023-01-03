@@ -13,6 +13,8 @@ import 'package:share_plus/share_plus.dart';
 import 'package:slide_digital_clock/slide_digital_clock.dart';
 
 import 'bmi/home_screen.dart';
+import 'covid19/covidmain.dart';
+import 'covid19/screens/world_stats_screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -496,195 +498,238 @@ class _HomePageState extends State<HomePage> {
       ),
 
       // backgroundColor: Colors.white,
-      body: Padding(
-        padding: const EdgeInsets.all(30.0),
+      body: WillPopScope(
+          onWillPop: () async {
+            final shouldPop = await showDialog<bool>(
+              context: context,
+              builder: (context) {
+                return CupertinoAlertDialog(
+                  title: Text('Exit?',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 18)),
+                  content: Text('Do you really want to Exit?',
+                      style: TextStyle(fontSize: 18)),
+                  actions: [
+                    CupertinoDialogAction(
+                      child: Text('Cancel',
+                          style: TextStyle(fontSize: 18)),
+                      onPressed: () {
+                        Navigator.pop(context); //close Dialog
+                      },
+                    ),
+                    CupertinoDialogAction(
+                        child: Text('Yes',
+                            style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.red.shade700)),
+                        onPressed: () {
+                          if (Platform.isAndroid) {
+                            SystemNavigator.pop();
+                          } else if (Platform.isIOS) {
+                            exit(0);
+                          }
+                        })
+                  ],
+                );
+              },
+            );
+            return shouldPop!;
+          },
+        child: Padding(
+          padding: const EdgeInsets.all(30.0),
 
-        child: GridView.count(
-          crossAxisCount: 2,
-          crossAxisSpacing: 15,
-          mainAxisSpacing: 20,
-          childAspectRatio: 1.20,
-          children: [
-            Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(25.0),
+          child: GridView.count(
+            crossAxisCount: 2,
+            crossAxisSpacing: 15,
+            mainAxisSpacing: 20,
+            childAspectRatio: 1.20,
+            children: [
+              Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(25.0),
+                ),
+                elevation: 6,
+                shadowColor: CupertinoColors.systemRed,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const HomeScreenBMI()));
+                  },
+                  mouseCursor: MouseCursor.defer,
+                  splashColor: Colors.red.shade100,
+                  hoverColor: Colors.grey.shade200,
+                  child: _pageadd(
+                      image: 'assets/images/bmi1.png', name: 'BMI Calculator'),
+                ),
               ),
-              elevation: 6,
-              shadowColor: CupertinoColors.systemRed,
-              child: InkWell(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const HomeScreenBMI()));
-                },
-                mouseCursor: MouseCursor.defer,
-                splashColor: Colors.red.shade100,
-                hoverColor: Colors.grey.shade200,
-                child: _pageadd(
-                    image: 'assets/images/bmi1.png', name: 'BMI Calculator'),
+              Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(25.0),
+                ),
+                elevation: 6,
+                shadowColor: CupertinoColors.systemRed,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const DiseaseMain()));
+                  },
+                  mouseCursor: MouseCursor.defer,
+                  splashColor: Colors.red.shade100,
+                  hoverColor: Colors.grey.shade200,
+                  child: _pageadd(
+                      image: 'assets/images/desease.png', name: 'Disease'),
+                ),
               ),
-            ),
-            Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(25.0),
+              Card(
+                shape: BeveledRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+                elevation: 6,
+                shadowColor: CupertinoColors.systemRed,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const BloodMain()));
+                  },
+                  mouseCursor: MouseCursor.defer,
+                  splashColor: Colors.red.shade100,
+                  hoverColor: Colors.grey.shade200,
+                  child: _pageadd(
+                      image: 'assets/images/b_donation.png',
+                      name: 'Blood Bank'),
+                ),
               ),
-              elevation: 6,
-              shadowColor: CupertinoColors.systemRed,
-              child: InkWell(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const DiseaseMain()));
-                },
-                mouseCursor: MouseCursor.defer,
-                splashColor: Colors.red.shade100,
-                hoverColor: Colors.grey.shade200,
-                child: _pageadd(
-                    image: 'assets/images/desease.png', name: 'Disease'),
+              Card(
+                shape: BeveledRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+                elevation: 6,
+                shadowColor: CupertinoColors.systemRed,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const BloodMain()));
+                  },
+                  mouseCursor: MouseCursor.defer,
+                  splashColor: Colors.red.shade100,
+                  hoverColor: Colors.grey.shade200,
+                  child: _pageadd(
+                      image: 'assets/images/blood-donation.png',
+                      name: 'Blood Donate'),
+                ),
               ),
-            ),
-            Card(
-              shape: BeveledRectangleBorder(
-                borderRadius: BorderRadius.circular(15.0),
-              ),
-              elevation: 6,
-              shadowColor: CupertinoColors.systemRed,
-              child: InkWell(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const BloodMain()));
-                },
-                mouseCursor: MouseCursor.defer,
-                splashColor: Colors.red.shade100,
-                hoverColor: Colors.grey.shade200,
-                child: _pageadd(
-                    image: 'assets/images/b_donation.png',
-                    name: 'Blood Bank'),
-              ),
-            ),
-            Card(
-              shape: BeveledRectangleBorder(
-                borderRadius: BorderRadius.circular(15.0),
-              ),
-              elevation: 6,
-              shadowColor: CupertinoColors.systemRed,
-              child: InkWell(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const BloodMain()));
-                },
-                mouseCursor: MouseCursor.defer,
-                splashColor: Colors.red.shade100,
-                hoverColor: Colors.grey.shade200,
-                child: _pageadd(
-                    image: 'assets/images/blood-donation.png',
-                    name: 'Blood Donate'),
-              ),
-            ),
-            Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(25.0),
-              ),
-              elevation: 6,
-              shadowColor: CupertinoColors.systemRed,
-              child: InkWell(
-                onTap: () {},
-                mouseCursor: MouseCursor.defer,
-                splashColor: Colors.red.shade100,
-                hoverColor: Colors.grey.shade200,
-                child: _pageadd(
-                    image: 'assets/images/ambulance.png', name: 'Ambulance'),
-              ),
-            ),
-            Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(25.0),
-              ),
-              elevation: 6,
-              shadowColor: CupertinoColors.systemRed,
-              child: InkWell(
-                onTap: () {},
-                mouseCursor: MouseCursor.defer,
-                splashColor: Colors.red.shade100,
-                hoverColor: Colors.grey.shade200,
-                child: _pageadd(
-                    image: 'assets/images/health.png', name: 'Health & Care'),
-              ),
-            ),
-           Card(
-             shape: BeveledRectangleBorder(
-               borderRadius: BorderRadius.circular(15.0),
-             ),
-             elevation: 6,
-             shadowColor: CupertinoColors.systemRed,
-             child: InkWell(
+              Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(25.0),
+                ),
+                elevation: 6,
+                shadowColor: CupertinoColors.systemRed,
+                child: InkWell(
                   onTap: () {},
                   mouseCursor: MouseCursor.defer,
                   splashColor: Colors.red.shade100,
                   hoverColor: Colors.grey.shade200,
                   child: _pageadd(
-                      image: 'assets/images/doctor.png', name: 'Doctors'),
+                      image: 'assets/images/ambulance.png', name: 'Ambulance'),
                 ),
-           ),
-            Card(
-              shape: BeveledRectangleBorder(
-                borderRadius: BorderRadius.circular(15.0),
               ),
-              elevation: 6,
-              shadowColor: CupertinoColors.systemRed,
-              child: InkWell(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => Hospital()));
-                },
-                mouseCursor: MouseCursor.defer,
-                splashColor: Colors.red.shade100,
-                hoverColor: Colors.grey.shade200,
-                child: _pageadd(
-                    image: 'assets/images/hospital.png', name: 'Hospital'),
+              Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(25.0),
+                ),
+                elevation: 6,
+                shadowColor: CupertinoColors.systemRed,
+                child: InkWell(
+                  onTap: () {},
+                  mouseCursor: MouseCursor.defer,
+                  splashColor: Colors.red.shade100,
+                  hoverColor: Colors.grey.shade200,
+                  child: _pageadd(
+                      image: 'assets/images/health.png', name: 'Health & Care'),
+                ),
               ),
-            ),
-            Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(25.0),
+             Card(
+               shape: BeveledRectangleBorder(
+                 borderRadius: BorderRadius.circular(15.0),
+               ),
+               elevation: 6,
+               shadowColor: CupertinoColors.systemRed,
+               child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const CovidMain()));
+                    },
+                    mouseCursor: MouseCursor.defer,
+                    splashColor: Colors.red.shade100,
+                    hoverColor: Colors.grey.shade200,
+                    child: _pageadd(
+                        image: 'assets/images/doctor.png', name: 'Doctors'),
+                  ),
+             ),
+              Card(
+                shape: BeveledRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+                elevation: 6,
+                shadowColor: CupertinoColors.systemRed,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Hospital()));
+                  },
+                  mouseCursor: MouseCursor.defer,
+                  splashColor: Colors.red.shade100,
+                  hoverColor: Colors.grey.shade200,
+                  child: _pageadd(
+                      image: 'assets/images/hospital.png', name: 'Hospital'),
+                ),
               ),
-              elevation: 6,
-              shadowColor: CupertinoColors.systemRed,
-              child: InkWell(
-                onTap: () {},
-                mouseCursor: MouseCursor.defer,
-                splashColor: Colors.red.shade100,
-                hoverColor: Colors.grey.shade200,
-                child: _pageadd(
-                    image: 'assets/images/medicine.png', name: 'Medicine'),
+              Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(25.0),
+                ),
+                elevation: 6,
+                shadowColor: CupertinoColors.systemRed,
+                child: InkWell(
+                  onTap: () {},
+                  mouseCursor: MouseCursor.defer,
+                  splashColor: Colors.red.shade100,
+                  hoverColor: Colors.grey.shade200,
+                  child: _pageadd(
+                      image: 'assets/images/medicine.png', name: 'Medicine'),
+                ),
               ),
-            ),
-            Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(25.0),
+              Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(25.0),
+                ),
+                elevation: 6,
+                shadowColor: CupertinoColors.systemRed,
+                child: InkWell(
+                  onTap: () {},
+                  mouseCursor: MouseCursor.defer,
+                  splashColor: Colors.red.shade100,
+                  hoverColor: Colors.grey.shade200,
+                  child: _pageadd(
+                      image: 'assets/images/calories.png', name: 'Food & Calories'),
+                ),
               ),
-              elevation: 6,
-              shadowColor: CupertinoColors.systemRed,
-              child: InkWell(
-                onTap: () {},
-                mouseCursor: MouseCursor.defer,
-                splashColor: Colors.red.shade100,
-                hoverColor: Colors.grey.shade200,
-                child: _pageadd(
-                    image: 'assets/images/calories.png', name: 'Food & Calories'),
-              ),
-            ),
-          ],
-        ),
+            ],
+          ),
 
+        ),
       ),
 
     );

@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:settings_ui/settings_ui.dart';
 
 class Settings extends StatefulWidget {
@@ -25,6 +28,39 @@ class _SettingsState extends State<Settings> {
               title: Text('Common'),
               tiles: <SettingsTile>[
                 SettingsTile.navigation(
+                  onPressed: (context) {
+                   // showDialog(context: context, builder: (context) { return
+                   //   CupertinoAlertDialog(
+                   //     title: Text('Exit?',
+                   //         style: TextStyle(
+                   //             fontWeight: FontWeight.bold, fontSize: 18)),
+                   //     content: Text('Do you really want to Exit?',
+                   //         style: TextStyle(fontSize: 18)),
+                   //     actions: [
+                   //       CupertinoDialogAction(
+                   //         child: Text('Cancel',
+                   //             style: TextStyle(fontSize: 18)),
+                   //         onPressed: () {
+                   //           Navigator.pop(context); //close Dialog
+                   //         },
+                   //       ),
+                   //       CupertinoDialogAction(
+                   //           child: Text('Yes',
+                   //               style: TextStyle(
+                   //                   fontSize: 18,
+                   //                   color: Colors.red.shade700)),
+                   //           onPressed: () {
+                   //             if (Platform.isAndroid) {
+                   //               SystemNavigator.pop();
+                   //             } else if (Platform.isIOS) {
+                   //               exit(0);
+                   //             }
+                   //           })
+                   //     ],
+                   //   );
+                   // },
+                   // );
+                  },
                   leading: Icon(Icons.language),
                   title: Text('Language'),
                   value: Text('English'),

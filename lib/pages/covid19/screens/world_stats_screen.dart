@@ -364,9 +364,7 @@ class _WorldStatsScreenState extends State<WorldStatsScreen> {
               );
             },
             style: ElevatedButton.styleFrom(
-              enableFeedback: true,
-              primary: MyColors.kCodGray,
-              onPrimary: MyColors.kPorcelain,
+              foregroundColor: MyColors.kPorcelain, backgroundColor: MyColors.kCodGray, enableFeedback: true,
               fixedSize: const Size.fromWidth(double.infinity),
             ),
             child: Text(
@@ -407,7 +405,7 @@ class _WorldStatsScreenState extends State<WorldStatsScreen> {
                   Navigator.of(context).pop(false);
                 },
                 style: TextButton.styleFrom(
-                  primary: MyColors.kCodGray,
+                  foregroundColor: MyColors.kCodGray,
                 ),
                 child: const Text('No'),
               ),
@@ -417,7 +415,7 @@ class _WorldStatsScreenState extends State<WorldStatsScreen> {
                   Navigator.of(context).pop(true);
                 },
                 style: TextButton.styleFrom(
-                  primary: MyColors.kCodGray,
+                  foregroundColor: MyColors.kCodGray,
                 ),
                 child: const Text('Yes'),
               ),
