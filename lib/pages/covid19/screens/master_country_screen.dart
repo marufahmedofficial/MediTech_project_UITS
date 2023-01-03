@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart' as intl;
+import 'package:meditech/pages/homepage.dart';
 import 'package:provider/provider.dart';
 
 import '../models/country_report.dart';
@@ -38,9 +39,11 @@ class _MasterCountryScreenState extends State<MasterCountryScreen> {
         automaticallyImplyLeading: true,
         centerTitle: true,
       ),
+
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: _size!.height * 0.03),
         child: _buildBody(context),
+
       ),
     );
   }
@@ -142,8 +145,35 @@ class _MasterCountryScreenState extends State<MasterCountryScreen> {
           'Today Recovered',
           formatter.format(countryReport.todayRecovered),
         ),
+        SizedBox(
+          height: 15,
+        ),
+        ElevatedButton(
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => const HomePage(),
+              ),
+            );
+          },
+          style: ElevatedButton.styleFrom(
+              foregroundColor: MyColors.kPorcelain, backgroundColor: Colors.red.shade900, enableFeedback: true,
+              fixedSize: const Size.fromWidth(double.infinity),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40))
+          ),
+          child: Text(
+            'Back to Home',
+            style: Theme.of(context).textTheme.headline4!.copyWith(
+                fontSize: _size!.height * 0.02,
+                color: MyColors.kPorcelain,fontWeight: FontWeight.bold
+            ),
+          ),
+        )
+
       ],
+
     );
+
   }
 
   Widget _buildReportItem(String title, String count) {
@@ -155,6 +185,7 @@ class _MasterCountryScreenState extends State<MasterCountryScreen> {
           _buildReportText(count),
         ],
       ),
+
     );
   }
 
@@ -175,4 +206,6 @@ class _MasterCountryScreenState extends State<MasterCountryScreen> {
       endIndent: _size!.height * 0.08,
     );
   }
+
+
 }
