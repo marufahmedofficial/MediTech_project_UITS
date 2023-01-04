@@ -424,7 +424,12 @@ class _HomePageState extends State<HomePage> {
         splashColor: Colors.redAccent,
         hoverColor: Colors.black54,
 
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const DoctorPage()));
+        },
         child: Center(
             child: Image.asset('assets/images/playstore.png')),
         // Icon(Icons.medical_information),
@@ -448,7 +453,9 @@ class _HomePageState extends State<HomePage> {
           mainAxisSize: MainAxisSize.max,
           children: [
             InkWell(
-              onTap: () {},
+              onTap: () {
+
+              },
               child: Padding(
                 padding: const EdgeInsets.only(left: 10.0, right: 10),
                 child: Column(
@@ -622,6 +629,46 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(25.0),
+                ),
+                elevation: 6,
+                shadowColor: CupertinoColors.systemRed,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>  AmbulanceList()));
+                  },
+                  mouseCursor: MouseCursor.defer,
+                  splashColor: Colors.red.shade100,
+                  hoverColor: Colors.grey.shade200,
+                  child: _pageadd(
+                      image: 'assets/images/ambulance.png', name: 'Ambulance'),
+                ),
+              ),
+              Card(
+                shape: BeveledRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+                elevation: 6,
+                shadowColor: CupertinoColors.systemRed,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const DoctorPage()));
+                  },
+                  mouseCursor: MouseCursor.defer,
+                  splashColor: Colors.red.shade100,
+                  hoverColor: Colors.grey.shade200,
+                  child: _pageadd(
+                      image: 'assets/images/doctor.png', name: 'Doctors'),
+                ),
+              ),
+              Card(
                 shape: BeveledRectangleBorder(
                   borderRadius: BorderRadius.circular(15.0),
                 ),
@@ -725,46 +772,7 @@ class _HomePageState extends State<HomePage> {
                       name: 'Blood Donate'),
                 ),
               ),
-              Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(25.0),
-                ),
-                elevation: 6,
-                shadowColor: CupertinoColors.systemRed,
-                child: InkWell(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>  AmbulanceList()));
-                  },
-                  mouseCursor: MouseCursor.defer,
-                  splashColor: Colors.red.shade100,
-                  hoverColor: Colors.grey.shade200,
-                  child: _pageadd(
-                      image: 'assets/images/ambulance.png', name: 'Ambulance'),
-                ),
-              ),
-              Card(
-                shape: BeveledRectangleBorder(
-                  borderRadius: BorderRadius.circular(15.0),
-                ),
-                elevation: 6,
-                shadowColor: CupertinoColors.systemRed,
-                child: InkWell(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const DoctorPage()));
-                  },
-                  mouseCursor: MouseCursor.defer,
-                  splashColor: Colors.red.shade100,
-                  hoverColor: Colors.grey.shade200,
-                  child: _pageadd(
-                      image: 'assets/images/doctor.png', name: 'Doctors'),
-                ),
-              ),
+
               Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25.0),

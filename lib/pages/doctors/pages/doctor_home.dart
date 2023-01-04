@@ -32,6 +32,8 @@ class _DoctorPageState extends State<DoctorPage> {
         elevation: 0,
         backgroundColor: Colors.transparent,
       ),
+
+
       body: getBody(),
     );
   }
@@ -54,13 +56,14 @@ class _DoctorPageState extends State<DoctorPage> {
                   child: Row(
                     children: [
                       CategoryBox(title: "Heart", icon: Icons.favorite, color: Colors.red, ),
-                      CategoryBox(title: "Medical", icon: Icons.local_hospital, color: Colors.blue, ),
+                      CategoryBox(title: "Urologist", icon: Icons.local_hospital, color: Colors.blue, ),
                       CategoryBox(title: "Dental", icon: Icons.details_rounded, color: Colors.purple, ),
                       CategoryBox(title: "Healing", icon: Icons.healing_outlined, color: Colors.green, ),
-                      CategoryBox(title: "Heart", icon: Icons.favorite, color: Colors.red, ),
-                      CategoryBox(title: "Medical", icon: Icons.local_hospital, color: Colors.blue, ),
-                      CategoryBox(title: "Dental", icon: Icons.details_rounded, color: Colors.purple, ),
-                      CategoryBox(title: "Healing", icon: Icons.healing_outlined, color: Colors.green, ),
+                      CategoryBox(title: "Cardiologist", icon: Icons.ac_unit_sharp, color: Colors.amber, ),
+                      CategoryBox(title: "Neurologist", icon: CupertinoIcons.ant, color: Colors.red.shade900, ),
+                      CategoryBox(title: "Oncologist", icon: Icons.adb_outlined, color: Colors.indigoAccent, ),
+                      CategoryBox(title: "Osteopaths", icon: Icons.accessibility_new, color: Colors.orangeAccent, ),
+                      CategoryBox(title: "Pathologist", icon: Icons.accessible_rounded, color: Colors.pinkAccent, ),
                     ],
                   ),
                 ),
