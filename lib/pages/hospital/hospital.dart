@@ -77,11 +77,11 @@ class HospitalState extends State<Hospital> {
                     children: [
                       IconButton(
                         onPressed: () { },
-                        icon: Icon(CupertinoIcons.location_solid),
+                        icon: Icon(CupertinoIcons.location_solid,color: CupertinoColors.systemTeal),
                       ),
                       IconButton(
                         onPressed: () {},
-                        icon: Icon(CupertinoIcons.phone),
+                        icon: Icon(CupertinoIcons.phone,color: CupertinoColors.systemRed),
                       ),
                     ],
                   ),
@@ -133,11 +133,11 @@ class HospitalState extends State<Hospital> {
                   children: [
                     IconButton(
                       onPressed: () { },
-                      icon: Icon(CupertinoIcons.location_solid),
+                      icon: Icon(CupertinoIcons.location_solid,color: CupertinoColors.systemTeal),
                     ),
                     IconButton(
                       onPressed: () {},
-                      icon: Icon(CupertinoIcons.phone),
+                      icon: Icon(CupertinoIcons.phone,color: CupertinoColors.systemRed),
                     ),
                   ],
                 ),
@@ -189,11 +189,11 @@ class HospitalState extends State<Hospital> {
                   children: [
                     IconButton(
                       onPressed: () { },
-                      icon: Icon(CupertinoIcons.location_solid),
+                      icon: Icon(CupertinoIcons.location_solid,color: CupertinoColors.systemTeal),
                     ),
                     IconButton(
                       onPressed: () {},
-                      icon: Icon(CupertinoIcons.phone),
+                      icon: Icon(CupertinoIcons.phone,color: CupertinoColors.systemRed),
                     ),
                   ],
                 ),
