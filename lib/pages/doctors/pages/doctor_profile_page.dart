@@ -23,11 +23,12 @@ class _DoctorProfilePageState extends State<DoctorProfilePage> {
         iconTheme: IconThemeData(color: Colors.black),
         backgroundColor: Colors.transparent,
         elevation: 0,
+        centerTitle: true,
         title: Text("Doctor's Profile", style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600),),
       ),
       body: getBody(),
       floatingActionButton: Padding(
-        padding: const EdgeInsets.only(left: 20, right: 20),
+        padding: const EdgeInsets.only(left: 40, right:40,bottom: 6),
         child: MyButton(
           disableButton: false,
           bgColor: primary,
@@ -47,8 +48,8 @@ class _DoctorProfilePageState extends State<DoctorProfilePage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text("Patient time 8:00am - 5:00pm", style: TextStyle(fontSize: 13, color: Colors.green)),
-          SizedBox(height: 25, ),
+          Text("Patient time : 8:00am - 10:00pm", style: TextStyle(fontSize: 15, color: Colors.green)),
+          SizedBox(height: 19),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,

@@ -16,7 +16,7 @@ class MyButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return 
+    return
       AbsorbPointer(
         absorbing: disableButton,
         child: GestureDetector(
@@ -25,6 +25,7 @@ class MyButton extends StatelessWidget {
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(13),
+                // ignore: deprecated_member_use
                 color: disableButton ? Theme.of(context).buttonColor.withOpacity(0.3) : bgColor,
                 boxShadow: [
                   BoxShadow(
@@ -42,7 +43,7 @@ class MyButton extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: isLoading ?
-                  [SizedBox(width: 20, height: 20, child: CircularProgressIndicator(color: Colors.white, strokeWidth: 3,))] : 
+                  [SizedBox(width: 20, height: 20, child: CircularProgressIndicator(color: Colors.white, strokeWidth: 3,))] :
                   (icon == null) ?
                     [
                       Text(title, style: TextStyle(color: disableButton ? Colors.white.withOpacity(0.3) : Colors.white, fontWeight: FontWeight.w600),)

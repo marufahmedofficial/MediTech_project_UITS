@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import '../data/json.dart';
@@ -69,7 +70,7 @@ class _DoctorPageState extends State<DoctorPage> {
                                 children: [
                                   Expanded(child: CustomTextBox()),
                                   SizedBox(width: 5,),
-                                  Icon(Icons.filter_list_rounded, color: primary, size: 35,),
+                                  Icon(CupertinoIcons.arrow_up_arrow_down, color: primary, size: 30,),
                                 ],
                               ),
                               SizedBox(height: 5,),

@@ -13,8 +13,8 @@ class DoctorInfoBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: 150,
-        height: 150,
+        width: 140,
+        height: 140,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(30),
