@@ -649,8 +649,8 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Card(
-                shape: BeveledRectangleBorder(
-                  borderRadius: BorderRadius.circular(15.0),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(25.0),
                 ),
                 elevation: 6,
                 shadowColor: CupertinoColors.systemRed,
