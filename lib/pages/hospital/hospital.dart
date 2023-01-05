@@ -77,11 +77,11 @@ class HospitalState extends State<Hospital> {
                     children: [
                       IconButton(
                         onPressed: () { },
-                        icon: Icon(CupertinoIcons.location_solid),
+                        icon: Icon(CupertinoIcons.location_solid,color:Colors.cyan ,),
                       ),
                       IconButton(
                         onPressed: () {},
-                        icon: Icon(CupertinoIcons.phone),
+                        icon: Icon(CupertinoIcons.phone,color: Colors.redAccent,),
                       ),
                     ],
                   ),
@@ -132,13 +132,14 @@ class HospitalState extends State<Hospital> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     IconButton(
-                      onPressed: () { },
-                      icon: Icon(CupertinoIcons.location_solid),
-                    ),
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(CupertinoIcons.phone),
-                    ),
+                    onPressed: () { },
+                icon: Icon(CupertinoIcons.location_solid,color:Colors.cyan ,),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: Icon(CupertinoIcons.phone,color: Colors.redAccent,),
+              ),
+
                   ],
                 ),
               ),
@@ -177,7 +178,7 @@ class HospitalState extends State<Hospital> {
             child: Padding(
               padding: const EdgeInsets.only(top: 2,bottom: 3,right: 1,left: 1),
               child: ListTile(
-                title: Text('DNCC                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      Covid-19 Hospital',
+                title: Text('DNCC Covid-19 Hospital',
                   //textAlign: TextAlign.center,
                   style: TextStyle(
                       fontSize: 14
@@ -189,11 +190,11 @@ class HospitalState extends State<Hospital> {
                   children: [
                     IconButton(
                       onPressed: () { },
-                      icon: Icon(CupertinoIcons.location_solid),
+                      icon: Icon(CupertinoIcons.location_solid,color:Colors.cyan ,),
                     ),
                     IconButton(
                       onPressed: () {},
-                      icon: Icon(CupertinoIcons.phone),
+                      icon: Icon(CupertinoIcons.phone,color: Colors.redAccent,),
                     ),
                   ],
                 ),

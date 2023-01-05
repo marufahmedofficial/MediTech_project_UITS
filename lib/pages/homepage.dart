@@ -9,6 +9,7 @@ import 'package:meditech/pages/settings.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:slide_digital_clock/slide_digital_clock.dart';
+import 'about.dart';
 import 'ambulance/ambulane.dart';
 import 'bmi/home_screen.dart';
 import 'covid19/covidmain.dart';
@@ -323,16 +324,24 @@ class _HomePageState extends State<HomePage> {
                   height: 15,
                 ),
                 Row(
-                  children: const [
+                  children:[
                     Icon(
                       CupertinoIcons.info_circle,
                       color: Colors.red,
                       size: 40,
                     ),
                     SizedBox(width: 50),
-                    Text('About',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w500, fontSize: 17)),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => AboutPage()));
+                      },
+                      child: Text('About',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500, fontSize: 17)),
+                    ),
                   ],
                 ),
                 const Divider(),
