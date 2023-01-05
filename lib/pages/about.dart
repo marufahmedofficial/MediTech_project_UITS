@@ -21,7 +21,7 @@ class _AboutPageState extends State<AboutPage> {
 
               radius: 70.0,
             ),
-            Text('Huzaifa Abubakr',
+            Text('Name of Your',
               style: TextStyle(
                 fontFamily: 'Pacifico',
                 color: Colors.white,
