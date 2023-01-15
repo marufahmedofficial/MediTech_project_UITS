@@ -1,79 +1,47 @@
 import 'package:flutter/material.dart';
-import 'package:nb_utils/nb_utils.dart';
+import 'package:nb_utils/nb_utils.dart';  //https://pub.dev/packages/nb_utils
 
 class BloodMain extends StatefulWidget {
+
   @override
   BloodMainState createState() => BloodMainState();
 }
 
 class BloodMainState extends State<BloodMain> {
-  late bool sort;
-  List<user> userdetails1 = [
-    user(
-        no: '1',
-        name: 'Maruf',
-        group: 'O+',
-        location: 'Badda,Dhaka',
-        phone: '17293773'),
-    user(
-        no: '2',
-        name: 'Murtoza Likhon',
-        group: 'O-',
-        location: 'Badda,Dhaka',
-        phone: '17293773'),
-    user(
-        no: '3',
-        name: 'Fahad',
-        group: 'AB+',
-        location: 'Gulshan,Dhaka',
-        phone: '17293773'),
-  ];
   List<user> userdetails = [
     user(
-        no: '1',
-        name: 'Maruf',
-        group: 'O+',
-        location: 'Badda,Dhaka',
-        phone: '17293773'),
-    user(
-        no: '2',
-        name: 'Murtoza Likhon',
-        group: 'O-',
-        location: 'Badda,Dhaka',
-        phone: '17293773'),
-    user(
-        no: '3',
-        name: 'Fahad',
-        group: 'AB+',
-        location: 'Gulshan,Dhaka',
-        phone: '17293773'),
+      name: 'Maruf A.',
+      group: 'O+',
+      phone: '292992',
+      address: 'Baridhara,Dhaka',
+    ),   user(
+      name: 'Murto',
+      group: 'O+',
+      phone: '292992',
+      address: 'Baridhara,Dhaka',
+    ),   user(
+      name: 'Maruf A.',
+      group: 'O+',
+      phone: '292992',
+      address: 'Baridhara,Dhaka',
+    ),   user(
+      name: 'Maruf A.',
+      group: 'O+',
+      phone: '292992',
+      address: 'Baridhara,Dhaka',
+    ),   user(
+      name: 'Maruf A.',
+      group: 'O+',
+      phone: '292992',
+      address: 'Baridhara,Dhaka',
+    ),   user(
+      name: 'Maruf A.',
+      group: 'O+',
+      phone: '292992',
+      address: 'Baridhara,Dhaka',
+    ),
+
   ];
-
-  onSortColumn(int columnIndex, bool ascending) {
-    if (columnIndex == 1) {
-      if (ascending) {
-        userdetails1.sort((a, b) => a.name!.compareTo(b.name!));
-      } else {
-        userdetails1.sort((a, b) => b.name!.compareTo(a.name!));
-      }
-    }
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    init();
-  }
-
-  init() async {
-    sort = false;
-    setState(() {});
-  }
-
-  @override
-  void setState(fn) {
-    if (mounted) super.setState(fn);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -84,51 +52,34 @@ class BloodMainState extends State<BloodMain> {
     return SafeArea(
       child: Scaffold(
         body: ListView(
-          padding: EdgeInsets.all(16),
+          padding: EdgeInsets.all(5),
           shrinkWrap: true,
           physics: BouncingScrollPhysics(),
           scrollDirection: Axis.vertical,
           children: [
-            Text('Blood Bank Data Table of UITS', style: boldTextStyle())
-                .paddingOnly(top: 20, bottom: 5),
+            Text('Swipe right or Landscape your device for full view', style: boldTextStyle()).paddingBottom(3),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: DataTable(
-                sortAscending: sort,
-                sortColumnIndex: 1,
                 columns: <DataColumn>[
-                  DataColumn(label: mHeading('No.'), tooltip: 'No.'),
-                  DataColumn(
-                    label: mHeading('Name'),
-                    onSort: (columnIndex, ascending) {
-                      setState(() {
-                        sort = !sort;
-                      });
-                      onSortColumn(columnIndex, ascending);
-                    },
-                  ),
+                  DataColumn(label: mHeading('Name')),
                   DataColumn(label: mHeading('Group')),
-                  DataColumn(label: mHeading('Location')),
                   DataColumn(label: mHeading('Phone')),
+                  DataColumn(label: mHeading('Address')),
                 ],
-                rows: userdetails1
+                rows: userdetails
                     .map(
                       (data) => DataRow(
-                        cells: [
-                          DataCell(Text(data.no!, style: secondaryTextStyle())),
-                          DataCell(
-                              Text(data.name!, style: secondaryTextStyle())),
-                          DataCell(
-                              Text(data.group!, style: secondaryTextStyle())),
-                          DataCell(Text(data.location!,
-                              style: secondaryTextStyle())),
-                          DataCell(Text(data.phone!,
-                              style: secondaryTextStyle())),
-                        ],
-                      ),
-                    )
+                    cells: [
+                      DataCell(Text(data.name!, style: secondaryTextStyle())),
+                      DataCell(Text(data.group!, style: secondaryTextStyle())),
+                      DataCell(Text(data.phone!, style: secondaryTextStyle())),
+                      DataCell(Text(data.address!, style: secondaryTextStyle())),
+                    ],
+                  ),
+                )
                     .toList(),
-              ).visible(userdetails1.isNotEmpty),
+              ).visible(userdetails.isNotEmpty),
             ),
           ],
         ),
@@ -137,12 +88,12 @@ class BloodMainState extends State<BloodMain> {
   }
 }
 
+// ignore: camel_case_types
 class user {
-  String? no;
   String? name;
   String? group;
-  String? location;
   String? phone;
+  String? address;
 
-  user({this.no, this.name, this.group, this.location, this.phone});
+  user({ this.name, this.group, this.phone, this.address});
 }
