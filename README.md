@@ -3,21 +3,31 @@
  MediTech is a one-stop digital health service solution for the people of Bangladesh.                                 UITS
  MediTech is a complete healthcare App created with the intent of becoming your first point of
  contact for Health, well-being, and Happiness.We wish to bring Access and Quality of care into the digital world so that we can improve your lives, wherever you are, whenever you need it.
-![Untitled-1](https://user-images.githubusercontent.com/79131390/201475988-7ded0b61-7909-4975-949e-1161f88e60d6.png)
 
- 
+HomeScreen & BMI Calculator :
 
+![201475988-7ded0b61-7909-4975-949e-1161f88e60d6](https://user-images.githubusercontent.com/79131390/211398963-ddbe29fb-f1b4-4417-8073-9f2ad335574c.png)
 
-## Getting Started
+Startup & Spalsh Screen :
 
-This project is a starting point for a Flutter application.
+![1](https://user-images.githubusercontent.com/79131390/211399415-96e9dfbd-fdc7-4d8d-b170-563965f4e585.png)
 
-A few resources to get you started if this is your first Flutter project:
+Disease Finder :
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+![2](https://user-images.githubusercontent.com/79131390/211399583-071ce51c-bbb1-4a32-86bb-8ff491305cb2.png)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Covid 19 Tracker :
 
+![3](https://user-images.githubusercontent.com/79131390/211399664-554c5278-8788-4e1f-85f4-9fec5971744e.png)
+
+Updated UI and Homescreen : 
+
+![4](https://user-images.githubusercontent.com/79131390/211399718-b8a86245-67ea-4a98-8b5a-4121f124e892.png)
+
+Doctors, Hospital & Ambulance List :
+
+![5](https://user-images.githubusercontent.com/79131390/211399803-60ffa905-ec7e-4945-ad88-070d98a6e8c0.png)
+
+Setting, Share & Rating :
+
+![6](https://user-images.githubusercontent.com/79131390/211399942-95682f6e-cfa9-42a4-ad79-a81fddbc709c.png)
