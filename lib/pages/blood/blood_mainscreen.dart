@@ -89,7 +89,7 @@ class BloodMainState extends State<BloodMain> {
           physics: BouncingScrollPhysics(),
           scrollDirection: Axis.vertical,
           children: [
-            Text('Data Table with name sorting', style: boldTextStyle())
+            Text('Blood Bank Data Table of UITS', style: boldTextStyle())
                 .paddingOnly(top: 20, bottom: 5),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
@@ -109,6 +109,7 @@ class BloodMainState extends State<BloodMain> {
                   ),
                   DataColumn(label: mHeading('Group')),
                   DataColumn(label: mHeading('Location')),
+                  DataColumn(label: mHeading('Phone')),
                 ],
                 rows: userdetails1
                     .map(
@@ -120,6 +121,8 @@ class BloodMainState extends State<BloodMain> {
                           DataCell(
                               Text(data.group!, style: secondaryTextStyle())),
                           DataCell(Text(data.location!,
+                              style: secondaryTextStyle())),
+                          DataCell(Text(data.phone!,
                               style: secondaryTextStyle())),
                         ],
                       ),
