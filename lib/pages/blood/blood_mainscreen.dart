@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';  //https://pub.dev/packages/nb_utils
 
@@ -14,30 +15,23 @@ class BloodMainState extends State<BloodMain> {
       group: 'O+',
       phone: '292992',
       address: 'Baridhara,Dhaka',
-    ),   user(
+    ),
+    user(
       name: 'M. Likhon',
       group: 'AB-',
-      phone: '292992',
+      phone: '634234',
       address: 'Baridhara,Dhaka',
-    ),   user(
+    ),
+    user(
       name: 'HF Fahad',
       group: 'B+',
-      phone: '292992',
+      phone: '78545',
       address: 'Baridhara,Dhaka',
-    ),   user(
+    ),
+    user(
       name: 'Selim Mia',
       group: 'O-',
-      phone: '292992',
-      address: 'Baridhara,Dhaka',
-    ),   user(
-      name: 'Maruf A.',
-      group: 'O+',
-      phone: '292992',
-      address: 'Baridhara,Dhaka',
-    ),   user(
-      name: 'Maruf A.',
-      group: 'O+',
-      phone: '292992',
+      phone: '5335',
       address: 'Baridhara,Dhaka',
     ),
 
@@ -51,6 +45,14 @@ class BloodMainState extends State<BloodMain> {
 
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          leading: const BackButton(
+            color: Colors.black, // <-- SEE HERE
+          ),
+          centerTitle: true,
+          title: const Text("UITS Blood bank list",style: TextStyle(color: Colors.black),),
+          backgroundColor: CupertinoColors.systemBackground,
+        ),
         body: ListView(
           padding: EdgeInsets.all(5),
           shrinkWrap: true,
