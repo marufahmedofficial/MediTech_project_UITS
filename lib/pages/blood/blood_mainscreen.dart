@@ -15,18 +15,18 @@ class BloodMainState extends State<BloodMain> {
       phone: '292992',
       address: 'Baridhara,Dhaka',
     ),   user(
-      name: 'Murto',
-      group: 'O+',
+      name: 'M. Likhon',
+      group: 'AB-',
       phone: '292992',
       address: 'Baridhara,Dhaka',
     ),   user(
-      name: 'Maruf A.',
-      group: 'O+',
+      name: 'HF Fahad',
+      group: 'B+',
       phone: '292992',
       address: 'Baridhara,Dhaka',
     ),   user(
-      name: 'Maruf A.',
-      group: 'O+',
+      name: 'Selim Mia',
+      group: 'O-',
       phone: '292992',
       address: 'Baridhara,Dhaka',
     ),   user(
