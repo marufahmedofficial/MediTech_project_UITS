@@ -9,19 +9,20 @@ class BloodMain extends StatefulWidget {
 
 class BloodMainState extends State<BloodMain> {
   late bool sort;
-  List<user> selectedList = [];
   List<user> userdetails1 = [
     user(
       no: '1',
       name: 'Maruf',
       group: 'O+',
       location: 'Badda,Dhaka',
+      phone : '17293773'
     ),
     user(
       no: '2',
       name: 'Murtoza Likhon',
       group: 'O-',
       location: 'Badda,Dhaka',
+        phone : '17293773'
     ),
     user(
       no: '3',
@@ -137,6 +138,8 @@ class user {
   String? name;
   String? group;
   String? location;
+  String? phone;
 
-  user({this.no, this.name, this.group, this.location});
+
+  user({this.no, this.name, this.group, this.location, this.phone});
 }
