@@ -19,15 +19,15 @@ class BloodMainState extends State<BloodMain> {
     ),
     user(
       no: '2',
-      name: 'Lee',
-      group: 'Lee@gmail.com',
-      location: 'Mumbai',
+      name: 'Murtoza Likhon',
+      group: 'O-',
+      location: 'Badda,Dhaka',
     ),
     user(
       no: '3',
-      name: 'Miller',
-      group: 'Miller@gmail.com',
-      location: 'Mumbai',
+      name: 'Fahad',
+      group: 'AB+',
+      location: 'Gulshan,Dhaka',
     ),
   ];
   List<user> userdetails = [
@@ -39,15 +39,15 @@ class BloodMainState extends State<BloodMain> {
     ),
     user(
       no: '2',
-      name: 'Lee',
-      group: 'Lee@gmail.com',
-      location: 'Mumbai',
+      name: 'Murtoza Likhon',
+      group: 'O-',
+      location: 'Badda,Dhaka',
     ),
     user(
       no: '3',
-      name: 'Miller',
-      group: 'Miller@gmail.com',
-      location: 'Mumbai',
+      name: 'Fahad',
+      group: 'AB+',
+      location: 'Gulshan,Dhaka',
     ),
   ];
 
