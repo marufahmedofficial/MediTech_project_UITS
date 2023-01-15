@@ -59,7 +59,7 @@ class BloodMainState extends State<BloodMain> {
           physics: BouncingScrollPhysics(),
           scrollDirection: Axis.vertical,
           children: [
-            Text('Swipe right or Landscape your device for full view', style: boldTextStyle()).paddingBottom(3),
+            Text('Swipe right to full view', style: boldTextStyle()).paddingBottom(3),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: DataTable(

@@ -12,6 +12,7 @@ import 'package:share_plus/share_plus.dart';
 import 'package:slide_digital_clock/slide_digital_clock.dart';
 import 'about.dart';
 import 'ambulance/ambulane.dart';
+import 'blood/BloodHome.dart';
 import 'bmi/home_screen.dart';
 import 'covid19/covidmain.dart';
 import 'doctors/pages/doctor_home.dart';
@@ -689,7 +690,7 @@ class _HomePageState extends State<HomePage> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) =>  BloodMain()));
+                            builder: (context) =>  BloodHome()));
                   },
                   mouseCursor: MouseCursor.defer,
                   splashColor: Colors.red.shade100,
