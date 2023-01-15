@@ -13,9 +13,9 @@ class BloodMainState extends State<BloodMain> {
   List<user> userdetails1 = [
     user(
       no: '1',
-      name: 'john',
-      group: 'john@gmail.com',
-      location: 'Mumbai',
+      name: 'Maruf',
+      group: 'O+',
+      location: 'Badda,Dhaka',
     ),
     user(
       no: '2',
@@ -33,9 +33,9 @@ class BloodMainState extends State<BloodMain> {
   List<user> userdetails = [
     user(
       no: '1',
-      name: 'john',
-      group: 'john@gmail.com',
-      location: 'Mumbai',
+      name: 'Maruf',
+      group: 'O+',
+      location: 'Badda,Dhaka',
     ),
     user(
       no: '2',
