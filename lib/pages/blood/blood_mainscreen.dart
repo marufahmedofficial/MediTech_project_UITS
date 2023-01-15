@@ -12,85 +12,41 @@ class BloodMainState extends State<BloodMain> {
   List<user> selectedList = [];
   List<user> userdetails1 = [
     user(
-      rank: '1',
+      no: '1',
       name: 'john',
-      email: 'john@gmail.com',
-      designation: 'Designer',
-      birthday: '12-03-1997',
+      group: 'john@gmail.com',
       location: 'Mumbai',
     ),
     user(
-      rank: '2',
+      no: '2',
       name: 'Lee',
-      email: 'Lee@gmail.com',
-      designation: 'Designer',
-      birthday: '12-07-1997',
+      group: 'Lee@gmail.com',
       location: 'Mumbai',
     ),
     user(
-      rank: '3',
+      no: '3',
       name: 'Miller',
-      email: 'Miller@gmail.com',
-      designation: 'Staff',
-      birthday: '12-03-1997',
-      location: 'Mumbai',
-    ),
-    user(
-      rank: '4',
-      name: 'killer',
-      email: 'killer@gmail.com',
-      designation: 'Manager',
-      birthday: '13-04-1997',
-      location: 'Mumbai',
-    ),
-    user(
-      rank: '5',
-      name: 'Smiler',
-      email: 'Smiler@gmail.com',
-      designation: 'Developer',
-      birthday: '12-06-1997',
+      group: 'Miller@gmail.com',
       location: 'Mumbai',
     ),
   ];
   List<user> userdetails = [
     user(
-      rank: '1',
+      no: '1',
       name: 'john',
-      email: 'john@gmail.com',
-      designation: 'Designer',
-      birthday: '12-03-1997',
+      group: 'john@gmail.com',
       location: 'Mumbai',
     ),
     user(
-      rank: '2',
+      no: '2',
       name: 'Lee',
-      email: 'Lee@gmail.com',
-      designation: 'Designer',
-      birthday: '12-07-1997',
+      group: 'Lee@gmail.com',
       location: 'Mumbai',
     ),
     user(
-      rank: '3',
+      no: '3',
       name: 'Miller',
-      email: 'Miller@gmail.com',
-      designation: 'Staff',
-      birthday: '12-03-1997',
-      location: 'Mumbai',
-    ),
-    user(
-      rank: '4',
-      name: 'killer',
-      email: 'killer@gmail.com',
-      designation: 'Manager',
-      birthday: '13-04-1997',
-      location: 'Mumbai',
-    ),
-    user(
-      rank: '5',
-      name: 'Smiler',
-      email: 'Smiler@gmail.com',
-      designation: 'Developer',
-      birthday: '12-06-1997',
+      group: 'Miller@gmail.com',
       location: 'Mumbai',
     ),
   ];
@@ -142,7 +98,7 @@ class BloodMainState extends State<BloodMain> {
                 sortAscending: sort,
                 sortColumnIndex: 1,
                 columns: <DataColumn>[
-                  DataColumn(label: mHeading('Rank'), tooltip: 'Rank'),
+                  DataColumn(label: mHeading('No.'), tooltip: 'No.'),
                   DataColumn(
                     label: mHeading('Name'),
                     onSort: (columnIndex, ascending) {
@@ -152,20 +108,16 @@ class BloodMainState extends State<BloodMain> {
                       onSortColumn(columnIndex, ascending);
                     },
                   ),
-                  DataColumn(label: mHeading('Email')),
-                  DataColumn(label: mHeading('Designation')),
-                  DataColumn(label: mHeading('Birthdate')),
+                  DataColumn(label: mHeading('Group')),
                   DataColumn(label: mHeading('Location')),
                 ],
                 rows: userdetails1
                     .map(
                       (data) => DataRow(
                     cells: [
-                      DataCell(Text(data.rank!, style: secondaryTextStyle())),
+                      DataCell(Text(data.no!, style: secondaryTextStyle())),
                       DataCell(Text(data.name!, style: secondaryTextStyle())),
-                      DataCell(Text(data.email!, style: secondaryTextStyle())),
-                      DataCell(Text(data.designation!, style: secondaryTextStyle())),
-                      DataCell(Text(data.birthday!, style: secondaryTextStyle())),
+                      DataCell(Text(data.group!, style: secondaryTextStyle())),
                       DataCell(Text(data.location!, style: secondaryTextStyle())),
                     ],
                   ),
@@ -181,12 +133,10 @@ class BloodMainState extends State<BloodMain> {
 }
 
 class user {
-  String? rank;
+  String? no;
   String? name;
-  String? email;
-  String? designation;
-  String? birthday;
+  String? group;
   String? location;
 
-  user({this.rank, this.name, this.email, this.designation, this.birthday, this.location});
+  user({this.no, this.name, this.group, this.location});
 }
