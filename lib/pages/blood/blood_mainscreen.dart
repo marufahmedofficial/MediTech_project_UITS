@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class BloodMain extends StatefulWidget {
-
   @override
   BloodMainState createState() => BloodMainState();
 }
@@ -11,45 +10,43 @@ class BloodMainState extends State<BloodMain> {
   late bool sort;
   List<user> userdetails1 = [
     user(
-      no: '1',
-      name: 'Maruf',
-      group: 'O+',
-      location: 'Badda,Dhaka',
-      phone : '17293773'
-    ),
+        no: '1',
+        name: 'Maruf',
+        group: 'O+',
+        location: 'Badda,Dhaka',
+        phone: '17293773'),
     user(
-      no: '2',
-      name: 'Murtoza Likhon',
-      group: 'O-',
-      location: 'Badda,Dhaka',
-        phone : '17293773'
-    ),
+        no: '2',
+        name: 'Murtoza Likhon',
+        group: 'O-',
+        location: 'Badda,Dhaka',
+        phone: '17293773'),
     user(
-      no: '3',
-      name: 'Fahad',
-      group: 'AB+',
-      location: 'Gulshan,Dhaka',
-    ),
+        no: '3',
+        name: 'Fahad',
+        group: 'AB+',
+        location: 'Gulshan,Dhaka',
+        phone: '17293773'),
   ];
   List<user> userdetails = [
     user(
-      no: '1',
-      name: 'Maruf',
-      group: 'O+',
-      location: 'Badda,Dhaka',
-    ),
+        no: '1',
+        name: 'Maruf',
+        group: 'O+',
+        location: 'Badda,Dhaka',
+        phone: '17293773'),
     user(
-      no: '2',
-      name: 'Murtoza Likhon',
-      group: 'O-',
-      location: 'Badda,Dhaka',
-    ),
+        no: '2',
+        name: 'Murtoza Likhon',
+        group: 'O-',
+        location: 'Badda,Dhaka',
+        phone: '17293773'),
     user(
-      no: '3',
-      name: 'Fahad',
-      group: 'AB+',
-      location: 'Gulshan,Dhaka',
-    ),
+        no: '3',
+        name: 'Fahad',
+        group: 'AB+',
+        location: 'Gulshan,Dhaka',
+        phone: '17293773'),
   ];
 
   onSortColumn(int columnIndex, bool ascending) {
@@ -92,7 +89,8 @@ class BloodMainState extends State<BloodMain> {
           physics: BouncingScrollPhysics(),
           scrollDirection: Axis.vertical,
           children: [
-            Text('Data Table with name sorting', style: boldTextStyle()).paddingOnly(top: 20, bottom: 5),
+            Text('Data Table with name sorting', style: boldTextStyle())
+                .paddingOnly(top: 20, bottom: 5),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: DataTable(
@@ -115,14 +113,17 @@ class BloodMainState extends State<BloodMain> {
                 rows: userdetails1
                     .map(
                       (data) => DataRow(
-                    cells: [
-                      DataCell(Text(data.no!, style: secondaryTextStyle())),
-                      DataCell(Text(data.name!, style: secondaryTextStyle())),
-                      DataCell(Text(data.group!, style: secondaryTextStyle())),
-                      DataCell(Text(data.location!, style: secondaryTextStyle())),
-                    ],
-                  ),
-                )
+                        cells: [
+                          DataCell(Text(data.no!, style: secondaryTextStyle())),
+                          DataCell(
+                              Text(data.name!, style: secondaryTextStyle())),
+                          DataCell(
+                              Text(data.group!, style: secondaryTextStyle())),
+                          DataCell(Text(data.location!,
+                              style: secondaryTextStyle())),
+                        ],
+                      ),
+                    )
                     .toList(),
               ).visible(userdetails1.isNotEmpty),
             ),
@@ -139,7 +140,6 @@ class user {
   String? group;
   String? location;
   String? phone;
-
 
   user({this.no, this.name, this.group, this.location, this.phone});
 }
