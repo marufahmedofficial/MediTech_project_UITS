@@ -3,16 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 
-class Hospital extends StatefulWidget {
-
-
+class Hospitalm extends StatefulWidget {
 
 
   @override
-  HospitalState createState() => HospitalState();
+  HospitalmState createState() => HospitalmState();
 }
 
-class HospitalState extends State<Hospital> {
+class HospitalmState extends State<Hospitalm> {
 
 
   @override

@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:meditech/pages/disease/mainscreen.dart';
-import 'package:meditech/pages/hospital/hospital.dart';
 import 'package:meditech/pages/profile/profile_main.dart';
 import 'package:meditech/pages/settings.dart';
 import 'package:nb_utils/nb_utils.dart';
@@ -16,6 +15,7 @@ import 'blood/BloodHome.dart';
 import 'bmi/home_screen.dart';
 import 'covid19/covidmain.dart';
 import 'doctors/pages/doctor_home.dart';
+import 'hospital/hospitalm.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -637,7 +637,7 @@ class _HomePageState extends State<HomePage> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => Hospital()));
+                            builder: (context) => Hospitalm()));
                   },
                   mouseCursor: MouseCursor.defer,
                   splashColor: Colors.red.shade100,
