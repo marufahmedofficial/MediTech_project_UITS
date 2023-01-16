@@ -111,7 +111,7 @@ class _BloodHomeState extends State<BloodHome> {
               splashColor: Colors.red.shade100,
               hoverColor: Colors.grey.shade200,
               child: _pageadd(
-                  image: 'assets/images/quantam.png', name: 'Quantum Lab'),
+                  image: 'assets/images/alifb.png', name: 'Alif Bank'),
             ),
 
           ],
