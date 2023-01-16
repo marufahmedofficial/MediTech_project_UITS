@@ -3,9 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:meditech/pages/blood/blood_mainscreen.dart';
 import 'package:meditech/pages/disease/mainscreen.dart';
 import 'package:meditech/pages/hospital/hospital.dart';
+import 'package:meditech/pages/profile/profile_main.dart';
 import 'package:meditech/pages/settings.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:share_plus/share_plus.dart';
@@ -216,18 +216,24 @@ class _HomePageState extends State<HomePage> {
                 const Text('Meditech ',
                     style: TextStyle(color: Colors.blue, fontSize: 15.0)),
                 const SizedBox(height: 27),
-                Row(
-                  children: const [
-                    Icon(
-                      CupertinoIcons.profile_circled,
-                      color: Colors.red,
-                      size: 40,
-                    ),
-                    SizedBox(width: 50),
-                    Text('Profile',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w500, fontSize: 17))
-                  ],
+                InkWell(
+                  onTap: (){Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ProfileMain()));},
+                  child: Row(
+                    children: const [
+                      Icon(
+                        CupertinoIcons.profile_circled,
+                        color: Colors.red,
+                        size: 40,
+                      ),
+                      SizedBox(width: 50),
+                      Text('Profile',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500, fontSize: 17))
+                    ],
+                  ),
                 ),
                 const Divider(),
                 const SizedBox(
