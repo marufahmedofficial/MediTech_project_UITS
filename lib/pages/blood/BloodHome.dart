@@ -72,8 +72,15 @@ class _BloodHomeState extends State<BloodHome> {
               child: _pageadd(
                   image: 'assets/images/uits.png', name: 'UITS'),
             ), InkWell(
-              onTap: () { Navigator.push( context, MaterialPageRoute(
-                        builder: (context) => BloodMain()));
+              onTap: () {
+              },
+              mouseCursor: MouseCursor.defer,
+              splashColor: Colors.red.shade100,
+              hoverColor: Colors.grey.shade200,
+              child: _pageadd(
+                  image: 'assets/images/gazipur.png', name: 'Gazipur Team'),
+            ),InkWell(
+              onTap: () {
               },
               mouseCursor: MouseCursor.defer,
               splashColor: Colors.red.shade100,
@@ -152,8 +159,15 @@ class _BloodHomeState extends State<BloodHome> {
               hoverColor: Colors.grey.shade200,
               child: _pageadd(
                   image: 'assets/images/retina.jpg', name: 'Retina Bank'),
+            ),InkWell(
+              onTap: () {
+              },
+              mouseCursor: MouseCursor.defer,
+              splashColor: Colors.red.shade100,
+              hoverColor: Colors.grey.shade200,
+              child: _pageadd(
+                  image: 'assets/images/oriental.jpg', name: 'Oriental Bank'),
             ),
-
           ],
         ),
 
