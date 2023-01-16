@@ -54,7 +54,7 @@ class _BloodHomeState extends State<BloodHome> {
         title: Text('Blood Bank'),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(30.0),
+        padding: const EdgeInsets.only(left: 30,right: 30 ,bottom: 20,top: 14),
 
         child: GridView.count(
           crossAxisCount: 2,
@@ -128,6 +128,30 @@ class _BloodHomeState extends State<BloodHome> {
               hoverColor: Colors.grey.shade200,
               child: _pageadd(
                   image: 'assets/images/mukti.jpg', name: 'Mukti Bank'),
+            ),InkWell(
+              onTap: () {
+              },
+              mouseCursor: MouseCursor.defer,
+              splashColor: Colors.red.shade100,
+              hoverColor: Colors.grey.shade200,
+              child: _pageadd(
+                  image: 'assets/images/islami.jpg', name: 'Islami Bank'),
+            ),InkWell(
+              onTap: () {
+              },
+              mouseCursor: MouseCursor.defer,
+              splashColor: Colors.red.shade100,
+              hoverColor: Colors.grey.shade200,
+              child: _pageadd(
+                  image: 'assets/images/ssmc.jpg', name: 'SSMC Bank'),
+            ),InkWell(
+              onTap: () {
+              },
+              mouseCursor: MouseCursor.defer,
+              splashColor: Colors.red.shade100,
+              hoverColor: Colors.grey.shade200,
+              child: _pageadd(
+                  image: 'assets/images/retina.jpg', name: 'Retina Bank'),
             ),
 
           ],
