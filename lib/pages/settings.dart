@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:meditech/pages/about.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:settings_ui/settings_ui.dart';
 
@@ -107,7 +108,18 @@ class _SettingsState extends State<Settings> {
             leading: Icon(Icons.language),
             title: Text('Language'),
             value: Text('English'),
-          ),
+          ), SettingsTile(
+                title: Text('About'),
+                value: Text('About info '),
+                leading: Icon(Icons.info),
+                onPressed: (BuildContext context) {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>  AboutPage()));
+                }
+              ),
+
           SettingsTile.switchTile(
             onToggle: (value) {},
             initialValue: false,

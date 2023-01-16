@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:nb_utils/nb_utils.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'homepage.dart';
 
 class AboutPage extends StatefulWidget {
@@ -91,8 +94,7 @@ class _AboutPageState extends State<AboutPage> {
                 leading: const Icon(Icons.code),
 
                 title: const Text('Cheak out GitHub'),
-                onTap: () =>
-                    Navigator.of(context).pushNamed('/growth_inapp_review_ex'),
+                  onTap: () { launch('https://github.com/marufahmedofficial/MediTech_project_UITS');}
               ),
             ),
             Padding(
@@ -101,7 +103,7 @@ class _AboutPageState extends State<AboutPage> {
                 leading: const Icon(Icons.bug_report),
                 title: const Text('Report issue on GitHub'),
                 onTap: () =>
-                    Navigator.of(context).pushNamed('/growth_inapp_review_ex'),
+                    Navigator.of(context).pushNamed(''),
               ),
             ),
             Padding(
@@ -109,8 +111,7 @@ class _AboutPageState extends State<AboutPage> {
               child: ListTile(
                 leading: const Icon(Icons.open_in_new),
                 title: const Text('Visit my website'),
-                onTap: () =>
-                    Navigator.of(context).pushNamed('/growth_inapp_review_ex'),
+                  onTap: () { launch('https://github.com/marufahmedofficial?tab=repositories');}
               ),
             ),
             Padding(
@@ -118,8 +119,58 @@ class _AboutPageState extends State<AboutPage> {
               child: ListTile(
                 leading: const Icon(Icons.shop),
                 title: const Text('Rate the app'),
-                onTap: () =>
-                    Navigator.of(context).pushNamed('/growth_inapp_review_ex'),
+                  onTap: () {
+
+                    showDialog(
+                        context: context,
+                        builder: (BuildContext context) =>
+                            Theme(
+                              data: ThemeData.light(),
+                              child: CupertinoAlertDialog(
+                                title: Text(
+                                  'Rating',
+                                  style: boldTextStyle(size: 18),
+                                ).paddingOnly(bottom: 9),
+                                content: Column(
+                                  children: [
+                                    RatingBar.builder(
+                                      initialRating: 5,
+                                      minRating: 1,
+                                      itemSize: 35,
+                                      direction: Axis.horizontal,
+                                      itemPadding:
+                                      EdgeInsets.symmetric(horizontal: 2.0),
+                                      itemBuilder: (context, _) =>
+                                          Icon(
+                                            Icons.star,
+                                            color: Colors.amber,
+                                          ),
+                                      onRatingUpdate: (rating) {},
+                                    ),
+                                  ],
+                                ),
+                                actions: [
+                                  CupertinoDialogAction(
+                                    child: Text(
+                                      "Cancel",
+                                    ),
+                                    onPressed: () {
+                                      finish(context);
+                                    },
+                                  ),
+                                  CupertinoDialogAction(
+                                    child: Text('Submit'),
+                                    onPressed: () {
+                                      toasty(context, 'Submitted!',
+                                          gravity: ToastGravity.CENTER);
+                                      finish(context);
+                                    },
+                                  )
+                                ],
+                              ),
+                            ));
+
+                  }
               ),
             ),
             Padding(
@@ -127,7 +178,7 @@ class _AboutPageState extends State<AboutPage> {
               child: ListTile(
                 leading: const Icon(Icons.apps),
                 title: const Text('My Other Apps'),
-                onTap: () => Navigator.of(context).pushNamed('/growth_my_other_apps'),
+                onTap: () { launch('https://github.com/marufahmedofficial?tab=repositories');}
               ),
             ),
 
