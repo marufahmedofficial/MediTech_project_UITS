@@ -9,10 +9,10 @@ class UserData {
 
   static User myUser = User(
     image:
-        "https://upload.wikimedia.org/wikipedia/en/0/0b/Darth_Vader_in_The_Empire_Strikes_Back.jpg",
-    name: 'Test Test',
-    email: 'test.test@gmail.com',
-    phone: '(208) 206-5039',
+        "https://img.freepik.com/premium-vector/heart-medical-shape-doctor-logo-design_23987-717.jpg",
+    name: 'Your Name',
+    email: 'example@.com',
+    phone: '+880........',
   );
 
   static Future init() async =>
