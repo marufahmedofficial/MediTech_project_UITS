@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:meditech/pages/blood/blood_mainscreen.dart';
 
@@ -88,7 +87,7 @@ class _BloodHomeState extends State<BloodHome> {
               splashColor: Colors.red.shade100,
               hoverColor: Colors.grey.shade200,
               child: _pageadd(
-                  image: 'assets/images/bmi1.png', name: 'BMI Calculator'),
+                  image: 'assets/images/policeb.jpg', name: 'Ploice Bank'),
             ), InkWell(
               onTap: () {
               },
@@ -96,7 +95,23 @@ class _BloodHomeState extends State<BloodHome> {
               splashColor: Colors.red.shade100,
               hoverColor: Colors.grey.shade200,
               child: _pageadd(
-                  image: 'assets/images/bmi1.png', name: 'BMI Calculator'),
+                  image: 'assets/images/quantam.png', name: 'Quantum Lab'),
+            ), InkWell(
+              onTap: () {
+              },
+              mouseCursor: MouseCursor.defer,
+              splashColor: Colors.red.shade100,
+              hoverColor: Colors.grey.shade200,
+              child: _pageadd(
+                  image: 'assets/images/quantam.png', name: 'Quantum Lab'),
+            ), InkWell(
+              onTap: () {
+              },
+              mouseCursor: MouseCursor.defer,
+              splashColor: Colors.red.shade100,
+              hoverColor: Colors.grey.shade200,
+              child: _pageadd(
+                  image: 'assets/images/quantam.png', name: 'Quantum Lab'),
             ),
 
           ],
