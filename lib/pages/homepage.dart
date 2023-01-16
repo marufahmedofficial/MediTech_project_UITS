@@ -557,9 +557,10 @@ class _HomePageState extends State<HomePage> {
             return shouldPop!;
           },
         child: Padding(
-          padding: const EdgeInsets.all(30.0),
+          padding: const EdgeInsets.only(left: 30,right: 30,bottom: 30,top: 20),
 
           child: GridView.count(
+            physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
             crossAxisCount: 2,
             crossAxisSpacing: 15,
             mainAxisSpacing: 20,

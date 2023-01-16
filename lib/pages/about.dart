@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'homepage.dart';
+
 class AboutPage extends StatefulWidget {
   const AboutPage({Key? key}) : super(key: key);
 
@@ -12,16 +14,27 @@ class _AboutPageState extends State<AboutPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.teal,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        iconTheme: IconThemeData(
+            color: Colors.black),
+        leading: BackButton(
+          onPressed:(){Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => HomePage()));},
+        ),
+        elevation: 0,
+      ),
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             CircleAvatar(
-              backgroundImage: AssetImage('images/asd.png'),
-
+              backgroundImage: AssetImage('assets/images/appstore.png'),
               radius: 70.0,
             ),
-            Text('Name of Your',
+            Text('MediTech App',
               style: TextStyle(
                 fontFamily: 'Pacifico',
                 color: Colors.white,
@@ -30,7 +43,7 @@ class _AboutPageState extends State<AboutPage> {
               ),
             ),
             Text(
-              'Flutter Developer',
+              'Made with Flutter',
               style: TextStyle(
                 letterSpacing: 2.0,
                 color: Colors.white,
@@ -50,12 +63,12 @@ class _AboutPageState extends State<AboutPage> {
               margin: EdgeInsets.symmetric(vertical: 15.0,horizontal: 30.0),
               child: ListTile(
                 leading:  Icon(
-                  Icons.phone,
+                  Icons.android,
                   color: Colors.teal,
                   size: 30.0,
                 ),
                 title: Text(
-                  '+923137028615',
+                  'Version : 1.0.0',
                   style: TextStyle(
                     fontSize: 25.0,
                     color: Colors.teal,
@@ -74,7 +87,7 @@ class _AboutPageState extends State<AboutPage> {
                   size: 30.0,
                 ),
                 title: Text(
-                  'abubakrch786@gmail.com',
+                  'maruf.c.uits@gmail.com',
                   style: TextStyle(
                     fontSize: 20.0,
                     color: Colors.teal,
