@@ -54,12 +54,12 @@ class _BloodHomeState extends State<BloodHome> {
         title: Text('Blood Bank'),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(40.0),
+        padding: const EdgeInsets.all(30.0),
 
         child: GridView.count(
           crossAxisCount: 2,
-          crossAxisSpacing: 35,
-          mainAxisSpacing: 25,
+          crossAxisSpacing: 20,
+          mainAxisSpacing: 15,
           childAspectRatio: 1.20,
           children: [
             InkWell(
@@ -103,7 +103,7 @@ class _BloodHomeState extends State<BloodHome> {
               splashColor: Colors.red.shade100,
               hoverColor: Colors.grey.shade200,
               child: _pageadd(
-                  image: 'assets/images/quantam.png', name: 'Quantum Lab'),
+                  image: 'assets/images/badhan.png', name: 'Badhan Bank'),
             ), InkWell(
               onTap: () {
               },
@@ -111,7 +111,23 @@ class _BloodHomeState extends State<BloodHome> {
               splashColor: Colors.red.shade100,
               hoverColor: Colors.grey.shade200,
               child: _pageadd(
-                  image: 'assets/images/alifb.png', name: 'Alif Bank'),
+                  image: 'assets/images/alifb.jpg', name: 'Alif Bank'),
+            ), InkWell(
+              onTap: () {
+              },
+              mouseCursor: MouseCursor.defer,
+              splashColor: Colors.red.shade100,
+              hoverColor: Colors.grey.shade200,
+              child: _pageadd(
+                  image: 'assets/images/sandhani.png', name: 'Sandhani'),
+            ), InkWell(
+              onTap: () {
+              },
+              mouseCursor: MouseCursor.defer,
+              splashColor: Colors.red.shade100,
+              hoverColor: Colors.grey.shade200,
+              child: _pageadd(
+                  image: 'assets/images/mukti.jpg', name: 'Mukti Bank'),
             ),
 
           ],
