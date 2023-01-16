@@ -52,15 +52,18 @@ class _BloodHomeState extends State<BloodHome> {
       appBar: AppBar(
         centerTitle: true,
         title: Text('Blood Bank'),
+        backgroundColor: Colors.red,
       ),
       body: Padding(
         padding: const EdgeInsets.only(left: 30,right: 30 ,bottom: 20,top: 14),
+
 
         child: GridView.count(
           crossAxisCount: 2,
           crossAxisSpacing: 20,
           mainAxisSpacing: 15,
           childAspectRatio: 1.20,
+          physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
           children: [
             InkWell(
               onTap: () { Navigator.push( context, MaterialPageRoute(
