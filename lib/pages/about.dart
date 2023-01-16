@@ -13,11 +13,11 @@ class _AboutPageState extends State<AboutPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.teal,
+      backgroundColor: Colors.teal.shade900,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         iconTheme: IconThemeData(
-            color: Colors.black),
+            color: Colors.white),
         leading: BackButton(
           onPressed:(){Navigator.push(
               context,
@@ -28,11 +28,14 @@ class _AboutPageState extends State<AboutPage> {
       ),
       body: SafeArea(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             CircleAvatar(
               backgroundImage: AssetImage('assets/images/appstore.png'),
-              radius: 70.0,
+              radius: 60.0,
+            ),
+            SizedBox(
+              height: 20,
             ),
             Text('MediTech App',
               style: TextStyle(
@@ -41,6 +44,9 @@ class _AboutPageState extends State<AboutPage> {
                 fontWeight: FontWeight.bold,
                 fontSize: 40.0,
               ),
+            ),
+            SizedBox(
+              height: 10,
             ),
             Text(
               'Made with Flutter',
@@ -52,10 +58,10 @@ class _AboutPageState extends State<AboutPage> {
             ),
             SizedBox(
               width: 300.0,
-              height: 20.0,
+              height: 27.0,
               child: Divider(
-                color: Colors.white,
-                thickness: 5.0,
+                color: Colors.indigoAccent,
+                thickness: 4.0,
               ),
             ),
             Card(
@@ -68,9 +74,9 @@ class _AboutPageState extends State<AboutPage> {
                   size: 30.0,
                 ),
                 title: Text(
-                  'Version : 1.0.0',
+                  'Version : 1.0.5',
                   style: TextStyle(
-                    fontSize: 25.0,
+                    fontSize: 22.0,
                     color: Colors.teal,
                     fontWeight: FontWeight.bold,
                   ),
