@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../user/user_data.dart';
 import '../widgets/appbar_widget.dart';
 
-// This class handles the Page to edit the Email Section of the User Profile.
 class EditEmailFormPage extends StatefulWidget {
   const EditEmailFormPage({Key? key}) : super(key: key);
 
@@ -82,7 +81,7 @@ class EditEmailFormPageState extends State<EditEmailFormPage> {
                             },
                             child: const Text(
                               'Update',
-                              style: TextStyle(fontSize: 15),
+                              style: TextStyle(fontSize: 15,color: Colors.white),
                             ),
                           ),
                         )))

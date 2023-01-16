@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:string_validator/string_validator.dart';
 import '../user/user_data.dart';
 import '../widgets/appbar_widget.dart';
-
-// This class handles the Page to edit the Phone Section of the User Profile.
 class EditPhoneFormPage extends StatefulWidget {
   const EditPhoneFormPage({Key? key}) : super(key: key);
   @override
@@ -90,7 +88,7 @@ class EditPhoneFormPageState extends State<EditPhoneFormPage> {
                             },
                             child: const Text(
                               'Update',
-                              style: TextStyle(fontSize: 15),
+                              style: TextStyle(fontSize: 15,color: Colors.white),
                             ),
                           ),
                         )))

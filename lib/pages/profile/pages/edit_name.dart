@@ -113,7 +113,7 @@ class EditNameFormPageState extends State<EditNameFormPage> {
                           },
                           child: const Text(
                             'Update',
-                            style: TextStyle(fontSize: 15),
+                            style: TextStyle(fontSize: 15,color: Colors.white),
                           ),
                         ),
                       )))

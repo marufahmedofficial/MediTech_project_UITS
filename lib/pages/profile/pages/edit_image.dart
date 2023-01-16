@@ -66,7 +66,7 @@ class _EditImagePageState extends State<EditImagePage> {
                       onPressed: () {},
                       child: const Text(
                         'Update',
-                        style: TextStyle(fontSize: 15),
+                        style: TextStyle(fontSize: 15,color: Colors.white),
                       ),
                     ),
                   )))
