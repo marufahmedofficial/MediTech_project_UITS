@@ -62,6 +62,7 @@ dependencies:
   string_validator: ^0.3.0
   image_picker: ^0.8.4+1
   path_provider: ^2.0.4
+  animated_radial_menu: ^0.0.1
 
 
 
