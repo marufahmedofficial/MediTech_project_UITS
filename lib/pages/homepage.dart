@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:meditech/pages/disease/mainscreen.dart';
+import 'package:meditech/pages/donate/donate.dart';
 import 'package:meditech/pages/food/food.dart';
 import 'package:meditech/pages/profile/profile_main.dart';
 import 'package:meditech/pages/settings.dart';
@@ -717,41 +718,10 @@ class _HomePageState extends State<HomePage> {
                 shadowColor: CupertinoColors.systemRed,
                 child: InkWell(
                     onTap: () {
-                      showDialog(
-                          context: context,
-                          builder: (context) =>
-                              AlertDialog(
-                                backgroundColor: CupertinoColors.systemBackground,
-                                content: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text("Hold On", style: TextStyle(fontWeight: FontWeight.bold,color:CupertinoColors.systemBlue)),
-                                    SizedBox(height: 16,),
-                                    Text(
-                                      "Please ! Hold on.\nMore features coming  soon....",
-                                      style: TextStyle(fontSize: 14,color: CupertinoColors.black),
-                                    ),
-                                    SizedBox(height: 16,),
-                                    GestureDetector(
-                                      onTap: () {
-                                        Navigator.of(context).pop();
-                                      },
-                                      child: Align(
-                                        alignment: Alignment.topRight,
-                                        child: Container(
-                                          decoration: BoxDecoration(color: CupertinoColors.systemRed, borderRadius: BorderRadius.circular(10)),
-                                          padding: EdgeInsets.fromLTRB(16, 8, 16, 8),
-                                          child: Text("Ok", style: TextStyle(color: Colors.white, fontSize: 16.0), ),
-                                        ),
-                                      ),
-                                    )
-                                  ],
-                                ),
-                                contentPadding: EdgeInsets.fromLTRB(16, 16, 16, 16),
-                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(topRight: Radius.circular(50), bottomLeft: Radius.circular(50))),
-                              ));
-
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>  DonatePage()));
                     },
                   mouseCursor: MouseCursor.defer,
                   splashColor: Colors.red.shade100,

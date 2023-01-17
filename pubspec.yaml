@@ -62,6 +62,7 @@ dependencies:
   string_validator: ^0.3.0
   image_picker: ^0.8.4+1
   path_provider: ^2.0.4
+  flutter_easyloading: ^3.0.5
 
   #  google_maps_flutter: ^2.2.3
   #  geolocator: ^9.0.2
