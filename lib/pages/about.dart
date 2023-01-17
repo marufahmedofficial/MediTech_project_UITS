@@ -81,7 +81,11 @@ class _AboutPageState extends State<AboutPage> {
                       context: context,
                       applicationName: 'MediTech Life',
                       applicationVersion:'version : 1.0.5',
-                      applicationIcon:Image(image: AssetImage('assets/images/appstore.png'),height: 70,width: 70,),
+                      applicationIcon:Container(
+                        decoration: BoxDecoration(
+                          border:Border.all(width: 2,color: Colors.lightBlue,),
+                        ),
+                          child: Image(image: AssetImage('assets/images/appstore.png'),height: 70,width: 70,)),
                       children: <Widget>[const Text('MediTech is a one-stop digital health service solution for the people of Bangladesh.')],
                     );
                   },
