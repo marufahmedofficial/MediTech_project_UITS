@@ -770,22 +770,6 @@ class _HomePageState extends State<HomePage> {
                 shadowColor: CupertinoColors.systemRed,
                 child: InkWell(
                   onTap: () {
-                  },
-                  mouseCursor: MouseCursor.defer,
-                  splashColor: Colors.red.shade100,
-                  hoverColor: Colors.grey.shade200,
-                  child: _pageadd(
-                      image: 'assets/images/health.png', name: 'Health & Care'),
-                ),
-              ),
-              Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(25.0),
-                ),
-                elevation: 6,
-                shadowColor: CupertinoColors.systemRed,
-                child: InkWell(
-                  onTap: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -815,7 +799,57 @@ class _HomePageState extends State<HomePage> {
                   splashColor: Colors.red.shade100,
                   hoverColor: Colors.grey.shade200,
                   child: _pageadd(
-                      image: 'assets/images/calories.png', name: 'Food & Calories'),
+                      image: 'assets/images/calories.png', name: 'Food & Nutrition'),
+                ),
+              ),
+              Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(25.0),
+                ),
+                elevation: 6,
+                shadowColor: CupertinoColors.systemRed,
+                child: InkWell(
+                  onTap: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) =>
+                            AlertDialog(
+                              backgroundColor: CupertinoColors.systemBackground,
+                              content: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("Hold On", style: TextStyle(fontWeight: FontWeight.bold,color:CupertinoColors.systemBlue)),
+                                  SizedBox(height: 16,),
+                                  Text(
+                                    "Please ! Hold on.\nMore features coming  soon....",
+                                    style: TextStyle(fontSize: 14,color: CupertinoColors.black),
+                                  ),
+                                  SizedBox(height: 16,),
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                    child: Align(
+                                      alignment: Alignment.topRight,
+                                      child: Container(
+                                        decoration: BoxDecoration(color: CupertinoColors.systemRed, borderRadius: BorderRadius.circular(10)),
+                                        padding: EdgeInsets.fromLTRB(16, 8, 16, 8),
+                                        child: Text("Ok", style: TextStyle(color: Colors.white, fontSize: 16.0), ),
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                              contentPadding: EdgeInsets.fromLTRB(16, 16, 16, 16),
+                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(topRight: Radius.circular(50), bottomLeft: Radius.circular(50))),
+                            ));
+                  },
+                  mouseCursor: MouseCursor.defer,
+                  splashColor: Colors.red.shade100,
+                  hoverColor: Colors.grey.shade200,
+                  child: _pageadd(
+                      image: 'assets/images/health.png', name: 'Health & Care'),
                 ),
               ),
             ],

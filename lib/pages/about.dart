@@ -180,7 +180,7 @@ class _AboutPageState extends State<AboutPage> {
               padding: EdgeInsets.only(left: 25),
               child: ListTile(
                 leading: const Icon(CupertinoIcons.square_grid_2x2_fill,color: Colors.lightBlue,),
-                title: const Text('My Other Apps'),
+                title: const Text('Our Other Apps'),
                 onTap: () { launch('https://github.com/marufahmedofficial?tab=repositories');}
               ),
             ),
