@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:meditech/pages/blood/blood_mainscreen.dart';
 
 class FoodPage extends StatefulWidget {
   const FoodPage({Key? key}) : super(key: key);
@@ -63,34 +62,36 @@ class _FoodPageState extends State<FoodPage> {
           physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
           children: [
             InkWell(
-              onTap: () { Navigator.push( context, MaterialPageRoute(
-                  builder: (context) => BloodMain()));
+              onTap: () {
+
               },
               child: _pageadd(
                   image: 'assets/food/a.jpg', name: 'Vitamin A'),
             ),
             InkWell(
-              onTap: () { Navigator.push( context, MaterialPageRoute(
-                  builder: (context) => BloodMain()));
+              onTap: () {
               },
               child: _pageadd(
                   image: 'assets/food/c.jpg', name: 'Vitamin C'),
             ),
             InkWell(
-              onTap: () { Navigator.push( context, MaterialPageRoute(
-                  builder: (context) => BloodMain()));
+              onTap: () {
               },
               child: _pageadd(
-                  image: 'assets/food/uits.png', name: 'Vitamin A'),
+                  image: 'assets/food/d.jpg', name: 'Vitamin D'),
             ),
             InkWell(
-              onTap: () { Navigator.push( context, MaterialPageRoute(
-                  builder: (context) => BloodMain()));
+              onTap: () {
               },
               child: _pageadd(
-                  image: 'assets/food/uits.png', name: 'Vitamin A'),
+                  image: 'assets/food/e.jpg', name: 'Vitamin E'),
             ),
-
+            InkWell(
+              onTap: () {
+              },
+              child: _pageadd(
+                  image: 'assets/food/k.jpg', name: 'Vitamin K'),
+            ),
 
           ],
         ),
