@@ -16,6 +16,7 @@ import 'bmi/home_screen.dart';
 import 'covid19/covidmain.dart';
 import 'doctors/pages/doctor_home.dart';
 import 'hospital/hospitalm.dart';
+import 'medicine/medicine.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -783,7 +784,12 @@ class _HomePageState extends State<HomePage> {
                 elevation: 6,
                 shadowColor: CupertinoColors.systemRed,
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>  MedicineHome()));
+                  },
                   mouseCursor: MouseCursor.defer,
                   splashColor: Colors.red.shade100,
                   hoverColor: Colors.grey.shade200,
