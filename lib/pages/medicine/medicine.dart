@@ -24,6 +24,8 @@ class MedicineHomeState extends State<MedicineHome> {
             Card1(),
             Card2(),
             Card3(),
+            Card4(),
+            Card5(),
 
             10.height,
           ],
@@ -73,6 +75,34 @@ class MedicineHomeState extends State<MedicineHome> {
                 ), 20.height,],),), Positioned(top: 2, child: Container(
               decoration: boxDecorationDefault( borderRadius: radius(16),), height: 70, width: 80,
               child: Image.asset('assets/images/Metformin.jpg',scale: 3,)
+          ,),)],),);
+  }
+  Widget Card4() {
+    return Padding( padding: const EdgeInsets.only(top: 4,left: 8,right: 8,bottom: 12),
+      child: Stack( alignment: Alignment.center, children: [
+          Container(width: context.width(), decoration: boxDecorationDefault(borderRadius: radius(40), color: context.cardColor),
+            padding: EdgeInsets.only(top: 80, bottom: 4, left: 6, right: 6),
+            child: Column( mainAxisSize: MainAxisSize.min, mainAxisAlignment: MainAxisAlignment.center,  children: [
+                Text('Albuterol.', style: boldTextStyle(size: 20)), 8.height,
+                Padding(padding: const EdgeInsets.only(left: 10,right: 8,bottom: 1),
+                  child: Text('Salbutamol, also known as albuterol and sold under the brand name Ventolin among others, is a medication that opens up the medium and large airways in the lungs.', style: secondaryTextStyle()),
+                ), 20.height,],),), Positioned(top: 2, child: Container(
+              decoration: boxDecorationDefault( borderRadius: radius(16),), height: 70, width: 80,
+              child: Image.asset('assets/images/Albuterol .jpg',scale: 4,)
+          ,),)],),);
+  }
+  Widget Card5() {
+    return Padding( padding: const EdgeInsets.only(top: 4,left: 8,right: 8,bottom: 12),
+      child: Stack( alignment: Alignment.center, children: [
+          Container(width: context.width(), decoration: boxDecorationDefault(borderRadius: radius(40), color: context.cardColor),
+            padding: EdgeInsets.only(top: 80, bottom: 4, left: 6, right: 6),
+            child: Column( mainAxisSize: MainAxisSize.min, mainAxisAlignment: MainAxisAlignment.center,  children: [
+                Text('Losartan.', style: boldTextStyle(size: 20)), 8.height,
+                Padding(padding: const EdgeInsets.only(left: 10,right: 8,bottom: 1),
+                  child: Text('Losartan, sold under the brand name Cozaar among others, is a medication used to treat high blood pressure.', style: secondaryTextStyle()),
+                ), 20.height,],),), Positioned(top: 2, child: Container(
+              decoration: boxDecorationDefault( borderRadius: radius(16),), height: 70, width: 80,
+              child: Image.asset('assets/images/Losartan.jpg',)
           ,),)],),);
   }
 
