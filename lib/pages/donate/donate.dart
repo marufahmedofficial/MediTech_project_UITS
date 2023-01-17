@@ -32,382 +32,318 @@ class _DonatePageState extends State<DonatePage> {
   String? selectedAddress;
   String? selectedBloodGroup;
   String? selectedGender;
-  bool _onEditing = true;
   bool confirmStage = false;
   bool stage1 = true;
   bool stage2 = false;
   bool stage3 = false;
   bool infoStage = false;
   bool isChecked = false;
-  bool _passwordVisible = false;
-  bool _passwordVisible2 = false;
-  final _formKey = GlobalKey<FormState>();
-  final passwordControllar = TextEditingController();
-  final emailControllar = TextEditingController();
-  final confirmPasswordControllar = TextEditingController();
-  final firstNameControllar = TextEditingController();
-  final lastNameControllar = TextEditingController();
-  final nidControllar = TextEditingController();
-  final phoneControllar = TextEditingController();
 
-  @override
-  void dispose() {
-    emailControllar.dispose();
-    super.dispose();
-  }
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
-      padding: const EdgeInsets.only(left: 20, right: 20, top: 5),
-      height: MediaQuery.of(context).size.height,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          if (msgError != null)
-            Text(
-              msgError!,
-              style: const TextStyle(color: Colors.redAccent),
+        body: SingleChildScrollView(
+          physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+          child: Container(
+      padding: const EdgeInsets.only(left: 20, right: 20, top: 30,bottom: 2),
+      height: MediaQuery.of(context).size.height-180,
+      child:
+            Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            if (msgError != null)
+              Text(
+                msgError!,
+                style: const TextStyle(color: Colors.redAccent),
+              ),
+            SizedBox(
+              height: 10,
             ),
-          InkWell(
-            onTap: () {
-              showCustomAlertDialog(
-                context,
-                "Camera",
-                "Gallery",
-                "Choose Your Source",
-                (String value) {
-                  setState(
-                    () {
-                      imageUrl = value;
-                    },
-                  );
-                },
-              );
-            },
-            child: imageUrl == null
-                ? Container(
-                    padding: const EdgeInsets.all(40),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(60),
-                      border: Border.all(
-                        color: Colors.grey.shade300,
-                        width: .5,
-                      ),
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Colors.grey,
-                          offset: Offset(0.0, 1.0), //(x,y)
-                          blurRadius: 6.0,
-                        ),
-                      ],
-                    ),
-                    child: const Icon(
-                      CupertinoIcons.camera,
-                      color: Colors.grey,
-                    ),
-                  )
-                : Padding(
-                    padding: const EdgeInsets.only(top: 40),
-                    child: CircleAvatar(
-                      backgroundImage: AssetImage("$imageUrl"),
-                      radius: 60,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(80),
-                        child: Image.file(
-                          File(imageUrl!),
-                          fit: BoxFit.cover,
-                          width: 120,
-                        ),
-                      ),
-                    ),
-                  ),
-          ),
-          const SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Flexible(
-                child: Padding(
-                  padding: const EdgeInsets.only(right: 10),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(
-                        color: Colors.grey.shade200,
-                        width: 1,
-                      ),
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Colors.grey,
-                          offset: Offset(0.0, 1.0), //(x,y)
-                          blurRadius: 6.0,
-                        ),
-                      ],
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: CupertinoTextField(
-                      padding: const EdgeInsets.only(
-                        top: 12,
-                        bottom: 12,
-                        left: 10,
-                      ),
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.grey.shade100),
-                      ),
-                      style: const TextStyle(color: Colors.grey),
-                      placeholder: "First Name",
-                      placeholderStyle: const TextStyle(
-                        color: Colors.grey,
-                        fontFamily: "Schyler",
-                        fontSize: 14,
-                      ),
-                      controller: firstNameControllar,
-                    ),
-                  ),
-                ),
-              ),
-              Flexible(
-                child: Padding(
-                  padding: const EdgeInsets.only(right: 10),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(
-                        color: Colors.grey.shade200,
-                        width: 1,
-                      ),
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Colors.grey,
-                          offset: Offset(0.0, 1.0), //(x,y)
-                          blurRadius: 6.0,
-                        ),
-                      ],
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: CupertinoTextField(
-                      padding: const EdgeInsets.only(
-                        top: 12,
-                        bottom: 12,
-                        left: 10,
-                      ),
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.grey.shade100),
-                      ),
-                      style: const TextStyle(color: Colors.grey),
-                      placeholder: "Last Name",
-                      placeholderStyle: const TextStyle(
-                        color: Colors.grey,
-                        fontFamily: "Schyler",
-                        fontSize: 14,
-                      ),
-                      controller: lastNameControllar,
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 16),
-          Flexible(
-            child: Padding(
-              padding: const EdgeInsets.only(right: 10),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(
-                    color: Colors.grey.shade200,
-                    width: 1,
-                  ),
-                  boxShadow: const [
-                    BoxShadow(
-                      color: Colors.grey,
-                      offset: Offset(0.0, 1.0), //(x,y)
-                      blurRadius: 6.0,
-                    ),
-                  ],
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: CupertinoTextField(
-                  padding: const EdgeInsets.only(
-                    top: 12,
-                    bottom: 12,
-                    left: 10,
-                  ),
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.grey.shade100),
-                  ),
-                  style: const TextStyle(color: Colors.grey),
-                  placeholder: "Phone Number",
-                  placeholderStyle: const TextStyle(
-                    color: Colors.grey,
-                    fontFamily: "Schyler",
-                    fontSize: 14,
-                  ),
-                  controller: phoneControllar,
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(height: 10),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              InkWell(
-                onTap: _selectGender,
-                child: Container(
-                  padding: const EdgeInsets.all(8),
-                  margin: const EdgeInsets.only(top: 10, right: 12),
-                  height: 50,
-                  width: MediaQuery.of(context).size.width * .36,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(
-                      color: Colors.grey.shade200,
-                      width: 1,
-                    ),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Colors.grey,
-                        offset: Offset(0.0, 1.0), //(x,y)
-                        blurRadius: 6.0,
-                      ),
-                    ],
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        selectedGender ?? "Select Gender",
-                        style: TextStyle(
-                          color: Colors.grey,
-                          fontFamily: "Schyler",
-                          fontSize: 12,
-                        ),
-                      ),
-                      SizedBox(width: 4),
-                      Icon(
-                        CupertinoIcons.person_2_alt,
-                        color: Colors.grey,
-                      )
-                    ],
-                  ),
-                ),
-              ),
-              const SizedBox(width: 10),
-              InkWell(
-                onTap: _datePick,
-                child: Container(
-                  padding: const EdgeInsets.all(8),
-                  margin: const EdgeInsets.only(top: 10, right: 12),
-                  height: 50,
-                  width: MediaQuery.of(context).size.width * .36,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(
-                      color: Colors.grey.shade200,
-                      width: 1,
-                    ),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Colors.grey,
-                        offset: Offset(0.0, 1.0), //(x,y)
-                        blurRadius: 6.0,
-                      ),
-                    ],
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        _date ?? "Date Of Birth",
-                        style: TextStyle(
-                          color: Colors.grey,
-                          fontFamily: "Schyler",
-                          fontSize: 12,
-                        ),
-                      ),
-                      SizedBox(width: 4),
-                      Icon(
-                        Icons.calendar_month,
-                        color: Colors.grey,
-                      )
-                    ],
-                  ),
-                ),
-              )
-            ],
-          ),
-          const SizedBox(height: 10),
-          Flexible(
-            child: InkWell(
+            InkWell(
               onTap: () {
-                selectBloodGroupUi(context, (value) {
-                  setState(() {
-                    selectedBloodGroup = value;
-                  });
-                });
+                showCustomAlertDialog(
+                  context,
+                  "Camera",
+                  "Gallery",
+                  "Choose Your Source",
+                  (String value) {
+                    setState(
+                      () {
+                        imageUrl = value;
+                      },
+                    );
+                  },
+                );
               },
-              child: Container(
-                padding: const EdgeInsets.all(8),
-                margin: const EdgeInsets.only(top: 10, right: 12),
-                height: 50,
-                width: MediaQuery.of(context).size.width * .6,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(
-                    color: Colors.grey.shade200,
-                    width: 1,
-                  ),
-                  boxShadow: const [
-                    BoxShadow(
-                      color: Colors.grey,
-                      offset: Offset(0.0, 1.0), //(x,y)
-                      blurRadius: 6.0,
-                    ),
-                  ],
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      selectedBloodGroup ?? "Select Your Blood Group",
-                      style: TextStyle(
+              child: imageUrl == null
+                  ? Container(
+                      padding: const EdgeInsets.all(40),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(60),
+                        border: Border.all(
+                          color: Colors.grey.shade300,
+                          width: .5,
+                        ),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.grey,
+                            offset: Offset(0.0, 1.0), //(x,y)
+                            blurRadius: 6.0,
+                          ),
+                        ],
+                      ),
+                      child: const Icon(
+                        CupertinoIcons.camera,
                         color: Colors.grey,
-                        fontFamily: "Schyler",
-                        fontSize: 12,
+                      ),
+                    )
+                  : Padding(
+                      padding: const EdgeInsets.only(top: 40),
+                      child: CircleAvatar(
+                        backgroundImage: AssetImage("$imageUrl"),
+                        radius: 60,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(80),
+                          child: Image.file(
+                            File(imageUrl!),
+                            fit: BoxFit.cover,
+                            width: 120,
+                          ),
+                        ),
                       ),
                     ),
-                    SizedBox(width: 4),
-                    Icon(
-                      Icons.bloodtype,
+            ),
+            const SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Flexible(
+                  child: Padding(
+                    padding: const EdgeInsets.only(right: 10),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(
+                          color: Colors.grey.shade200,
+                          width: 1,
+                        ),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.grey,
+                            offset: Offset(0.0, 1.0), //(x,y)
+                            blurRadius: 6.0,
+                          ),
+                        ],
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: CupertinoTextField(
+                        padding: const EdgeInsets.only(
+                          top: 12,
+                          bottom: 12,
+                          left: 10,
+                        ),
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.grey.shade100),
+                        ),
+                        style: const TextStyle(color: Colors.grey),
+                        placeholder: "First Name",
+                        placeholderStyle: const TextStyle(
+                          color: Colors.grey,
+                          fontFamily: "Schyler",
+                          fontSize: 14,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Flexible(
+                  child: Padding(
+                    padding: const EdgeInsets.only(right: 10),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(
+                          color: Colors.grey.shade200,
+                          width: 1,
+                        ),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.grey,
+                            offset: Offset(0.0, 1.0), //(x,y)
+                            blurRadius: 6.0,
+                          ),
+                        ],
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: CupertinoTextField(
+                        padding: const EdgeInsets.only(
+                          top: 12,
+                          bottom: 12,
+                          left: 10,
+                        ),
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.grey.shade100),
+                        ),
+                        style: const TextStyle(color: Colors.grey),
+                        placeholder: "Last Name",
+                        placeholderStyle: const TextStyle(
+                          color: Colors.grey,
+                          fontFamily: "Schyler",
+                          fontSize: 14,
+                        ),
+
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 16),
+
+
+            Flexible(
+              child: Padding(
+                padding: const EdgeInsets.only(right: 10),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    border: Border.all(
+                      color: Colors.grey.shade200,
+                      width: 1,
+                    ),
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Colors.grey,
+                        offset: Offset(0.0, 1.0), //(x,y)
+                        blurRadius: 6.0,
+                      ),
+                    ],
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: CupertinoTextField(
+                    padding: const EdgeInsets.only(
+                      top: 12,
+                      bottom: 12,
+                      left: 10,
+                    ),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey.shade100),
+                    ),
+                    style: const TextStyle(color: Colors.grey),
+                    placeholder: "Phone Number",
+                    placeholderStyle: const TextStyle(
                       color: Colors.grey,
-                    )
-                  ],
+                      fontFamily: "Schyler",
+                      fontSize: 14,
+                    ),
+                  ),
                 ),
               ),
             ),
-          ),
-          const SizedBox(height: 16),
-          //autoComplite Location
-          Padding(
-            padding: const EdgeInsets.only(left: 8, right: 8),
-            child: Flexible(
+            const SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                InkWell(
+                  onTap: _selectGender,
+                  child: Container(
+                    padding: const EdgeInsets.all(8),
+                    margin: const EdgeInsets.only(top: 10, right: 12),
+                    height: 50,
+                    width: MediaQuery.of(context).size.width * .36,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(
+                        color: Colors.grey.shade200,
+                        width: 1,
+                      ),
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Colors.grey,
+                          offset: Offset(0.0, 1.0), //(x,y)
+                          blurRadius: 6.0,
+                        ),
+                      ],
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          selectedGender ?? "Select Gender",
+                          style: TextStyle(
+                            color: Colors.grey,
+                            fontFamily: "Schyler",
+                            fontSize: 12,
+                          ),
+                        ),
+                        SizedBox(width: 4),
+                        Icon(
+                          CupertinoIcons.person_2_alt,
+                          color: Colors.grey,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 10),
+                InkWell(
+                  onTap: _datePick,
+                  child: Container(
+                    padding: const EdgeInsets.all(8),
+                    margin: const EdgeInsets.only(top: 10, right: 12),
+                    height: 50,
+                    width: MediaQuery.of(context).size.width * .36,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(
+                        color: Colors.grey.shade200,
+                        width: 1,
+                      ),
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Colors.grey,
+                          offset: Offset(0.0, 1.0), //(x,y)
+                          blurRadius: 6.0,
+                        ),
+                      ],
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          _date ?? "Date Of Birth",
+                          style: TextStyle(
+                            color: Colors.grey,
+                            fontFamily: "Schyler",
+                            fontSize: 12,
+                          ),
+                        ),
+                        SizedBox(width: 4),
+                        Icon(
+                          Icons.calendar_month,
+                          color: Colors.grey,
+                        )
+                      ],
+                    ),
+                  ),
+                )
+              ],
+            ),
+            const SizedBox(height: 10),
+            Flexible(
               child: InkWell(
                 onTap: () {
-                  selectAddressGroupUi(context, (value) {
+                  selectBloodGroupUi(context, (value) {
                     setState(() {
-                      selectedAddress = value;
+                      selectedBloodGroup = value;
                     });
                   });
                 },
@@ -436,7 +372,7 @@ class _DonatePageState extends State<DonatePage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        selectedAddress ?? "Select Your Address",
+                        selectedBloodGroup ?? "Select Your Blood Group",
                         style: TextStyle(
                           color: Colors.grey,
                           fontFamily: "Schyler",
@@ -453,23 +389,79 @@ class _DonatePageState extends State<DonatePage> {
                 ),
               ),
             ),
-          ),
-          const SizedBox(height: 15),
-
-          CupertinoButton(
-            color: Colors.red,
-            child: const Text(
-              "Continue",
-              style: TextStyle(
-                color: Colors.white,
-                fontFamily: "Schyler",
+            const SizedBox(height: 16),
+            //autoComplite Location
+            Padding(
+              padding: const EdgeInsets.only(left: 8, right: 8),
+              child: Flexible(
+                child: InkWell(
+                  onTap: () {
+                    selectAddressGroupUi(context, (value) {
+                      setState(() {
+                        selectedAddress = value;
+                      });
+                    });
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.all(8),
+                    margin: const EdgeInsets.only(top: 10, right: 12),
+                    height: 50,
+                    width: MediaQuery.of(context).size.width * .6,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(
+                        color: Colors.grey.shade200,
+                        width: 1,
+                      ),
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Colors.grey,
+                          offset: Offset(0.0, 1.0), //(x,y)
+                          blurRadius: 6.0,
+                        ),
+                      ],
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          selectedAddress ?? "Select Your Address",
+                          style: TextStyle(
+                            color: Colors.grey,
+                            fontFamily: "Schyler",
+                            fontSize: 12,
+                          ),
+                        ),
+                        SizedBox(width: 4),
+                        Icon(
+                          Icons.bloodtype,
+                          color: Colors.grey,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
               ),
             ),
-            onPressed: () {},
-          )
-        ],
+            const SizedBox(height: 15),
+
+            CupertinoButton(
+              color: Colors.red,
+              child: const Text(
+                "Continue",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontFamily: "Schyler",
+                ),
+              ),
+              onPressed: () {},
+            )
+          ],
       ),
-    ));
+    ),
+        ));
   }
 
   void _datePick() async {
@@ -490,8 +482,7 @@ class _DonatePageState extends State<DonatePage> {
     String nMsg,
     String pMsg,
     String msg,
-    Function(String value) onclick,
-  ) {
+    Function(String value) onclick,) {
     showCupertinoModalPopup<void>(
       context: context,
       builder: (BuildContext context) => CupertinoAlertDialog(
