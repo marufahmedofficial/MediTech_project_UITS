@@ -91,8 +91,7 @@ class _AboutPageState extends State<AboutPage> {
             Padding(
               padding: EdgeInsets.only(left: 25),
               child: ListTile(
-                leading: const Icon(Icons.code),
-
+                leading: const Icon(Icons.code,color: Colors.lightBlue,),
                 title: const Text('Cheak out GitHub'),
                   onTap: () { launch('https://github.com/marufahmedofficial/MediTech_project_UITS');}
               ),
@@ -100,7 +99,7 @@ class _AboutPageState extends State<AboutPage> {
             Padding(
               padding: EdgeInsets.only(left: 25),
               child: ListTile(
-                leading: const Icon(Icons.bug_report),
+                leading: const Icon(Icons.bug_report,color: Colors.lightBlue,),
                 title: const Text('Report issue on GitHub'),
                 onTap: () =>
                     Navigator.of(context).pushNamed(''),
@@ -109,7 +108,7 @@ class _AboutPageState extends State<AboutPage> {
             Padding(
               padding: EdgeInsets.only(left: 25),
               child: ListTile(
-                leading: const Icon(Icons.open_in_new),
+                leading: const Icon(Icons.open_in_new,color: Colors.lightBlue,),
                 title: const Text('Visit my website'),
                   onTap: () { launch('https://github.com/marufahmedofficial?tab=repositories');}
               ),
@@ -117,7 +116,7 @@ class _AboutPageState extends State<AboutPage> {
             Padding(
               padding: EdgeInsets.only(left: 25),
               child: ListTile(
-                leading: const Icon(Icons.shop),
+                leading: const Icon(Icons.shop,color: Colors.lightBlue,),
                 title: const Text('Rate the app'),
                   onTap: () {
 
@@ -176,7 +175,7 @@ class _AboutPageState extends State<AboutPage> {
             Padding(
               padding: EdgeInsets.only(left: 25),
               child: ListTile(
-                leading: const Icon(Icons.apps),
+                leading: const Icon(CupertinoIcons.square_grid_2x2_fill,color: Colors.lightBlue,),
                 title: const Text('My Other Apps'),
                 onTap: () { launch('https://github.com/marufahmedofficial?tab=repositories');}
               ),
