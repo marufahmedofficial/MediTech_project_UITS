@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:nb_utils/nb_utils.dart';
+import 'package:meditech/pages/blood/blood_mainscreen.dart';
 
 class FoodPage extends StatefulWidget {
   const FoodPage({Key? key}) : super(key: key);
@@ -10,27 +9,97 @@ class FoodPage extends StatefulWidget {
 }
 
 class _FoodPageState extends State<FoodPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(bottom: 16, left: 16, right: 16),
-      child: Row(
-        children: <Widget>[
-          ClipRRect(
-            borderRadius: BorderRadius.circular(12.0),
-            child: Image.asset('model.img', fit: BoxFit.fill, height: 80, width: 80),
-          ),
-          SizedBox(width: 10),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Text('model.name', style: primaryTextStyle(fontFamily: fontMedium)),
-              Text('model.info', style: primaryTextStyle(color: db1_textColorSecondary, size: 14), maxLines: 1),
 
-            ],
-          )
+
+  Widget _pageadd({
+    required String image,
+    required String name,
+    TextStyle style = const TextStyle(
+        fontSize: 20, fontWeight: FontWeight.bold, color: Colors.indigo),
+  }) {
+    return Container(
+      width: MediaQuery.of(context).size.width / 2,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(17.0),
+          border: Border.all(color: Colors.deepOrange, width: 2))
+      , //grey
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            height: 130,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage(image), fit: BoxFit.contain),
+            ),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Text(name, style: style)
         ],
       ),
     );
   }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text('Food and Nutrition'),
+        backgroundColor: Colors.red,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.only(left: 60,right:60 ,bottom: 20,top: 14),
+
+
+        child: GridView.count(
+          crossAxisCount: 1,
+          crossAxisSpacing: 20,
+          mainAxisSpacing: 15,
+          childAspectRatio: 1.20,
+          physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+          children: [
+            InkWell(
+              onTap: () { Navigator.push( context, MaterialPageRoute(
+                  builder: (context) => BloodMain()));
+              },
+              child: _pageadd(
+                  image: 'assets/food/a.jpg', name: 'Vitamin A'),
+            ),
+            InkWell(
+              onTap: () { Navigator.push( context, MaterialPageRoute(
+                  builder: (context) => BloodMain()));
+              },
+              child: _pageadd(
+                  image: 'assets/food/c.jpg', name: 'Vitamin C'),
+            ),
+            InkWell(
+              onTap: () { Navigator.push( context, MaterialPageRoute(
+                  builder: (context) => BloodMain()));
+              },
+              child: _pageadd(
+                  image: 'assets/food/uits.png', name: 'Vitamin A'),
+            ),
+            InkWell(
+              onTap: () { Navigator.push( context, MaterialPageRoute(
+                  builder: (context) => BloodMain()));
+              },
+              child: _pageadd(
+                  image: 'assets/food/uits.png', name: 'Vitamin A'),
+            ),
+
+
+          ],
+        ),
+
+      ),
+
+    );
+
+
+  }
 }
+

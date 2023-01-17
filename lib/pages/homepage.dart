@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:meditech/pages/disease/mainscreen.dart';
+import 'package:meditech/pages/food/food.dart';
 import 'package:meditech/pages/profile/profile_main.dart';
 import 'package:meditech/pages/settings.dart';
 import 'package:nb_utils/nb_utils.dart';
@@ -804,7 +805,12 @@ class _HomePageState extends State<HomePage> {
                 elevation: 6,
                 shadowColor: CupertinoColors.systemRed,
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>  FoodPage()));
+                  },
                   mouseCursor: MouseCursor.defer,
                   splashColor: Colors.red.shade100,
                   hoverColor: Colors.grey.shade200,
