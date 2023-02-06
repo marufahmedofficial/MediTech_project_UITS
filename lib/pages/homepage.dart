@@ -882,8 +882,5 @@ class _HomePageState extends State<HomePage> {
 
 
   }
-  void finish(BuildContext context, [Object? result]) {
-    if (Navigator.canPop(context)) Navigator.pop(context, result);
-  }
 }
 
