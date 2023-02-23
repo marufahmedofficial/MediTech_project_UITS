@@ -22,9 +22,9 @@ class _DoctorPageState extends State<DoctorPage> {
     return Scaffold(
       backgroundColor: appBgColor,
       appBar: AppBar(
-         leading: BackButton(color: Colors.grey,),
+        leading: BackButton(color: Colors.grey,),
         title: Text('Doctors',style: TextStyle(
-          color: Colors.grey,fontWeight: FontWeight.bold
+            color: Colors.grey,fontWeight: FontWeight.bold
         ),
         ),
 
