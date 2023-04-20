@@ -67,7 +67,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             decoration: pageDecoration,
           ),
           PageViewModel(
-            title: "Desease Finder",
+            title: "Diseases Finder",
             body:
             "Finds your disease according to your symptoms.",
             image: _buildImage('desease.png'),
@@ -83,7 +83,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           PageViewModel(
             title: "Connect with Doctors",
             body:
-                "Cummunicate and connect with doctor from anytime and anywhere.",
+                "Communicate and connect with doctor from anytime and anywhere.",
             image: _buildImage('doctor.png'),
             decoration: pageDecoration,
           ),PageViewModel(
@@ -91,6 +91,30 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             body:
                 "Government , privet & Covid Hospital list & contact.",
             image: _buildImage('hospital.png'),
+            decoration: pageDecoration,
+          ),PageViewModel(
+            title: "Blood Bank",
+            body:
+                "Blood bank list & contact.",
+            image: _buildImage('b_donation.png'),
+            decoration: pageDecoration,
+          ),PageViewModel(
+            title: "Donate Blood",
+            body:
+                "Sign as a blood donor.",
+            image: _buildImage('blood-donation.png'),
+            decoration: pageDecoration,
+          ),PageViewModel(
+            title: "Medicine",
+            body:
+                "Medicine Info and details.",
+            image: _buildImage('medicine.png'),
+            decoration: pageDecoration,
+          ),PageViewModel(
+            title: "Food & Nutrition",
+            body:
+                "Food & Nutrition information.",
+            image: _buildImage('calories.png'),
             decoration: pageDecoration,
           ),
         ],
