@@ -74,14 +74,25 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             decoration: pageDecoration,
           ),
           PageViewModel(
-            title: "Connect with Doctors",
+            title: "Covid Tracker",
             body:
-            "Cummunicate and connect with doctor from anytime and anywhere.",
-            image: _buildImage('doctor.png'),
+            "Track Covid-19 world report.",
+            image: _buildImage('Covid19.png'),
             decoration: pageDecoration,
           ),
-
-
+          PageViewModel(
+            title: "Connect with Doctors",
+            body:
+                "Cummunicate and connect with doctor from anytime and anywhere.",
+            image: _buildImage('doctor.png'),
+            decoration: pageDecoration,
+          ),PageViewModel(
+            title: "Hospital",
+            body:
+                "Government , privet & Covid Hospital list & contact.",
+            image: _buildImage('hospital.png'),
+            decoration: pageDecoration,
+          ),
         ],
         onDone: () => _onIntroEnd(context),
         onSkip: () => _onIntroEnd(context),
