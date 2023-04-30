@@ -77,7 +77,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             title: "Covid Tracker",
             body:
             "Track Covid-19 world report.",
-            image: _buildImage('Covid19.png'),
+            image: _buildImage('covid19.png'),
             decoration: pageDecoration,
           ),
           PageViewModel(
@@ -130,10 +130,10 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         next: const Icon(CupertinoIcons.right_chevron),
         done: const Text('Done', style: TextStyle(fontWeight: FontWeight.w600)),
         curve: Curves.fastLinearToSlowEaseIn,
-        controlsMargin: const EdgeInsets.all(16),
+        controlsMargin: const EdgeInsets.all(2),
         controlsPadding: kIsWeb
             ? const EdgeInsets.all(12.0)
-            : const EdgeInsets.fromLTRB(8.0, 12.0, 8.0, 1.0),
+            : const EdgeInsets.fromLTRB(8.0, 7.0, 8.0, 1.0),
         dotsDecorator: const DotsDecorator(
           size: Size(10.0, 10.0),
           color: Colors.red,
