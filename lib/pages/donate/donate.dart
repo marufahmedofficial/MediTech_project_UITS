@@ -359,9 +359,9 @@ class _DonatePageState extends State<DonatePage> {
                     },
                     child: Container(
                       padding: const EdgeInsets.all(8),
-                      margin: const EdgeInsets.only(top: 10, right: 12),
+                      margin: const EdgeInsets.only(top: 10, right: 2,left: 11),
                       height: 50,
-                      width: MediaQuery.of(context).size.width * .6,
+                      width: MediaQuery.of(context).size.width * .8,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         border: Border.all(
@@ -389,7 +389,7 @@ class _DonatePageState extends State<DonatePage> {
                               fontSize: 12,
                             ),
                           ),
-                          SizedBox(width: 4),
+                          SizedBox(width: 6),
                           Icon(
                             Icons.bloodtype,
                             color: Colors.grey,
@@ -418,9 +418,9 @@ class _DonatePageState extends State<DonatePage> {
                       },
                       child: Container(
                         padding: const EdgeInsets.all(8),
-                        margin: const EdgeInsets.only(top: 10, right: 12),
+                        margin: const EdgeInsets.only(top: 10, right: 2,left: 4),
                         height: 50,
-                        width: MediaQuery.of(context).size.width * .6,
+                        width: MediaQuery.of(context).size.width * .8,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           border: Border.all(
@@ -445,7 +445,7 @@ class _DonatePageState extends State<DonatePage> {
                               style: TextStyle(
                                 color: Colors.grey,
                                 fontFamily: "Schyler",
-                                fontSize: 12,
+                                fontSize: 13,
                               ),
                             ),
                             SizedBox(width: 6),
