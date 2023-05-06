@@ -448,9 +448,9 @@ class _DonatePageState extends State<DonatePage> {
                                 fontSize: 12,
                               ),
                             ),
-                            SizedBox(width: 4),
+                            SizedBox(width: 6),
                             Icon(
-                              Icons.bloodtype,
+                              Icons.location_on_rounded,
                               color: Colors.grey,
                             )
                           ],
