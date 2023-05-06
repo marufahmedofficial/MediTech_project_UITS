@@ -205,44 +205,48 @@ class _DonatePageState extends State<DonatePage> {
             const SizedBox(height: 16),
 
 
-            Flexible(
-              child: Padding(
-                padding: const EdgeInsets.only(right: 10),
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(
-                      color: Colors.grey.shade200,
-                      width: 1,
-                    ),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Colors.grey,
-                        offset: Offset(0.0, 1.0), //(x,y)
-                        blurRadius: 6.0,
+            Row(
+              children: [
+                Flexible(
+                  child: Padding(
+                    padding: const EdgeInsets.only(right: 10),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(
+                          color: Colors.grey.shade200,
+                          width: 1,
+                        ),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.grey,
+                            offset: Offset(0.0, 1.0), //(x,y)
+                            blurRadius: 6.0,
+                          ),
+                        ],
+                        borderRadius: BorderRadius.circular(8),
                       ),
-                    ],
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: CupertinoTextField(
-                    padding: const EdgeInsets.only(
-                      top: 12,
-                      bottom: 12,
-                      left: 10,
-                    ),
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey.shade100),
-                    ),
-                    style: const TextStyle(color: Colors.grey),
-                    placeholder: "Phone Number",
-                    placeholderStyle: const TextStyle(
-                      color: Colors.grey,
-                      fontFamily: "Schyler",
-                      fontSize: 14,
+                      child: CupertinoTextField(
+                        padding: const EdgeInsets.only(
+                          top: 12,
+                          bottom: 12,
+                          left: 10,
+                        ),
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.grey.shade100),
+                        ),
+                        style: const TextStyle(color: Colors.grey),
+                        placeholder: "Phone Number",
+                        placeholderStyle: const TextStyle(
+                          color: Colors.grey,
+                          fontFamily: "Schyler",
+                          fontSize: 14,
+                        ),
+                      ),
                     ),
                   ),
                 ),
-              ),
+              ],
             ),
             const SizedBox(height: 10),
             Row(
@@ -338,111 +342,119 @@ class _DonatePageState extends State<DonatePage> {
               ],
             ),
             const SizedBox(height: 10),
-            Flexible(
-              child: InkWell(
-                onTap: () {
-                  selectBloodGroupUi(context, (value) {
-                    setState(() {
-                      selectedBloodGroup = value;
-                    });
-                  });
-                },
-                child: Container(
-                  padding: const EdgeInsets.all(8),
-                  margin: const EdgeInsets.only(top: 10, right: 12),
-                  height: 50,
-                  width: MediaQuery.of(context).size.width * .6,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(
-                      color: Colors.grey.shade200,
-                      width: 1,
-                    ),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Colors.grey,
-                        offset: Offset(0.0, 1.0), //(x,y)
-                        blurRadius: 6.0,
-                      ),
-                    ],
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        selectedBloodGroup ?? "Select Your Blood Group",
-                        style: TextStyle(
-                          color: Colors.grey,
-                          fontFamily: "Schyler",
-                          fontSize: 12,
+            Row(
+              children: [
+                Flexible(
+                  child: InkWell(
+                    onTap: () {
+                      selectBloodGroupUi(context, (value) {
+                        setState(() {
+                          selectedBloodGroup = value;
+                        });
+                      });
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.all(8),
+                      margin: const EdgeInsets.only(top: 10, right: 12),
+                      height: 50,
+                      width: MediaQuery.of(context).size.width * .6,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(
+                          color: Colors.grey.shade200,
+                          width: 1,
                         ),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.grey,
+                            offset: Offset(0.0, 1.0), //(x,y)
+                            blurRadius: 6.0,
+                          ),
+                        ],
+                        borderRadius: BorderRadius.circular(8),
                       ),
-                      SizedBox(width: 4),
-                      Icon(
-                        Icons.bloodtype,
-                        color: Colors.grey,
-                      )
-                    ],
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            selectedBloodGroup ?? "Select Your Blood Group",
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontFamily: "Schyler",
+                              fontSize: 12,
+                            ),
+                          ),
+                          SizedBox(width: 4),
+                          Icon(
+                            Icons.bloodtype,
+                            color: Colors.grey,
+                          )
+                        ],
+                      ),
+                    ),
                   ),
                 ),
-              ),
+              ],
             ),
             const SizedBox(height: 16),
             //autoComplite Location
             Padding(
               padding: const EdgeInsets.only(left: 8, right: 8),
-              child: Flexible(
-                child: InkWell(
-                  onTap: () {
-                    selectAddressGroupUi(context, (value) {
-                      setState(() {
-                        selectedAddress = value;
-                      });
-                    });
-                  },
-                  child: Container(
-                    padding: const EdgeInsets.all(8),
-                    margin: const EdgeInsets.only(top: 10, right: 12),
-                    height: 50,
-                    width: MediaQuery.of(context).size.width * .6,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(
-                        color: Colors.grey.shade200,
-                        width: 1,
-                      ),
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Colors.grey,
-                          offset: Offset(0.0, 1.0), //(x,y)
-                          blurRadius: 6.0,
-                        ),
-                      ],
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          selectedAddress ?? "Select Your Address",
-                          style: TextStyle(
-                            color: Colors.grey,
-                            fontFamily: "Schyler",
-                            fontSize: 12,
+              child: Row(
+                children: [
+                  Flexible(
+                    child: InkWell(
+                      onTap: () {
+                        selectAddressGroupUi(context, (value) {
+                          setState(() {
+                            selectedAddress = value;
+                          });
+                        });
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(8),
+                        margin: const EdgeInsets.only(top: 10, right: 12),
+                        height: 50,
+                        width: MediaQuery.of(context).size.width * .6,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(
+                            color: Colors.grey.shade200,
+                            width: 1,
                           ),
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Colors.grey,
+                              offset: Offset(0.0, 1.0), //(x,y)
+                              blurRadius: 6.0,
+                            ),
+                          ],
+                          borderRadius: BorderRadius.circular(8),
                         ),
-                        SizedBox(width: 4),
-                        Icon(
-                          Icons.bloodtype,
-                          color: Colors.grey,
-                        )
-                      ],
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              selectedAddress ?? "Select Your Address",
+                              style: TextStyle(
+                                color: Colors.grey,
+                                fontFamily: "Schyler",
+                                fontSize: 12,
+                              ),
+                            ),
+                            SizedBox(width: 4),
+                            Icon(
+                              Icons.bloodtype,
+                              color: Colors.grey,
+                            )
+                          ],
+                        ),
+                      ),
                     ),
                   ),
-                ),
+                ],
               ),
             ),
             const SizedBox(height: 15),
