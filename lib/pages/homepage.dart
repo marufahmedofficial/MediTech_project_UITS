@@ -373,7 +373,7 @@ class _HomePageState extends State<HomePage> {
                             actions: [
                               CupertinoDialogAction(
                                 child: Text('Cancel',
-                                    style: TextStyle(fontSize: 18)),
+                                    style: TextStyle(fontSize: 18,color: Colors.teal)),
                                 onPressed: () {
                                   Navigator.pop(context); //close Dialog
                                 },

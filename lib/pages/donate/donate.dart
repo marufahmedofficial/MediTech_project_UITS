@@ -505,7 +505,7 @@ class _DonatePageState extends State<DonatePage> {
         title: const Text(
           'Alert',
           style: TextStyle(
-            color: Colors.red,
+            color: Colors.purple,
             fontFamily: "Schyler",
             fontSize: 22,
           ),
@@ -528,7 +528,7 @@ class _DonatePageState extends State<DonatePage> {
                   await ImagePicker().pickImage(source: ImageSource.camera);
               onclick(file!.path);
             },
-            child: Text(nMsg),
+            child: Text(nMsg,  style: TextStyle(fontSize: 18,color: Colors.teal)),
           ),
           CupertinoDialogAction(
             isDestructiveAction: true,
@@ -569,7 +569,7 @@ class _DonatePageState extends State<DonatePage> {
             onPressed: () {
               Navigator.pop(context);
             },
-            child: const Text("Cancel")),
+            child: const Text("Cancel",  style: TextStyle(fontSize: 18,color: Colors.teal))),
       ),
     );
   }
@@ -632,7 +632,7 @@ class _DonatePageState extends State<DonatePage> {
             onPressed: () {
               Navigator.pop(context);
             },
-            child: const Text("Cancel")),
+            child: const Text("Cancel",  style: TextStyle(fontSize: 18,color: Colors.teal))),
       ),
     );
   }
@@ -695,7 +695,10 @@ class _DonatePageState extends State<DonatePage> {
             onPressed: () {
               Navigator.pop(context);
             },
-            child: const Text("Cancel")),
+            child: const Text("Cancel", style:
+            TextStyle(fontSize: 18,color: Colors.teal),
+            )
+        ),
       ),
     );
   }
