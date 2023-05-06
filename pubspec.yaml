@@ -52,7 +52,7 @@ dependencies:
   firebase_auth:
   firebase_core:
   firebase_storage:
-  cloud_firestore: ^4.6.0
+#  cloud_firestore: ^4.6.0
   firebase_database:
   settings_ui: ^2.0.2
   google_fonts: ^4.0.3

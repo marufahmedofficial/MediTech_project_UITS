@@ -74,7 +74,8 @@ class _BloodHomeState extends State<BloodHome> {
               hoverColor: Colors.grey.shade200,
               child: _pageadd(
                   image: 'assets/images/uits.png', name: 'UITS'),
-            ), InkWell(
+            ),
+            InkWell(
               onTap: () {
               },
               mouseCursor: MouseCursor.defer,
@@ -82,7 +83,8 @@ class _BloodHomeState extends State<BloodHome> {
               hoverColor: Colors.grey.shade200,
               child: _pageadd(
                   image: 'assets/images/gazipur.png', name: 'Gazipur Team'),
-            ),InkWell(
+            ),
+            InkWell(
               onTap: () {
               },
               mouseCursor: MouseCursor.defer,
@@ -90,7 +92,8 @@ class _BloodHomeState extends State<BloodHome> {
               hoverColor: Colors.grey.shade200,
               child: _pageadd(
                   image: 'assets/images/redc.png', name: 'Red Crescent'),
-            ), InkWell(
+            ),
+            InkWell(
               onTap: () {
               },
               mouseCursor: MouseCursor.defer,
