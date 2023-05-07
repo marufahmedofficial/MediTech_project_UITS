@@ -73,7 +73,13 @@ dependencies:
 
 
 dev_dependencies:
-  flutter_launcher_icons: ^0.13.1
+  flutter_launcher_icons: "^0.12.0"
+
+flutter_icons:
+  android: "launcher_icon"
+  remove_alpha_ios: true
+  image_path: "assets/images/launcher_image2.png"
+  min_sdk_android: 21
 
   flutter_test:
     sdk: flutter
@@ -90,13 +96,13 @@ flutter_native_splash:
     icon_background_color_dark: "#272727"
 
 #  flutter_launcher_icons: ^0.13.1
-flutter_icons:
-  android: true
-  ios: true
-#  image_path: "assets/images/appstore.png"
-  image_path_android: "assets/images/appstore.png"
-  image_path_ios: "assets/images/appstore.png"
-  min_sdk_android: 33
+#flutter_icons:
+#  android: true
+#  ios: true
+##  image_path: "assets/images/appstore.png"
+#  image_path_android: "assets/images/appstore.png"
+#  image_path_ios: "assets/images/appstore.png"
+#  min_sdk_android: 33
 
 
 
