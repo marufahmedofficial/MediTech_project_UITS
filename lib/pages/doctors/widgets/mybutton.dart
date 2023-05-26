@@ -26,7 +26,7 @@ class MyButton extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(13),
                 // ignore: deprecated_member_use
-                color: disableButton ? Theme.of(context).buttonColor.withOpacity(0.3) : bgColor,
+                color: disableButton ? Theme.of(context).primaryColorDark : bgColor,
                 boxShadow: [
                   BoxShadow(
                     color: Theme.of(context).shadowColor.withOpacity(0.1),
