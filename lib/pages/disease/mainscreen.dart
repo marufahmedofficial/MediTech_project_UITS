@@ -22,6 +22,7 @@ class _DiseaseMainState extends State<DiseaseMain> {
             automaticallyImplyLeading: false,
             backgroundColor: Colors.transparent,
             elevation: 0,
+            centerTitle: true,
             title: Text("Disease Finder",style: TextStyle(color:Colors.black),),
           ),
           floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
