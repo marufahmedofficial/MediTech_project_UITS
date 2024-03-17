@@ -133,7 +133,7 @@ class _HomePageState extends State<HomePage> {
                 bottomRight: Radius.circular(60)),
           ),
         ),
-        title: const Text('MediTech'),
+        title: const Text('MediTech', style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
         centerTitle: true,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
